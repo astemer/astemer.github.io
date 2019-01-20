@@ -63,19 +63,38 @@
 			var x = document.getElementById("info");
 			x.value = coord_lat +  " , " + coord_long;
 		}
+
+		function draw_map()
+		{
+			map_image = new Image();
+			map_image.src = 'img/map_1001.jpg';
+			map_image.onload = function() {
+				canvas = document.getElementById("map_canvas"),
+				context = canvas.getContext('2d');
+				canvas.width  = map_image.width;
+				canvas.height = map_image.height;
+				context.drawImage(map_image, 0, 0);
+			}
+		}
 		
-		window.onload = initiate_watchlocation;
+		function init() {
+			draw_map();
+			//initiate_watchlocation();
+		}
+		
+		window.onload = init;
     </script>
   </head>
   <body>
     <div>	  
-	  <button type="button" onclick="initiate_watchlocation();">Start Position</button>
-	  &nbsp&nbsp
-	  <button type="button" onclick="stop_watchlocation();">Stop Position</button>
-	  &nbsp&nbsp
-	  <button type="button" onclick="getLocation();">Get Location</button>
-	  &nbsp&nbsp	  	  
+		<button type="button" onclick="initiate_watchlocation();">Start Position</button>
+		&nbsp&nbsp
+		<button type="button" onclick="stop_watchlocation();">Stop Position</button>
+		&nbsp&nbsp
+		<button type="button" onclick="getLocation();">Get Location</button>
+		&nbsp&nbsp
+		<input type="text" id="info" name="info">	  
     </div>
-	<input type="text" id="info" name="info">
+	<canvas id="map_canvas" name="map_canvas"></canvas>
   </body>
 </html>
