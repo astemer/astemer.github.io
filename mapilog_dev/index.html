@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>    
+    <script>
+ 
+        var watchProcess = null;
+		var coord_lat = 0.0;
+		var coord_long = 0.0;
+ 
+        function initiate_watchlocation() {			
+			if (watchProcess == null) {
+				watchProcess = navigator.geolocation.watchPosition(handle_geolocation_query, handle_errors,
+				    {
+						timeout: 1000,
+						enableHighAccuracy: true,
+						maximumAge: Infinity
+					}
+				);
+			}
+        }
+ 
+        function stop_watchlocation() {
+		    if (watchProcess != null) {
+				navigator.geolocation.clearWatch(watchProcess);
+				watchProcess = null;
+			}			
+        }
+ 
+        function handle_errors(error)
+        {
+            switch(error.code)
+            {
+                case error.PERMISSION_DENIED: alert("user did not share geolocation data");
+                break;
+ 
+                case error.POSITION_UNAVAILABLE: alert("could not detect current position");
+                break;
+ 
+                case error.TIMEOUT: alert("retrieving position timedout");
+                break;
+ 
+                default: alert("unknown error");
+                break;
+            }
+        }
+		
+        function getLocation() {
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(handle_geolocation_query);
+			} else {
+				x.innerHTML = "Geolocation is not supported by this browser.";
+				x.text = "Geolocation is not supported by this browser.";
+			}
+		}
+		
+		function handle_geolocation_query(position) {
+			coord_lat = position.coords.latitude;
+			coord_long = position.coords.longitude;		    
+			showPosition();
+        }        
+		
+		function showPosition() {
+			var x = document.getElementById("info");
+			x.value = coord_lat +  " , " + coord_long;
+		}
+
+		function draw_map()
+		{
+			map_image = new Image();
+			map_image.src = 'maps/1001/img.jpg';
+			map_image.onload = function() {
+				canvas = document.getElementById("map_canvas"),
+				context = canvas.getContext('2d');
+				canvas.width  = map_image.width;
+				canvas.height = map_image.height;
+				context.drawImage(map_image, 0, 0);
+			}
+		}
+		
+		function init() {
+			draw_map();
+			//initiate_watchlocation();
+		}
+		
+		window.onload = init;
+    </script>
+  </head>
+  <body>
+    <div>	  
+		<button type="button" onclick="initiate_watchlocation();">Start Position</button>
+		&nbsp&nbsp
+		<button type="button" onclick="stop_watchlocation();">Stop Position</button>
+		&nbsp&nbsp
+		<button type="button" onclick="getLocation();">Get Location</button>
+		&nbsp&nbsp
+		<input type="text" id="info" name="info">	  
+    </div>
+	<canvas id="map_canvas" name="map_canvas"></canvas>
+  </body>
+</html>
