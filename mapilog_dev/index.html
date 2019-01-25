@@ -3,31 +3,32 @@
   <head>    
     <script>
  
-        var watchProcess = null;
-		var coord_lat = 0.0;
-		var coord_long = 0.0;
+    var watchProcess = null;
+		var gps_coords = {lat: 0.0, long: 0.0};
+		var map_coords = {topLeft_lat: 0.0, topLeft_lon: 0.0, bottomRight_lat: 0.0, bottomRight_lon: 0.0};
+		var map_orient_data = {alfa: 0.0, ratioX: 1.0, ratioY: 1.0};
+		var dataJsonStr = "";
+
  
-        function initiate_watchlocation() {			
+    function initiate_watchlocation() {			
 			if (watchProcess == null) {
 				watchProcess = navigator.geolocation.watchPosition(handle_geolocation_query, handle_errors,
-				    {
-						timeout: 1000,
+			    {
+						timeout: 10000,
 						enableHighAccuracy: true,
 						maximumAge: Infinity
-					}
-				);
+					});
 			}
-        }
+    }
  
-        function stop_watchlocation() {
-		    if (watchProcess != null) {
+    function stop_watchlocation() {
+		  if (watchProcess != null) {
 				navigator.geolocation.clearWatch(watchProcess);
 				watchProcess = null;
 			}			
-        }
+    }
  
-        function handle_errors(error)
-        {
+    function handle_errors(error) {
             switch(error.code)
             {
                 case error.PERMISSION_DENIED: alert("user did not share geolocation data");
@@ -41,10 +42,10 @@
  
                 default: alert("unknown error");
                 break;
-            }
-        }
+        		}
+    }
 		
-        function getLocation() {
+    function getLocation() {
 			if (navigator.geolocation) {
 				navigator.geolocation.getCurrentPosition(handle_geolocation_query);
 			} else {
@@ -57,29 +58,129 @@
 			coord_lat = position.coords.latitude;
 			coord_long = position.coords.longitude;		    
 			showPosition();
-        }        
+    }        
 		
 		function showPosition() {
+			console.log("showPosition: lat: " + coord_lat + ", long:" + coord_long);
 			var x = document.getElementById("info");
 			x.value = coord_lat +  " , " + coord_long;
+
+			var p = latLon_2_xy(coord_lat, coord_long);
+			drawXonCanvas(p.x, p.y);
 		}
 
-		function draw_map()
+		function drawXonCanvas(x, y) {	
+			var canvas = document.getElementById("map_canvas");		
+			var context = canvas.getContext('2d');			
+			context.lineWidth = 3;
+			context.strokeStyle = "black";			
+			var X_location_x = x;
+			var X_location_y = y;
+			//context.strokeStyle = '#00ff00';
+			context.moveTo(X_location_x - 10, X_location_y - 10);			
+			context.lineTo(X_location_x + 10, X_location_y + 10);
+			context.moveTo(X_location_x - 10, X_location_y + 10);			
+			context.lineTo(X_location_x + 10, X_location_y - 10);
+			context.stroke();
+		}
+
+		function drawMap()
 		{
 			map_image = new Image();
-			map_image.src = 'maps/1001/img.jpg';
+			map_image.src = 'maps/1002/img.jpg';
 			map_image.onload = function() {
 				canvas = document.getElementById("map_canvas"),
 				context = canvas.getContext('2d');
 				canvas.width  = map_image.width;
 				canvas.height = map_image.height;
 				context.drawImage(map_image, 0, 0);
+				postInit();
 			}
 		}
+	
+		function toRadians (angle) {
+			return angle * (Math.PI / 180);
+		}
 		
+		function toDegrees (angle) {
+			return angle * (180 / Math.PI);
+		}
+
+		var mapOrientData = {
+			vector: {angle: 0.0, dist: 0.0}, 
+			vectorRatio: 0.0, 
+			p1: {lat: 0.0, lon: 0.0}, 
+			p2: {lat: 0.0, lon: 0.0}
+		};
+
+		function prepareOrientationData() {
+			console.log("prepareOrientationData()");
+			mapOrientData.vector = calcVector(mapOrientData.p1.lon, mapOrientData.p1.lat, mapOrientData.p2.lon, mapOrientData.p2.lat);
+			var xyDist = distance(0, 0, map_image.width, map_image.height);
+			mapOrientData.vectorRatio = xyDist / mapOrientData.vector.dist
+			console.log("mapOrientData:" + JSON.stringify(mapOrientData));			
+		}
+
+		function distance(x1, y1, x2, y2) {			
+			var distX = x2 - x1;
+			var distY = y2 - y1;
+			var dist = Math.sqrt(distX * distX + distY * distY);
+			console.log("distX: " + distX + ", distY: " + distY + ", dist: " + dist);
+			return dist;
+		}
+
+		function angleFromEast(x1, y1, x2, y2) {
+			var distX = x2 - x1;
+			var distY = (y2 - y1) * (-1); // Since we look at the second quarter of the origin.
+			var angle = Math.atan2(distY, distX);	
+			console.log("Angle: Rad=" + angle + ", Deg=" + toDegrees(angle));	
+			return angle;
+		}
+
+		function calcVector(x1, y1, x2, y2) {			
+			var vector = {angle: 0.0, dist: 0.0};									 
+			vector.angle = angleFromEast(x1, y1, x2, y2);
+			vector.dist = distance(x1, y1, x2, y2);
+			console.log("vector: " + JSON.stringify(vector));
+			return vector;
+		}
+
+		function latLon_2_xy(lat, lon) {
+			var p = {x: 0.0, y: 0.0};
+			console.log("latLon_2_xy: lat:" + lat + ", " + lon);
+			var vector = calcVector(mapOrientData.p1.lon, mapOrientData.p1.lat, lon, lat);
+			// Assuming the top left corner of the image is 0,0 and the bottom right corner is the "100,100":
+			angleDelta = mapOrientData.vector.angle - vector.angle;
+			angle = mapOrientData.vector.angle - angleDelta;
+			dist = vector.dist * mapOrientData.vectorRatio;
+			console.log("dist: " + dist + ", angle:" + angle);
+
+			p.x = Math.cos(angle) * dist;
+			p.y = Math.sin(angle) * dist;
+			console.log("p.x: " + p.x + ", p.y:" + p.y);
+
+			return p;
+		}
+
+		function setMapOrientData() {	
+			// For Israel_0:
+			var dataJson = {"ver":1,"ori_point_left_top_lat":"33.6389522","ori_point_left_top_long":"33.2235350","ori_point_right_bottom_lat":"29.0940005","ori_point_right_bottom_long":"36.8380370"};
+			mapOrientData.p1.lat = dataJson.ori_point_left_top_lat;
+			mapOrientData.p1.lon = dataJson.ori_point_left_top_long;
+			mapOrientData.p2.lat = dataJson.ori_point_right_bottom_lat;
+			mapOrientData.p2.lon = dataJson.ori_point_right_bottom_long;
+		}
+
+		function postInit() { // Runs after image loads:
+			console.log("postInit...");
+			prepareOrientationData();
+			initiate_watchlocation();
+		}
+
 		function init() {
-			draw_map();
-			//initiate_watchlocation();
+			console.log("init...");
+			setMapOrientData();			
+			drawMap();
 		}
 		
 		window.onload = init;
