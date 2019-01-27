@@ -53,41 +53,73 @@
 				x.text = "Geolocation is not supported by this browser.";
 			}
 		}
-		
+
+		function testLocation() {
+			// Pairs of lat,long points:			
+			var testPoints = [32.0476788,34.7729125,  32.0476788,34.7829125, 32.0376788,34.7729125,												
+																							  32.0476788,35.0729125, 31.7476788,34.7729125,
+																								31.7476788,35.0729125 ];    
+    	for (var i=0; i<testPoints.length; i+=2) {
+				console.log("Test #" + i);
+				showPosition(testPoints[i], testPoints[i+1]);			
+			}	
+		}
+
+		function applyLocation() {
+			/*
+			var x = document.getElementById("newLoc");
+			var newLocStr = x.value;
+			console.log("applyLocation: newLocStr: " + newLocStr);
+			newLoc = newLocStr.split(",");
+			console.log("Str: " + newLocStr);
+			console.log("Arr: " + newLoc[0]);
+			setPosition(parseFloat(newLoc[0]), parseFloat(newLoc[1]));		
+			*/
+			testLocation();	
+		}
+
+		function setPosition(lat, long) {
+			console.log("setPosition: lat: " + lat + ", long:" + long);
+			coord_lat = lat;
+			coord_long = long;
+			console.log("setPosition: coord_lat: " + coord_lat + ", coord_long:" + coord_long);
+			showPosition(coord_lat, coord_long);
+		}
+
 		function handle_geolocation_query(position) {
-			coord_lat = position.coords.latitude;
-			coord_long = position.coords.longitude;		    
-			showPosition();
+			console.log("===> handle_geolocation_query: lat: " + position.coords.latitude + ", long:" + position.coords.longitude);
+			setPosition(position.coords.latitude, position.coords.longitude);			
     }        
 		
-		function showPosition() {
-			console.log("showPosition: lat: " + coord_lat + ", long:" + coord_long);
+		function showPosition(lat, long) {
+			console.log("showPosition: lat: " + lat + ", long:" + long);
 			var x = document.getElementById("info");
-			x.value = coord_lat +  " , " + coord_long;
-
-			var p = latLon_2_xy(coord_lat, coord_long);
+			x.value = lat +  ", " + long;
+			var p = latLon_2_xy(lat, long);
 			drawXonCanvas(p.x, p.y);
 		}
 
 		function drawXonCanvas(x, y) {	
+			console.log("drawXonCanvas: x: " + x + ", y:" + y);
 			var canvas = document.getElementById("map_canvas");		
 			var context = canvas.getContext('2d');			
 			context.lineWidth = 3;
 			context.strokeStyle = "black";			
 			var X_location_x = x;
 			var X_location_y = y;
+			var X_size = 20;
 			//context.strokeStyle = '#00ff00';
-			context.moveTo(X_location_x - 10, X_location_y - 10);			
-			context.lineTo(X_location_x + 10, X_location_y + 10);
-			context.moveTo(X_location_x - 10, X_location_y + 10);			
-			context.lineTo(X_location_x + 10, X_location_y - 10);
+			context.moveTo(X_location_x - X_size, X_location_y - X_size);			
+			context.lineTo(X_location_x + X_size, X_location_y + X_size);
+			context.moveTo(X_location_x - X_size, X_location_y + X_size);			
+			context.lineTo(X_location_x + X_size, X_location_y - X_size);
 			context.stroke();
 		}
 
 		function drawMap()
 		{
 			map_image = new Image();
-			map_image.src = 'maps/1002/img.jpg';
+			map_image.src = 'maps/1003/img.jpg';
 			map_image.onload = function() {
 				canvas = document.getElementById("map_canvas"),
 				context = canvas.getContext('2d');
@@ -97,7 +129,7 @@
 				postInit();
 			}
 		}
-	
+
 		function toRadians (angle) {
 			return angle * (Math.PI / 180);
 		}
@@ -115,7 +147,7 @@
 
 		function prepareOrientationData() {
 			console.log("prepareOrientationData()");
-			mapOrientData.vector = calcVector(mapOrientData.p1.lon, mapOrientData.p1.lat, mapOrientData.p2.lon, mapOrientData.p2.lat);
+			mapOrientData.vector = calcGeoVector(mapOrientData.p1.lon, mapOrientData.p1.lat, mapOrientData.p2.lon, mapOrientData.p2.lat);
 			var xyDist = distance(0, 0, map_image.width, map_image.height);
 			mapOrientData.vectorRatio = xyDist / mapOrientData.vector.dist
 			console.log("mapOrientData:" + JSON.stringify(mapOrientData));			
@@ -129,18 +161,18 @@
 			return dist;
 		}
 
-		function angleFromEast(x1, y1, x2, y2) {
-			var distX = x2 - x1;
-			var distY = (y2 - y1) * (-1); // Since we look at the second quarter of the origin.
-			var angle = Math.atan2(distY, distX);	
+		function angleFromEast(lat1, lon1, lat2, lon2, dist) {
+			var distOverLat = getDistanceFromLatLonInKm(lat1, lon1, lat2, lon1);			
+			var angle = Math.asin(distOverLat/dist);
 			console.log("Angle: Rad=" + angle + ", Deg=" + toDegrees(angle));	
 			return angle;
 		}
 
-		function calcVector(x1, y1, x2, y2) {			
-			var vector = {angle: 0.0, dist: 0.0};									 
-			vector.angle = angleFromEast(x1, y1, x2, y2);
-			vector.dist = distance(x1, y1, x2, y2);
+		function calcGeoVector(lat1, lon1, lat2, lon2) {			
+			var vector = {angle: 0.0, dist: 0.0};									 			
+			//vector.dist = distance(x1, y1, x2, y2);
+			vector.dist = getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2);
+			vector.angle = angleFromEast(lat1, lon1, lat2, lon2, vector.dist);
 			console.log("vector: " + JSON.stringify(vector));
 			return vector;
 		}
@@ -148,7 +180,7 @@
 		function latLon_2_xy(lat, lon) {
 			var p = {x: 0.0, y: 0.0};
 			console.log("latLon_2_xy: lat:" + lat + ", " + lon);
-			var vector = calcVector(mapOrientData.p1.lon, mapOrientData.p1.lat, lon, lat);
+			var vector = calcGeoVector(mapOrientData.p1.lat, mapOrientData.p1.lon, lat, lon);
 			// Assuming the top left corner of the image is 0,0 and the bottom right corner is the "100,100":
 			angleDelta = mapOrientData.vector.angle - vector.angle;
 			angle = mapOrientData.vector.angle - angleDelta;
@@ -162,9 +194,26 @@
 			return p;
 		}
 
-		function setMapOrientData() {	
-			// For Israel_0:
-			var dataJson = {"ver":1,"ori_point_left_top_lat":"33.6389522","ori_point_left_top_long":"33.2235350","ori_point_right_bottom_lat":"29.0940005","ori_point_right_bottom_long":"36.8380370"};
+		// From StackOverFlow:
+		// https://stackoverflow.com/questions/27928/calculate-distance-between-two-latitude-longitude-points-haversine-formula
+		function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
+  		var R = 6371; // Radius of the earth in km
+  		var dLat = toRadians(lat2-lat1);  // deg2rad below
+  		var dLon = toRadians(lon2-lon1); 
+  		var a = 
+    		Math.sin(dLat/2) * Math.sin(dLat/2) +
+    		Math.cos(toRadians(lat1)) * Math.cos(toRadians(lat2)) * 
+    		Math.sin(dLon/2) * Math.sin(dLon/2); 
+  		var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+			var d = R * c; // Distance in km
+			console.log("getDistanceFromLatLonInKm: " + d);
+  		return d;
+		}
+
+		function setMapOrientData() {				
+			var dataJson = 
+			/* 1002: Full Israel: *///{"ver":1,"ori_point_left_top_lat":"33.6389522","ori_point_left_top_long":"33.2235350","ori_point_right_bottom_lat":"29.0940005","ori_point_right_bottom_long":"36.8380370"};
+			/* 1003: Road 1-443: */ {"ver":1,"ori_point_left_top_lat":"32.0476788","ori_point_left_top_long":"34.7729125","ori_point_right_bottom_lat":"31.6918620","ori_point_right_bottom_long":"35.3702941"};
 			mapOrientData.p1.lat = dataJson.ori_point_left_top_lat;
 			mapOrientData.p1.lon = dataJson.ori_point_left_top_long;
 			mapOrientData.p2.lat = dataJson.ori_point_right_bottom_lat;
@@ -195,6 +244,10 @@
 		<button type="button" onclick="getLocation();">Get Location</button>
 		&nbsp&nbsp
 		<input type="text" id="info" name="info">	  
+		&nbsp&nbsp
+		<button type="button" onclick="applyLocation();">Apply Location</button>
+		&nbsp&nbsp
+		<input type="text" id="newLoc" name="newLoc">	  
     </div>
 	<canvas id="map_canvas" name="map_canvas"></canvas>
   </body>
