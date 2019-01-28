@@ -8,7 +8,12 @@
 		var map_coords = {topLeft_lat: 0.0, topLeft_lon: 0.0, bottomRight_lat: 0.0, bottomRight_lon: 0.0};
 		var map_orient_data = {alfa: 0.0, ratioX: 1.0, ratioY: 1.0};
 		var dataJsonStr = "";
-
+		var mapOrientData = {
+			vector: {angle: 0.0, dist: 0.0}, 
+			vectorRatio: 0.0, 
+			p1: {lat: 0.0, lon: 0.0}, 
+			p2: {lat: 0.0, lon: 0.0}
+		};
  
     function initiate_watchlocation() {			
 			if (watchProcess == null) {
@@ -66,7 +71,7 @@
 		}
 
 		function applyLocation() {
-			/*
+			
 			var x = document.getElementById("newLoc");
 			var newLocStr = x.value;
 			console.log("applyLocation: newLocStr: " + newLocStr);
@@ -74,8 +79,8 @@
 			console.log("Str: " + newLocStr);
 			console.log("Arr: " + newLoc[0]);
 			setPosition(parseFloat(newLoc[0]), parseFloat(newLoc[1]));		
-			*/
-			testLocation();	
+			
+			//testLocation();	
 		}
 
 		function setPosition(lat, long) {
@@ -83,7 +88,7 @@
 			coord_lat = lat;
 			coord_long = long;
 			console.log("setPosition: coord_lat: " + coord_lat + ", coord_long:" + coord_long);
-			showPosition(coord_lat, coord_long);
+			showPosition(lat, long);
 		}
 
 		function handle_geolocation_query(position) {
@@ -138,16 +143,9 @@
 			return angle * (180 / Math.PI);
 		}
 
-		var mapOrientData = {
-			vector: {angle: 0.0, dist: 0.0}, 
-			vectorRatio: 0.0, 
-			p1: {lat: 0.0, lon: 0.0}, 
-			p2: {lat: 0.0, lon: 0.0}
-		};
-
 		function prepareOrientationData() {
 			console.log("prepareOrientationData()");
-			mapOrientData.vector = calcGeoVector(mapOrientData.p1.lon, mapOrientData.p1.lat, mapOrientData.p2.lon, mapOrientData.p2.lat);
+			mapOrientData.vector = calcGeoVector(mapOrientData.p1.lat, mapOrientData.p1.lon, mapOrientData.p2.lat, mapOrientData.p2.lon);
 			var xyDist = distance(0, 0, map_image.width, map_image.height);
 			mapOrientData.vectorRatio = xyDist / mapOrientData.vector.dist
 			console.log("mapOrientData:" + JSON.stringify(mapOrientData));			
@@ -168,9 +166,9 @@
 			return angle;
 		}
 
-		function calcGeoVector(lat1, lon1, lat2, lon2) {			
-			var vector = {angle: 0.0, dist: 0.0};									 			
-			//vector.dist = distance(x1, y1, x2, y2);
+		function calcGeoVector(lat1, lon1, lat2, lon2) {
+			console.log("calcGeoVector: #1:" + lat1 + ", " + lon1 + " #2:" + lat2 + ", " + lon2);			
+			var vector = {angle: 0.0, dist: 0.0};									 						
 			vector.dist = getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2);
 			vector.angle = angleFromEast(lat1, lon1, lat2, lon2, vector.dist);
 			console.log("vector: " + JSON.stringify(vector));
@@ -214,6 +212,13 @@
 			var dataJson = 
 			/* 1002: Full Israel: *///{"ver":1,"ori_point_left_top_lat":"33.6389522","ori_point_left_top_long":"33.2235350","ori_point_right_bottom_lat":"29.0940005","ori_point_right_bottom_long":"36.8380370"};
 			/* 1003: Road 1-443: */ {"ver":1,"ori_point_left_top_lat":"32.0476788","ori_point_left_top_long":"34.7729125","ori_point_right_bottom_lat":"31.6918620","ori_point_right_bottom_long":"35.3702941"};
+			/* 1004: Australia Kalinburu:*/// {"ver":1,"ori_point_left_top_lat":"-14.2825752","ori_point_left_top_long":"126.6229404","ori_point_right_bottom_lat":"-14.3016826","ori_point_right_bottom_long":"126.6543544"};
+			/* Street corner: */// testPoint = [-14.293615, 126.644603];
+			/* 1005: Santiago: */ //{"ver":1,"ori_point_left_top_lat":"-33.2970122","ori_point_left_top_long":"-70.8912797","ori_point_right_bottom_lat":"-33.5966048","ori_point_right_bottom_long":"-70.2980180"};
+			/* Pudahel street: */ //testPoint = [-33.447511, -70.777573];	
+			/* 1006: NY: */ //{"ver":1,"ori_point_left_top_lat":"40.7533338","ori_point_left_top_long":"-74.2577155","ori_point_right_bottom_lat":"40.5209412","ori_point_right_bottom_long":"-73.8127692"};
+			/* Verezano Bridge: */ //testPoint = [40.607508, -74.044776];		
+
 			mapOrientData.p1.lat = dataJson.ori_point_left_top_lat;
 			mapOrientData.p1.lon = dataJson.ori_point_left_top_long;
 			mapOrientData.p2.lat = dataJson.ori_point_right_bottom_lat;
