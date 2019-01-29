@@ -7,21 +7,24 @@
 		var debugLogsEnabled = true; // <<===
     var watchProcess = null;
 		var gps_coords = {lat: 0.0, long: 0.0};
+		var map_coords = {x: 0.0, y: 0.0};
 		var simulatorlocations;
 		var simulatorlocationsIndex;
-		var simulatorMode = false; // <<====
-		var map_coords = {topLeft_lat: 0.0, topLeft_lon: 0.0, bottomRight_lat: 0.0, bottomRight_lon: 0.0};
+		var simulatorMode = true; // <<====
 		var map_orient_data = {alfa: 0.0, ratioX: 1.0, ratioY: 1.0};
 		var dataJsonStr = "";
 		var mapOrientData = {
 			vector: {angle: 0.0, dist: 0.0}, 
 			vectorRatio: 0.0, 
-			p1: {lat: 0.0, lon: 0.0}, 
-			p2: {lat: 0.0, lon: 0.0}
+			p1: {lat: 0.0, lon: 0.0},//Top left 
+			p2: {lat: 0.0, lon: 0.0} // Bottom right
 		};
+		var historyPointsMinDistance;
 		var id = setInterval(timeTick, 200);
 		var canvas;
-		var context;		
+		var context;
+		var historyPoints = [{x: 0.0, y: 0.0}];	
+		var tailPoints = [{x: 0.0, y: 0.0}];	
  
     function initiate_watchlocation() {			
 			if (watchProcess == null) {
@@ -72,8 +75,7 @@
 			var newLocStr = x.value;
 			debugLog(3, "applyLocation: newLocStr: " + newLocStr);
 			newLoc = newLocStr.split(",");
-			debugLog(3, "Str: " + newLocStr);
-			debugLog(3, "Arr: " + newLoc[0]);
+			debugLog(3, "Str: " + newLocStr + " Arr: " + newLoc[0]);			
 			setPosition(parseFloat(newLoc[0]), parseFloat(newLoc[1]));		
 		}
 
@@ -81,8 +83,43 @@
 			debugLog(3, "setPosition: lat: " + lat + ", long:" + long);
 			gps_coords.lat = lat;
 			gps_coords.long = long;
-			debugLog(3, "setPosition: coord_lat: " + gps_coords.lat + ", coord_long:" + gps_coords.long);			
-			showPosition(lat, long);
+			var infoBox = document.getElementById("info");
+			infoBox.value = lat +  ", " + long;						
+			map_coords = latLon_2_xy(lat, long);
+			addTailPoint();			
+		}
+
+		function addTailPoint() {
+			dist = distance(map_coords.x, map_coords.y, tailPoints[tailPoints.length - 1].x, tailPoints[tailPoints.length - 1].y);
+			if (dist > tailPointsMinDistance) {
+				tailPoints.push({x: map_coords.x, y: map_coords.y});
+			}
+			if (tailPoints.length > 20) {
+				var lastPoint = tailPoints.shift();
+				addHistoryPoint(lastPoint.x, lastPoint.y);
+			}
+		}
+
+		function addHistoryPoint(x, y) {
+			dist = distance(x, y, historyPoints[historyPoints.length - 1].x, historyPoints[historyPoints.length - 1].y);
+			if (dist > historyPointsMinDistance) {
+				historyPoints.push({x: x, y: y});
+				if (historyPoints.length > 1000) {
+					historyPoints.shift();
+				}
+			}
+		}
+
+		function showHistory() {
+			context.lineWidth = 1;
+			context.strokeStyle = "red";			
+			historyPoints.forEach(drawHistoryPoint);
+		}
+
+		function showTail() {
+			context.lineWidth = 1;
+			context.strokeStyle = "pink";			
+			tailPoints.forEach(drawTailPoint);
 		}
 
 		function handle_geolocation_query(position) {
@@ -90,16 +127,26 @@
 			setPosition(position.coords.latitude, position.coords.longitude);			
     }        
 		
-		function showPosition(lat, long) {
-			debugLog(3, "showPosition: lat: " + lat + ", long:" + long);
-			var x = document.getElementById("info");
-			x.value = lat +  ", " + long;
-			var p = latLon_2_xy(lat, long);
-			drawXonCanvas(p.x, p.y);
+		function showPosition(x, y) {
+			debugLog(3, "showPosition: x: " + x + ", y:" + y);			
+			drawXonCanvas(x, y);
+		}
+
+		function drawHistoryPoint(value) {
+			context.beginPath();
+			context.arc(value.x, value.y, 4, 0, 2 * Math.PI);
+			context.stroke();
+		}
+
+		function drawTailPoint(value) {
+			context.beginPath();
+			context.arc(value.x, value.y, 2, 0, 2 * Math.PI);
+			context.stroke();
 		}
 
 		function drawXonCanvas(x, y) {	
 			debugLog(3, "drawXonCanvas: x: " + x + ", y:" + y);
+			context.beginPath();
 			context.lineWidth = 3;
 			context.strokeStyle = "black";			
 			var X_location_x = x;
@@ -129,13 +176,17 @@
 			context.clearRect(0, 0, canvas.width, canvas.height);
 			context.beginPath();
 			context.closePath();
-			context.drawImage(map_image, 0, 0);		
-			var location = getLocation();		
-			showPosition(location.lat, location.long);
+			context.drawImage(map_image, 0, 0);	
+			showHistory();
+			showTail();					
+			showPosition(map_coords.x, map_coords.y);
 		}
 
 		function timeTick() {
 			debugLog(4, "TimeTick");
+			if (simulatorMode == true) {
+				simulatorLocationTick();
+			}
 			reDraw();
 		}
 
@@ -152,7 +203,9 @@
 			mapOrientData.vector = calcGeoVector(mapOrientData.p1.lat, mapOrientData.p1.lon, mapOrientData.p2.lat, mapOrientData.p2.lon);
 			var xyDist = distance(0, 0, map_image.width, map_image.height);
 			mapOrientData.vectorRatio = xyDist / mapOrientData.vector.dist
-			debugLog(3, "mapOrientData:" + JSON.stringify(mapOrientData));			
+			debugLog(3, "mapOrientData:" + JSON.stringify(mapOrientData));
+			historyPointsMinDistance = xyDist / 50;			
+			tailPointsMinDistance = xyDist / 100;
 		}
 
 		function distance(x1, y1, x2, y2) {			
@@ -251,31 +304,17 @@
 			}
 		}
 
-		function getGpsLocation() {
-			var location = {lat: 0.0, long: 0.0};
-			location.lat = gps_coords.lat;
-			location.long = gps_coords.long;
-			return location;
-		}
-
-		function getLocation() {
-			var location = {lat: 0.0, long: 0.0};
-			if (simulatorMode == true) {
-				location = getSimulatorLocation();
-			} else {
-				location = getGpsLocation();
-			}
-			return location;
-		}
-
 		function gpsSimulatorInit() {
-			simulatorlocations = [{lat: 32.0, long: 35.0}, {lat: 32.0, long: 35.1}, {lat: 32.0, long: 35.2}, {lat: 32.0, long: 35.3}];
-			simulatorlocationsIndex = 0;			
-			debugLog(2, "LocationsSize=" + simulatorlocations.length);
-			simulatorMode = true;
+			simulatorlocations = 
+				[
+					{lat: 32.0, long: 35.0}, {lat: 32.0, long: 35.01}, {lat: 32.0, long: 35.02}, {lat: 32.0, long: 35.03},
+					{lat: 32.0, long: 35.04}, {lat: 32.0, long: 35.05}, {lat: 32.0, long: 35.06}, {lat: 32.0, long: 35.07},
+					{lat: 32.0, long: 35.08}, {lat: 32.0, long: 35.09}, {lat: 32.0, long: 35.10}, {lat: 32.0, long: 35.11}					
+				];
+			simulatorlocationsIndex = 0;						
 		}
 
-		function getSimulatorLocation() {	
+		function simulatorLocationTick() {	
 			var location = {lat: 0.0, long: 0.0};
 			location.lat = simulatorlocations[simulatorlocationsIndex].lat;
 			location.long = simulatorlocations[simulatorlocationsIndex].long;
@@ -283,7 +322,7 @@
 			if (simulatorlocationsIndex >= simulatorlocations.length) {
 				simulatorlocationsIndex = 0;
 			}
-			return location;
+			setPosition(location.lat, location.long);			
 		}
 
 		function debugLog(severity, str) {
