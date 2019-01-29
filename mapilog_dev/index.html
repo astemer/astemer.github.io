@@ -10,7 +10,7 @@
 		var map_coords = {x: 0.0, y: 0.0};
 		var simulatorlocations;
 		var simulatorlocationsIndex;
-		var simulatorMode = false; // <<====
+		var simulatorMode = true; // <<====
 		var map_orient_data = {alfa: 0.0, ratioX: 1.0, ratioY: 1.0};
 		var dataJsonStr = "";
 		var mapOrientData = {
@@ -20,7 +20,7 @@
 			p2: {lat: 0.0, lon: 0.0} // Bottom right
 		};
 		var historyPointsMinDistance;
-		var id = setInterval(timeTick, 200);
+		var id = setInterval(timeTick, 500);
 		var canvas;
 		var context;
 		var historyPoints = [{x: 0.0, y: 0.0}];	
@@ -118,7 +118,7 @@
 		}
 
 		function showTail() {
-			context.lineWidth = 1;
+			context.lineWidth = 3;
 			context.strokeStyle = "pink";			
 			tailPoints.forEach(drawTailPoint);
 		}
@@ -136,7 +136,7 @@
 
 		function drawHistoryPoint(value) {
 			context.beginPath();
-			context.arc(value.x, value.y, 4, 0, 2 * Math.PI);
+			context.arc(value.x, value.y, 3, 0, 2 * Math.PI);
 			context.stroke();
 		}
 
