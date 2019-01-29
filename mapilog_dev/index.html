@@ -24,7 +24,8 @@
 		var canvas;
 		var context;
 		var historyPoints = [{x: 0.0, y: 0.0}];	
-		var tailPoints = [{x: 0.0, y: 0.0}];	
+		var tailPoints = [{x: 0.0, y: 0.0}];
+		var tickNumber = 0;	
  
     function initiate_watchlocation() {			
 			if (watchProcess == null) {
@@ -129,7 +130,8 @@
 		
 		function showPosition(x, y) {
 			debugLog(3, "showPosition: x: " + x + ", y:" + y);			
-			drawXonCanvas(x, y);
+			//drawXonCanvas(x, y);
+			drawLocationIcon(x, y);
 		}
 
 		function drawHistoryPoint(value) {
@@ -141,6 +143,47 @@
 		function drawTailPoint(value) {
 			context.beginPath();
 			context.arc(value.x, value.y, 2, 0, 2 * Math.PI);
+			context.stroke();
+		}
+
+		function drawLocationIcon(x, y) {
+			var radius = 10;
+			if (tickNumber%2 == 0) {
+				radius = radius - (radius/4);
+			}
+	    var targetBars = ((2 * radius) / 3);
+	    var targetCircle = ( radius / 3);
+			
+			context.beginPath();
+			context.lineWidth = 3;
+			context.strokeStyle = "red";				
+				
+			context.arc(x, y , radius - targetCircle, 0, 2 * Math.PI);
+			context.moveTo(x - radius, y);
+			context.lineTo(x - radius + targetBars, y);	              	      
+			context.moveTo(x + radius, y);
+			context.lineTo(x + radius - targetBars, y);	              	      
+			context.moveTo(x, y - radius, x);
+			context.lineTo(x, y - radius + targetBars);	              	      
+			context.moveTo(x, y + radius);
+			context.lineTo(x, y + radius - targetBars);	              	      		
+			 
+			context.stroke();
+
+			context.beginPath();
+			context.lineWidth = 1;
+			context.strokeStyle = "white";				
+
+			context.arc(x, y , radius - targetCircle, 0, 2 * Math.PI);
+			context.moveTo(x - radius, y);
+			context.lineTo(x - radius + targetBars, y);	              	      
+			context.moveTo(x + radius, y);
+			context.lineTo(x + radius - targetBars, y);	              	      
+			context.moveTo(x, y - radius, x);
+			context.lineTo(x, y - radius + targetBars);	              	      
+			context.moveTo(x, y + radius);
+			context.lineTo(x, y + radius - targetBars);	 
+			
 			context.stroke();
 		}
 
@@ -182,8 +225,12 @@
 			showPosition(map_coords.x, map_coords.y);
 		}
 
-		function timeTick() {
-			debugLog(4, "TimeTick");
+		function timeTick() {		
+			tickNumber += 1;
+			if (tickNumber > 100000) {
+				tickNumber = 0;
+			}	
+			debugLog(4, "TimeTick:" + tickNumber);
 			if (simulatorMode == true) {
 				simulatorLocationTick();
 			}
