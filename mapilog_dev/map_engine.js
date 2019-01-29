@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html>
-  <head>    
-    <script>
 
-		var debugSeverityLevel = 2;
+		var debugSeverityLevel = 4;
 		var debugLogsEnabled = true; // <<===
-    var watchProcess = null;
+    	var watchProcess = null;
 		var gps_coords = {lat: 0.0, long: 0.0};
 		var map_coords = {x: 0.0, y: 0.0};
 		var simulatorlocations;
@@ -60,32 +56,12 @@
                 default: alert("unknown error");
                 break;
         		}
-    }
+    	}
 		
-    function getCurrentLocation() {
-			if (navigator.geolocation) {
-				navigator.geolocation.getCurrentPosition(handle_geolocation_query);
-			} else {
-				x.innerHTML = "Geolocation is not supported by this browser.";
-				x.text = "Geolocation is not supported by this browser.";
-			}
-		}
-
-		function applyLocation() {			
-			var x = document.getElementById("newLoc");
-			var newLocStr = x.value;
-			debugLog(3, "applyLocation: newLocStr: " + newLocStr);
-			newLoc = newLocStr.split(",");
-			debugLog(3, "Str: " + newLocStr + " Arr: " + newLoc[0]);			
-			setPosition(parseFloat(newLoc[0]), parseFloat(newLoc[1]));		
-		}
-
 		function setPosition(lat, long) {
 			debugLog(3, "setPosition: lat: " + lat + ", long:" + long);
 			gps_coords.lat = lat;
 			gps_coords.long = long;
-			var infoBox = document.getElementById("info");
-			infoBox.value = lat +  ", " + long;						
 			map_coords = latLon_2_xy(lat, long);
 			addTailPoint();			
 		}
@@ -206,7 +182,7 @@
 		function drawMap()
 		{
 			map_image = new Image();
-			map_image.src = 'maps/1003/img.jpg';
+			map_image.src = 'img.jpg';
 			map_image.onload = function() {
 				canvas.width  = map_image.width;
 				canvas.height = map_image.height;
@@ -313,16 +289,6 @@
 		}
 
 		function setMapOrientData() {				
-			var dataJson = 
-			/* 1002: Full Israel: *///{"ver":1,"ori_point_left_top_lat":"33.6389522","ori_point_left_top_long":"33.2235350","ori_point_right_bottom_lat":"29.0940005","ori_point_right_bottom_long":"36.8380370"};
-			/* 1003: Road 1-443: */ {"ver":1,"ori_point_left_top_lat":"32.0476788","ori_point_left_top_long":"34.7729125","ori_point_right_bottom_lat":"31.6918620","ori_point_right_bottom_long":"35.3702941"};
-			/* 1004: Australia Kalinburu:*/// {"ver":1,"ori_point_left_top_lat":"-14.2825752","ori_point_left_top_long":"126.6229404","ori_point_right_bottom_lat":"-14.3016826","ori_point_right_bottom_long":"126.6543544"};
-			/* Street corner: */// testPoint = [-14.293615, 126.644603];
-			/* 1005: Santiago: */ //{"ver":1,"ori_point_left_top_lat":"-33.2970122","ori_point_left_top_long":"-70.8912797","ori_point_right_bottom_lat":"-33.5966048","ori_point_right_bottom_long":"-70.2980180"};
-			/* Pudahel street: */ //testPoint = [-33.447511, -70.777573];	
-			/* 1006: NY: */ //{"ver":1,"ori_point_left_top_lat":"40.7533338","ori_point_left_top_long":"-74.2577155","ori_point_right_bottom_lat":"40.5209412","ori_point_right_bottom_long":"-73.8127692"};
-			/* Verezano Bridge: */ //testPoint = [40.607508, -74.044776];		
-
 			mapOrientData.p1.lat = dataJson.ori_point_left_top_lat;
 			mapOrientData.p1.lon = dataJson.ori_point_left_top_long;
 			mapOrientData.p2.lat = dataJson.ori_point_right_bottom_lat;
@@ -382,22 +348,3 @@
 		}
 
 		window.onload = init;
-    </script>
-  </head>
-  <body>
-    <div>	  
-		<button type="button" onclick="initiate_watchlocation();">Start Position</button>
-		&nbsp&nbsp
-		<button type="button" onclick="stop_watchlocation();">Stop Position</button>
-		&nbsp&nbsp
-		<button type="button" onclick="getCurrentLocation();">Get Location</button>
-		&nbsp&nbsp
-		<input type="text" id="info" name="info">	  
-		&nbsp&nbsp
-		<button type="button" onclick="applyLocation();">Apply Location</button>
-		&nbsp&nbsp
-		<input type="text" id="newLoc" name="newLoc">	  
-    </div>
-	<canvas id="map_canvas" name="map_canvas"></canvas>
-  </body>
-</html>
