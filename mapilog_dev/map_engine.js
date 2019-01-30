@@ -44,16 +44,13 @@
     function handle_errors(error) {
             switch(error.code)
             {
-                case error.PERMISSION_DENIED: alert("user did not share geolocation data");
+                case error.PERMISSION_DENIED: alert("User did not share geolocation data");
                 break;
- 
-                case error.POSITION_UNAVAILABLE: alert("could not detect current position");
+                case error.POSITION_UNAVAILABLE: alert("Could not detect current position");
                 break;
- 
-                case error.TIMEOUT: alert("retrieving position timedout");
+                case error.TIMEOUT: alert("Retrieving position timedout");
                 break;
- 
-                default: alert("unknown error");
+                default: alert("Unknown error");
                 break;
         		}
     	}
@@ -63,6 +60,8 @@
 			gps_coords.lat = lat;
 			gps_coords.long = long;
 			map_coords = latLon_2_xy(lat, long);
+			document.getElementById("current_location").value = gps_coords.lat + ", " + gps_coords.long;
+			current_location
 			addTailPoint();			
 		}
 
@@ -228,7 +227,7 @@
 			mapOrientData.vectorRatio = xyDist / mapOrientData.vector.dist
 			debugLog(3, "mapOrientData:" + JSON.stringify(mapOrientData));
 			historyPointsMinDistance = xyDist / 50;			
-			tailPointsMinDistance = xyDist / 100;
+			tailPointsMinDistance = xyDist / 500;
 		}
 
 		function distance(x1, y1, x2, y2) {			
@@ -303,6 +302,11 @@
 
 		function init() {
 			debugLog(2, "init...");
+			if (typeof mapTitle === 'undefined') {
+				document.getElementById("map_title").innerHTML = "Your location map";
+			} else {
+				document.getElementById("map_title").innerHTML = mapTitle;
+			}
 			setMapOrientData();	
 			canvas = document.getElementById("map_canvas"),
 			context = canvas.getContext('2d');		

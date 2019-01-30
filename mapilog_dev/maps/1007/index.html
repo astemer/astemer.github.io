@@ -1,21 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>	      
-    <script>
+    <script>	
 		var dataJson = 
-		/* 1002: Full Israel: *///{"ver":1,"ori_point_left_top_lat":"33.6389522","ori_point_left_top_long":"33.2235350","ori_point_right_bottom_lat":"29.0940005","ori_point_right_bottom_long":"36.8380370"};
-		/* 1003: Road 1-443: */ //{"ver":1,"ori_point_left_top_lat":"32.0476788","ori_point_left_top_long":"34.7729125","ori_point_right_bottom_lat":"31.6918620","ori_point_right_bottom_long":"35.3702941"};
-		/* 1004: Australia Kalinburu:*/// {"ver":1,"ori_point_left_top_lat":"-14.2825752","ori_point_left_top_long":"126.6229404","ori_point_right_bottom_lat":"-14.3016826","ori_point_right_bottom_long":"126.6543544"};
-		/* Street corner: */// testPoint = [-14.293615, 126.644603];
-		/* 1005: Santiago: */ //{"ver":1,"ori_point_left_top_lat":"-33.2970122","ori_point_left_top_long":"-70.8912797","ori_point_right_bottom_lat":"-33.5966048","ori_point_right_bottom_long":"-70.2980180"};
-		/* Pudahel street: */ //testPoint = [-33.447511, -70.777573];	
-		/* 1006: NY: */ //{"ver":1,"ori_point_left_top_lat":"40.7533338","ori_point_left_top_long":"-74.2577155","ori_point_right_bottom_lat":"40.5209412","ori_point_right_bottom_long":"-73.8127692"};
-		/* Verezano Bridge: */ //testPoint = [40.607508, -74.044776];			
-		/* 1007: Gimzo: */ {"ver":1,"ori_point_left_top_lat":"31.9357197","ori_point_left_top_long":"34.9286591","ori_point_right_bottom_lat":"31.9237003","ori_point_right_bottom_long":"34.9521767"}
+			{"ver":1,"ori_point_left_top_lat":"31.9842794","ori_point_left_top_long":"34.9273028","ori_point_right_bottom_lat":"31.8973346","ori_point_right_bottom_long":"35.0299563"};
 	</script>
 	<script type="text/javascript" src="..\..\map_engine.js"></script>
+	<style>
+		div {text-align:center;}
+		p {text-align:center;}
+		img {text-align:left;}
+		input {text-align:right;}
+	</style>	
   </head>
   <body>
+	<header>
+		<div id="page_title" name="page_title">	
+		<table style="width:100%">
+			<tr>
+				<th><img src="navigation_page_services_icon.png" alt="navigation_page_services_icon" height="40" width="40"></th>
+				<th><b id="map_title">יער בן שמן</b></th> 
+				<th><input type="text" id="current_location" name="current_location"></th>
+			</tr>
+		</table>		
+		</div>		
+	</header>
+	
 	<canvas id="map_canvas" name="map_canvas"></canvas>
+	
+	<footer>
+		<p><b><center>Navigation Page Services (c)</center></b>
+		<center>nopyanywhere@gmail.com</center>
+		<center>All rights reserved to Avner Stemmer</center></p>
+	</footer>
   </body>
 </html>
