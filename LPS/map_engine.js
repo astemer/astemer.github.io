@@ -125,12 +125,12 @@
 		}
 
 		function drawLocationIcon(x, y) {
-			var radius = 10;
+			var radius = 20;
 			if (tickNumber%2 == 0) {
 				radius = radius - (radius/4);
 			}
-	    var targetBars = ((2 * radius) / 3);
-	    var targetCircle = ( radius / 3);
+	    	var targetBars = ((2 * radius) / 3);
+	    	var targetCircle = ( radius / 3);
 			
 			context.beginPath();
 			context.lineWidth = 3;
@@ -229,7 +229,7 @@
 			var xyDist = distance(0, 0, map_image.width, map_image.height);
 			mapOrientData.vectorRatio = xyDist / mapOrientData.vector.dist
 			debugLog(3, "mapOrientData:" + JSON.stringify(mapOrientData));
-			historyPointsMinDistance = xyDist / 50;			
+			historyPointsMinDistance = xyDist / 100;			
 			tailPointsMinDistance = xyDist / 500;
 		}
 
