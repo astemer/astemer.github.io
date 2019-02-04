@@ -16,12 +16,15 @@
 			p2: {lat: 0.0, lon: 0.0} // Bottom right
 		};
 		var historyPointsMinDistance;
-		var id = setInterval(timeTick, 500);
+		var id;
 		var canvas;
 		var context;
 		var historyPoints = [{x: 0.0, y: 0.0}];	
 		var tailPoints = [{x: 0.0, y: 0.0}];
-		var tickNumber = 0;	
+		var tickNumber = 0;
+		var lat = "lat";
+		var long = "long";
+	
  
     function initiate_watchlocation() {			
 			if (watchProcess == null) {
@@ -294,14 +297,70 @@
 			mapOrientData.p2.lon = dataJson.ori_point_right_bottom_long;
 		}
 
+		function check() {
+			code = document.getElementById("current_location").value;
+			debugLog(2, "Check(): " + code);
+			if (check_2(code, long.length, lat.length) == true) {
+				init();
+			}
+		}
+
+		function check_2(code, longSize, latSize) {
+			var code3 = parseInt(code.charAt(latSize));
+			debugLog(2, "code3: " + code3);
+			if (code3 == (longSize + latSize)) {
+				return check_3(code, longSize, latSize);
+			} else {
+				return false;
+			}
+		}
+
+		function check_3(code, longSize, latSize) {
+			var code2 = parseInt(code.charAt(longSize / 2));
+			debugLog(2, "code2: " + code2);
+			if (code2 == (longSize - latSize)) {
+				return check_4(code, longSize, latSize);
+			} else {
+				return false;
+			}
+		}
+
+		function check_4(code, longSize, latSize) {
+			var code1 = parseInt(code.charAt(longSize - latSize));
+			debugLog(2, "code1: " + code1);
+			if (code1 == latSize) {
+				return check_5(code, longSize, latSize);
+			} else {
+				return false;
+			}
+		}
+
+		function check_5(code, longSize, latSize) {
+			var code0 = parseInt(code.charAt(longSize - longSize));
+			debugLog(2, "code0: " + code0);
+			if (code0 == longSize) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+		function preInit() {
+			debugLog(3, "preInit");
+			document.getElementById("map_title").innerHTML = "Sorry - Site is not open yet";
+			document.getElementById("current_location").value = "Code Please.";
+		}
+
 		function postInit() { // Runs after image loads:
 			debugLog(3, "postInit...");
 			prepareOrientationData();
 			initLocation();
+			id = setInterval(timeTick, 500);
 		}
 
 		function init() {
 			debugLog(2, "init...");
+			document.getElementById("current_location").value = "Loading...";
 			if (typeof mapTitle === 'undefined') {
 				document.getElementById("map_title").innerHTML = "Your location map";
 			} else {
@@ -351,4 +410,4 @@
 			} 
 		}
 
-		window.onload = init;
+		window.onload = preInit();
