@@ -1,14 +1,14 @@
 
 		var debugSeverityLevel = 4;
-		var debugLogsEnabled = false; // 			<<===
-		var skipCode = false; // 					<<===
+		var debugLogsEnabled = true; // 			<<===
+		var skipCode = true; // 					<<===
 		var codeEnabled = false;
     	var watchProcess = null;
 		var gps_coords = {lat: 0.0, long: 0.0};
 		var map_coords = {x: 0.0, y: 0.0};
 		var simulatorlocations;
 		var simulatorlocationsIndex;
-		var simulatorMode = false; // 				<<====
+		var simulatorMode = true; // 				<<====
 		var map_orient_data = {alfa: 0.0, ratioX: 1.0, ratioY: 1.0};
 		var dataJsonStr = "";
 		var mapOrientData = {
@@ -17,7 +17,7 @@
 			p1: {lat: 0.0, lon: 0.0},//Top left 
 			p2: {lat: 0.0, lon: 0.0} // Bottom right
 		};
-		var historyPointsMinDistance;
+		var tailPointsMinDistance;
 		var id;
 		var canvas;
 		var context;
@@ -26,6 +26,7 @@
 		var tickNumber = 0;
 		var lat = "lat";
 		var long = "long";
+		var isLocatedOnthisMap = true;
 	
  
     	function initiate_watchlocation() {			
@@ -71,7 +72,11 @@
 			gps_coords.long = long;
 			map_coords = latLon_2_xy(lat, long);
 			document.getElementById("current_location").value = gps_coords.lat + ", " + gps_coords.long;
-			current_location
+			if (map_coords.x > canvas.width || map_coords.x < 0 || map_coords.y > canvas.height || map_coords.y < 0) {
+				isLocatedOnthisMap = false;	
+			} else {
+				isLocatedOnthisMap = true;
+			}
 			addTailPoint();			
 		}
 
@@ -80,19 +85,8 @@
 			if (dist > tailPointsMinDistance) {
 				tailPoints.push({x: map_coords.x, y: map_coords.y});
 			}
-			if (tailPoints.length > 20) {
-				var lastPoint = tailPoints.shift();
-				addHistoryPoint(lastPoint.x, lastPoint.y);
-			}
-		}
-
-		function addHistoryPoint(x, y) {
-			dist = distance(x, y, historyPoints[historyPoints.length - 1].x, historyPoints[historyPoints.length - 1].y);
-			if (dist > historyPointsMinDistance) {
-				historyPoints.push({x: x, y: y});
-				if (historyPoints.length > 1000) {
-					historyPoints.shift();
-				}
+			if (tailPoints.length > 1000) {
+				tailPoints.shift();				
 			}
 		}
 
@@ -102,27 +96,15 @@
 			drawLocationIcon(x, y);
 		}
 
-		function showHistory() {
-			context.lineWidth = 1;
-			context.strokeStyle = "red";			
-			historyPoints.forEach(drawHistoryPoint);
-		}
-
 		function showTail() {
 			context.lineWidth = 1;
-			context.strokeStyle = "pink";			
+			context.strokeStyle = "red";			
 			tailPoints.forEach(drawTailPoint);
-		}
-
-		function drawHistoryPoint(value) {
-			context.beginPath();
-			context.arc(value.x, value.y, 3, 0, 2 * Math.PI);
-			context.stroke();
 		}
 
 		function drawTailPoint(value) {
 			context.beginPath();
-			context.arc(value.x, value.y, 2, 0, 2 * Math.PI);
+			context.arc(value.x, value.y, 3, 0, 2 * Math.PI);
 			context.stroke();
 		}
 
@@ -199,14 +181,25 @@
 			}
 		}
 
+		function printNotOnMapMessage() {
+			if (isLocatedOnthisMap == true) {
+				return;
+			}
+			context.strokeStyle = "red";
+			context.font = "40px Arial";
+			var left = (tickNumber * 6) % canvas.width;
+			var message_youAreNotOnThisMap = "You are not located on this map...";
+			context.strokeText(message_youAreNotOnThisMap, left, canvas.height/2);
+		}
+
 		function reDraw() {			
 			context.clearRect(0, 0, canvas.width, canvas.height);
 			context.beginPath();
 			context.closePath();
-			context.drawImage(map_image, 0, 0);	
-			showHistory();
+			context.drawImage(map_image, 0, 0);				
 			showTail();					
 			showPosition(map_coords.x, map_coords.y);
+			printNotOnMapMessage();
 		}
 
 		function timeTick() {		
@@ -234,9 +227,8 @@
 			mapOrientData.vector = calcGeoVector(mapOrientData.p1.lat, mapOrientData.p1.lon, mapOrientData.p2.lat, mapOrientData.p2.lon);
 			var xyDist = distance(0, 0, map_image.width, map_image.height);
 			mapOrientData.vectorRatio = xyDist / mapOrientData.vector.dist
-			debugLog(3, "mapOrientData:" + JSON.stringify(mapOrientData));
-			historyPointsMinDistance = xyDist / 100;			
-			tailPointsMinDistance = xyDist / 500;
+			debugLog(3, "mapOrientData:" + JSON.stringify(mapOrientData));						
+			tailPointsMinDistance = xyDist / 250;
 		}
 
 		function distance(x1, y1, x2, y2) {			
@@ -390,9 +382,18 @@
 		function gpsSimulatorInit() {
 			simulatorlocations = 
 				[
-					{lat: 32.0, long: 35.0}, {lat: 32.0, long: 35.01}, {lat: 32.0, long: 35.02}, {lat: 32.0, long: 35.03},
-					{lat: 32.0, long: 35.04}, {lat: 32.0, long: 35.05}, {lat: 32.0, long: 35.06}, {lat: 32.0, long: 35.07},
-					{lat: 32.0, long: 35.08}, {lat: 32.0, long: 35.09}, {lat: 32.0, long: 35.10}, {lat: 32.0, long: 35.11}					
+					{lat: 32.0, long: 35.0}, {lat: 32.0, long: 35.0001}, {lat: 32.0, long: 35.0002}, {lat: 32.0, long: 35.0003},
+					{lat: 32.0, long: 35.0004}, {lat: 32.0, long: 35.0005}, {lat: 32.0, long: 35.0006}, {lat: 32.0, long: 35.0007},
+					{lat: 32.0, long: 35.0008}, {lat: 32.0, long: 35.0009}, {lat: 32.0, long: 35.0010}, {lat: 32.0, long: 35.0011},
+					{lat: 32.0, long: 35.0012}, {lat: 32.0, long: 35.0013}, {lat: 32.0, long: 35.0014}, {lat: 32.0, long: 35.0015},
+					{lat: 32.0, long: 35.0016}, {lat: 32.0, long: 35.0017}, {lat: 32.0, long: 35.0018}, {lat: 32.0, long: 35.0019},
+					{lat: 32.0, long: 35.0020}, {lat: 32.0, long: 35.0021}, {lat: 32.0, long: 35.0022}, {lat: 32.0, long: 35.0023},					
+					{lat: 32.0, long: 35.0024}, {lat: 32.0, long: 35.0025}, {lat: 32.0, long: 35.0026}, {lat: 32.0, long: 35.0027},
+					{lat: 32.0, long: 35.0028}, {lat: 32.0, long: 35.0029}, {lat: 32.0, long: 35.0030}, {lat: 32.0, long: 35.0031},
+					{lat: 32.0, long: 35.0032}, {lat: 32.0, long: 35.0033}, {lat: 32.0, long: 35.0034}, {lat: 32.0, long: 35.0035},
+					{lat: 32.0, long: 35.0036}, {lat: 32.0, long: 35.0037}, {lat: 32.0, long: 35.0038}, {lat: 32.0, long: 35.0039},
+					{lat: 32.0, long: 35.0040}, {lat: 32.0, long: 35.0041}, {lat: 32.0, long: 35.0042}, {lat: 32.0, long: 35.0043}					
+				
 				];
 			simulatorlocationsIndex = 0;						
 		}
@@ -409,7 +410,7 @@
 		}
 
 		
-		function clearMeasurment() {
+		function menuShowLatestMessages() {
 			closeNav();
 		}
 		function saveForOffline() {
@@ -424,9 +425,10 @@
 			if (codeEnabled == false) {
 				return;
 			}
-			document.getElementById("menuClearMeasurments").innerHTML = "Clear Measurments";
-			document.getElementById("menuSaveOffline").innerHTML = "Save for Offline use"
+			//document.getElementById("menuClearMeasurments").innerHTML = "Clear Measurments";
+			document.getElementById("menuShowLatestMessages").innerHTML = "Show latest messages";
 			document.getElementById("menuMessage").innerHTML = "Send message"
+			document.getElementById("menuSaveOffline").innerHTML = "Save for Offline use"			
 			document.getElementById("mySidenav").style.width = "200px";
 			document.getElementById("main").style.marginLeft = "200px";
 			document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
