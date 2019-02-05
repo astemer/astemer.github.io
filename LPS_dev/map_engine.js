@@ -1,12 +1,14 @@
 
 		var debugSeverityLevel = 4;
-		var debugLogsEnabled = true; // <<===
+		var debugLogsEnabled = false; // 			<<===
+		var skipCode = false; // 					<<===
+		var codeEnabled = false;
     	var watchProcess = null;
 		var gps_coords = {lat: 0.0, long: 0.0};
 		var map_coords = {x: 0.0, y: 0.0};
 		var simulatorlocations;
 		var simulatorlocationsIndex;
-		var simulatorMode = false; // <<====
+		var simulatorMode = false; // 				<<====
 		var map_orient_data = {alfa: 0.0, ratioX: 1.0, ratioY: 1.0};
 		var dataJsonStr = "";
 		var mapOrientData = {
@@ -26,7 +28,7 @@
 		var long = "long";
 	
  
-    function initiate_watchlocation() {			
+    	function initiate_watchlocation() {			
 			if (watchProcess == null) {
 				watchProcess = navigator.geolocation.watchPosition(handle_geolocation_query, handle_errors,
 			    {
@@ -35,16 +37,16 @@
 						maximumAge: Infinity
 					});
 			}
-    }
+    	}
  
-    function stop_watchlocation() {
+    	function stop_watchlocation() {
 		  if (watchProcess != null) {
 				navigator.geolocation.clearWatch(watchProcess);
 				watchProcess = null;
 			}			
-    }
+    	}
  
-    function handle_errors(error) {
+    	function handle_errors(error) {
             switch(error.code)
             {
                 case error.PERMISSION_DENIED: alert("User did not share geolocation data");
@@ -57,6 +59,11 @@
                 break;
         		}
     	}
+
+		function handle_geolocation_query(position) {
+			debugLog(3, "===> handle_geolocation_query: lat: " + position.coords.latitude + ", long:" + position.coords.longitude);
+			setPosition(position.coords.latitude, position.coords.longitude);			
+    	}        
 		
 		function setPosition(lat, long) {
 			debugLog(3, "setPosition: lat: " + lat + ", long:" + long);
@@ -89,6 +96,12 @@
 			}
 		}
 
+		function showPosition(x, y) {
+			debugLog(3, "showPosition: x: " + x + ", y:" + y);			
+			//drawXonCanvas(x, y);
+			drawLocationIcon(x, y);
+		}
+
 		function showHistory() {
 			context.lineWidth = 1;
 			context.strokeStyle = "red";			
@@ -96,20 +109,9 @@
 		}
 
 		function showTail() {
-			context.lineWidth = 3;
+			context.lineWidth = 1;
 			context.strokeStyle = "pink";			
 			tailPoints.forEach(drawTailPoint);
-		}
-
-		function handle_geolocation_query(position) {
-			debugLog(3, "===> handle_geolocation_query: lat: " + position.coords.latitude + ", long:" + position.coords.longitude);
-			setPosition(position.coords.latitude, position.coords.longitude);			
-    }        
-		
-		function showPosition(x, y) {
-			debugLog(3, "showPosition: x: " + x + ", y:" + y);			
-			//drawXonCanvas(x, y);
-			drawLocationIcon(x, y);
 		}
 
 		function drawHistoryPoint(value) {
@@ -125,7 +127,11 @@
 		}
 
 		function drawLocationIcon(x, y) {
-			var radius = 20;
+			if (x==0 && y==0) {
+				// This is not a true location:
+				return;
+			}
+			var radius = 30;
 			if (tickNumber%2 == 0) {
 				radius = radius - (radius/4);
 			}
@@ -133,7 +139,7 @@
 	    	var targetCircle = ( radius / 3);
 			
 			context.beginPath();
-			context.lineWidth = 3;
+			context.lineWidth = 5;
 			context.strokeStyle = "red";				
 				
 			context.arc(x, y , radius - targetCircle, 0, 2 * Math.PI);
@@ -149,7 +155,7 @@
 			context.stroke();
 
 			context.beginPath();
-			context.lineWidth = 1;
+			context.lineWidth = 2;
 			context.strokeStyle = "white";				
 
 			context.arc(x, y , radius - targetCircle, 0, 2 * Math.PI);
@@ -306,8 +312,7 @@
 		}
 
 		function check_2(code, longSize, latSize) {
-			var code3 = parseInt(code.charAt(latSize));
-			debugLog(2, "code3: " + code3);
+			var code3 = parseInt(code.charAt(latSize));			
 			if (code3 == (longSize + latSize)) {
 				return check_3(code, longSize, latSize);
 			} else {
@@ -316,8 +321,7 @@
 		}
 
 		function check_3(code, longSize, latSize) {
-			var code2 = parseInt(code.charAt(longSize / 2));
-			debugLog(2, "code2: " + code2);
+			var code2 = parseInt(code.charAt(longSize / 2));			
 			if (code2 == (longSize - latSize)) {
 				return check_4(code, longSize, latSize);
 			} else {
@@ -326,8 +330,7 @@
 		}
 
 		function check_4(code, longSize, latSize) {
-			var code1 = parseInt(code.charAt(longSize - latSize));
-			debugLog(2, "code1: " + code1);
+			var code1 = parseInt(code.charAt(longSize - latSize));			
 			if (code1 == latSize) {
 				return check_5(code, longSize, latSize);
 			} else {
@@ -336,8 +339,7 @@
 		}
 
 		function check_5(code, longSize, latSize) {
-			var code0 = parseInt(code.charAt(longSize - longSize));
-			debugLog(2, "code0: " + code0);
+			var code0 = parseInt(code.charAt(longSize - longSize));			
 			if (code0 == longSize) {
 				return true;
 			} else {
@@ -346,6 +348,10 @@
 		}
 
 		function preInit() {
+			if (skipCode == true) {				
+				init();
+				return;
+			}
 			debugLog(3, "preInit");
 			document.getElementById("map_title").innerHTML = "Sorry - Site is not open yet";
 			document.getElementById("current_location").value = "Code Please.";
@@ -360,6 +366,7 @@
 
 		function init() {
 			debugLog(2, "init...");
+			codeEnabled = true;
 			document.getElementById("current_location").value = "Loading...";
 			if (typeof mapTitle === 'undefined') {
 				document.getElementById("map_title").innerHTML = "Your location map";
@@ -399,6 +406,36 @@
 				simulatorlocationsIndex = 0;
 			}
 			setPosition(location.lat, location.long);			
+		}
+
+		
+		function clearMeasurment() {
+			closeNav();
+		}
+		function saveForOffline() {
+			closeNav();
+		}
+		
+		function contactMapVendor() {
+			closeNav();
+		}
+
+		function openNav() {
+			if (codeEnabled == false) {
+				return;
+			}
+			document.getElementById("menuClearMeasurments").innerHTML = "Clear Measurments";
+			document.getElementById("menuSaveOffline").innerHTML = "Save for Offline use"
+			document.getElementById("menuMessage").innerHTML = "Send message"
+			document.getElementById("mySidenav").style.width = "200px";
+			document.getElementById("main").style.marginLeft = "200px";
+			document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+		}
+		  
+		function closeNav() {
+			document.getElementById("mySidenav").style.width = "0";
+			document.getElementById("main").style.marginLeft= "0";
+			document.body.style.backgroundColor = "white";
 		}
 
 		function debugLog(severity, str) {
