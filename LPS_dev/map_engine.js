@@ -186,15 +186,23 @@
 			if (isLocatedOnthisMap == true) {
 				return;
 			}
-			context.strokeStyle = "red";
-			context.font = "40px Arial";
-			var left = (tickNumber * 6) % canvas.width;
+			if ((tickNumber % 4) == 0) {
+				context.strokeStyle = "white";	
+			} else {
+				context.strokeStyle = "red";
+			}			
+			context.font = "30px Arial";
+			var left = 20;
+			var top = 60;
 			var message_youAreNotOnThisMap = "You are not located on this map...";
-			context.strokeText(message_youAreNotOnThisMap, left, canvas.height/2);
+			context.strokeText(message_youAreNotOnThisMap, left, top);
 		}
 
 		function drawDistancePointer() {
 			if (lastTouchPosition.x == 0 && lastTouchPosition.y == 0) {
+				return;
+			}
+			if (isLocatedOnthisMap == false) {
 				return;
 			}
 			debugLog(3, "drawDistancePointer: x: " + lastTouchPosition.x + ", y:" + lastTouchPosition.y);			
@@ -214,7 +222,8 @@
 			context.font = fontSize + "px Arial";
 			var distanceFromLocation = getGpsDistance(lastTouchPosition.x, lastTouchPosition.y, map_coords.x, map_coords.y);
 			distanceFromLocation = distanceFromLocation.toFixed(3);
-			context.strokeText(distanceFromLocation, lastTouchPosition.x, lastTouchPosition.y - (2 * fontSize));
+			var distanceFromLocation_str = distanceFromLocation + "Km";
+			context.strokeText(distanceFromLocation_str, lastTouchPosition.x, lastTouchPosition.y - (2 * fontSize));
 			context.stroke();
 		}
 
