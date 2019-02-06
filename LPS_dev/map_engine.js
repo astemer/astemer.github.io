@@ -27,6 +27,7 @@
 		var lat = "lat";
 		var long = "long";
 		var isLocatedOnthisMap = true;
+		var lastTouchPosition = {x: 0, y: 0};
 	
  
     	function initiate_watchlocation() {			
@@ -192,6 +193,31 @@
 			context.strokeText(message_youAreNotOnThisMap, left, canvas.height/2);
 		}
 
+		function drawDistancePointer() {
+			if (lastTouchPosition.x == 0 && lastTouchPosition.y == 0) {
+				return;
+			}
+			debugLog(3, "drawDistancePointer: x: " + lastTouchPosition.x + ", y:" + lastTouchPosition.y);			
+			context.beginPath();
+			context.lineWidth = 2;
+			context.strokeStyle = "black";			
+			var radius = 7;			
+			context.moveTo(map_coords.x, map_coords.y);			
+			context.lineTo(lastTouchPosition.x, lastTouchPosition.y);
+			context.stroke();
+			context.beginPath();
+			context.arc(lastTouchPosition.x, lastTouchPosition.y, radius, 0, 2 * Math.PI);
+			context.fill();
+			
+			// Print the distance:
+			var fontSize = 20;			
+			context.font = fontSize + "px Arial";
+			var distanceFromLocation = getGpsDistance(lastTouchPosition.x, lastTouchPosition.y, map_coords.x, map_coords.y);
+			distanceFromLocation = distanceFromLocation.toFixed(3);
+			context.strokeText(distanceFromLocation, lastTouchPosition.x, lastTouchPosition.y - (2 * fontSize));
+			context.stroke();
+		}
+
 		function reDraw() {			
 			context.clearRect(0, 0, canvas.width, canvas.height);
 			context.beginPath();
@@ -200,6 +226,7 @@
 			showTail();					
 			showPosition(map_coords.x, map_coords.y);
 			printNotOnMapMessage();
+			drawDistancePointer();			
 		}
 
 		function timeTick() {		
@@ -229,6 +256,16 @@
 			mapOrientData.vectorRatio = xyDist / mapOrientData.vector.dist
 			debugLog(3, "mapOrientData:" + JSON.stringify(mapOrientData));						
 			tailPointsMinDistance = xyDist / 250;
+		}
+
+		function getGpsDistance(x1, y1, x2, y2) {
+			var dist = distance(x1, y1, x2, y2);
+			if (mapOrientData.vectorRatio == 0) {
+				dist = 0;
+			} else {
+				dist = dist/mapOrientData.vectorRatio;//In KMs.
+			}
+			return dist;
 		}
 
 		function distance(x1, y1, x2, y2) {			
@@ -356,6 +393,22 @@
 			id = setInterval(timeTick, 500);
 		}
 
+		// Get the position of a touch relative to the canvas
+		function getTouchPosition(canvasDom, touchEvent) {
+			var rect = canvasDom.getBoundingClientRect();
+			return {
+	  			x: touchEvent.touches[0].clientX - rect.left,
+	  			y: touchEvent.touches[0].clientY - rect.top };
+  		}
+		// Get the position of the mouse relative to the canvas
+		function getMousePosition(canvasDom, mouseEvent) {
+			var rect = canvasDom.getBoundingClientRect();
+			return {
+			  x: mouseEvent.clientX - rect.left,
+			  y: mouseEvent.clientY - rect.top	};
+		}
+		  
+
 		function init() {
 			debugLog(2, "init...");
 			codeEnabled = true;
@@ -369,6 +422,14 @@
 			canvas = document.getElementById("map_canvas"),
 			context = canvas.getContext('2d');		
 			drawMap();
+			canvas.addEventListener("mousedown", function (e) {
+					lastTouchPosition = getMousePosition(canvas, e);
+					reDraw();
+				}, false);
+			canvas.addEventListener("touchstart", function (e) {
+					lastTouchPosition = getTouchPosition(canvas, e);
+					reDraw();
+				}, false);
 		}
 		
 		function initLocation() {
@@ -416,7 +477,11 @@
 		function saveForOffline() {
 			closeNav();
 		}
-		
+		function clearMeasurments() {
+			lastTouchPosition.x = 0;
+			lastTouchPosition.y = 0;
+			closeNav();
+		}
 		function contactMapVendor() {
 			closeNav();
 		}
