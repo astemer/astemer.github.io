@@ -1,14 +1,14 @@
 
 		var debugSeverityLevel = 2;
-		var debugLogsEnabled = false; // 			<<===
-		var skipCode = false; // 					<<===
+		var debugLogsEnabled = true; // 			<<===
+		var skipCode = true; // 					<<===
 		var codeEnabled = false;
     	var watchProcess = null;
 		var gps_coords = {lat: 0.0, long: 0.0};
 		var map_coords = {x: 0.0, y: 0.0};
 		var simulatorlocations;
 		var simulatorlocationsIndex;
-		var simulatorMode = false; // 				<<====
+		var simulatorMode = true; // 				<<====
 		var map_orient_data = {alfa: 0.0, ratioX: 1.0, ratioY: 1.0};
 		var dataJsonStr = "";
 		var mapOrientData = {
@@ -403,6 +403,7 @@
 			debugLog(3, "preInit");
 			document.getElementById("map_title").innerHTML = "Sorry - Site is not open yet";
 			document.getElementById("current_location").value = "Code Please.";
+			document.getElementById("current_location").focus();
 		}
 
 		function postInit() { // Runs after image loads:
