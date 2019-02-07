@@ -1,14 +1,14 @@
 
 		var debugSeverityLevel = 2;
-		var debugLogsEnabled = true; // 			<<===
-		var skipCode = true; // 					<<===
+		var debugLogsEnabled = false; // 			<<===
+		var skipCode = false; // 					<<===
 		var codeEnabled = false;
     	var watchProcess = null;
 		var gps_coords = {lat: 0.0, long: 0.0};
 		var map_coords = {x: 0.0, y: 0.0};
 		var simulatorlocations;
 		var simulatorlocationsIndex;
-		var simulatorMode = true; // 				<<====
+		var simulatorMode = false; // 				<<====
 		var map_orient_data = {alfa: 0.0, ratioX: 1.0, ratioY: 1.0};
 		var dataJsonStr = "";
 		var mapOrientData = {
