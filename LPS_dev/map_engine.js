@@ -1,14 +1,14 @@
 
 		var debugSeverityLevel = 2;
-		var debugLogsEnabled = false; // 			<<===
-		var skipCode = false; // 					<<===
+		var debugLogsEnabled = true; // 			<<===
+		var skipCode = true; // 					<<===
 		var codeEnabled = false;
     	var watchProcess = null;
 		var gps_coords = {lat: 0.0, long: 0.0};
 		var map_coords = {x: 0.0, y: 0.0};
 		var simulatorlocations;
 		var simulatorlocationsIndex;
-		var simulatorMode = false; // 				<<====
+		var simulatorMode = true; // 				<<====
 		var map_orient_data = {alfa: 0.0, ratioX: 1.0, ratioY: 1.0};
 		var dataJsonStr = "";
 		var mapOrientData = {
@@ -29,6 +29,7 @@
 		var isLocatedOnthisMap = true;
 		var lastTouchPosition = {x: 0, y: 0};
 		var showDistance = false;
+		var showTail = false;
 	
  
     	function initiate_watchlocation() {			
@@ -98,7 +99,10 @@
 			drawLocationIcon(x, y);
 		}
 
-		function showTail() {
+		function showLocationTail() {
+			if (showTail == false) {
+				return;
+			}
 			context.lineWidth = 1;
 			context.strokeStyle = "red";			
 			tailPoints.forEach(drawTailPoint);
@@ -178,15 +182,8 @@
 			map_image.onload = function() {				
 				var imageRatio = (map_image.width / map_image.height);
 				debugLog(2, "drawMap - load: imageRatio=" + imageRatio);
-				if (window.innerWidth > window.innerHeight) {
-					canvas.height = window.innerHeight;	
-					canvas.width  = imageRatio * canvas.height;
-				} else {
-					canvas.width = window.innerWidth;	
-					canvas.height  = canvas.width / imageRatio;
-				}
-				//canvas.width  = window.innerWidth;
-				//canvas.height = window.innerHeight;				
+				canvas.width = window.innerWidth;	
+				canvas.height  = canvas.width / imageRatio;
 				context.drawImage(map_image, 0, 0, map_image.width, map_image.height, 0, 0, canvas.width, canvas.height);
 				postInit();
 			}			
@@ -232,8 +229,8 @@
 			context.font = fontSize + "px Arial";
 			var distanceFromLocation = getGpsDistance(lastTouchPosition.x, lastTouchPosition.y, map_coords.x, map_coords.y);
 			distanceFromLocation = distanceFromLocation.toFixed(3);
-			var distanceFromLocation_str = distanceFromLocation + "Km";
-			context.strokeText(distanceFromLocation_str, lastTouchPosition.x, lastTouchPosition.y - (2 * fontSize));
+			var distanceFromLocation_str = distanceFromLocation + " Km";
+			context.strokeText(distanceFromLocation_str, lastTouchPosition.x, lastTouchPosition.y - (1.5 * fontSize));
 			context.stroke();
 		}
 
@@ -242,7 +239,7 @@
 			context.beginPath();
 			context.closePath();
 			context.drawImage(map_image, 0, 0, map_image.width, map_image.height, 0, 0, canvas.width, canvas.height);							
-			showTail();					
+			showLocationTail();					
 			showPosition(map_coords.x, map_coords.y);
 			printNotOnMapMessage();
 			drawDistancePointer();			
@@ -500,6 +497,21 @@
 		function contactMapVendor() {
 			closeNav();
 		}
+
+		function toggleKeepScreenOn() {
+			closeNav();
+		}
+
+		function toggleShowTail() {
+			debugLog(2, "toggleShowTail");
+			if (showTail == false) {
+				showTail = true;
+			} else {
+				showTail = false;
+			}
+			closeNav();
+		}
+
 		function toggleShowDistance() {
 			debugLog(2, "toggleShowDistance");
 			if (showDistance == false) {
@@ -517,9 +529,19 @@
 			}
 			document.getElementById("menuItem1").innerHTML = menuItem;
 			document.getElementById("menuItem1").setAttribute('onclick', 'toggleShowDistance()');
-			menuItem = "Save for Offline use"		
+			menuItem = "Keep screen on"
 			document.getElementById("menuItem2").innerHTML = menuItem;
-			document.getElementById("menuItem2").setAttribute('onclick', 'saveForOffline()');
+			document.getElementById("menuItem2").setAttribute('onclick', 'toggleKeepScreenOn()');
+			menuItem = "Show tail of locations"
+			if (showTail == true) {
+				menuItem = "Hide tail of locations"
+			}			
+			document.getElementById("menuItem3").innerHTML = menuItem;
+			document.getElementById("menuItem3").setAttribute('onclick', 'toggleShowTail()');
+			menuItem = "Save for Offline use"		
+			document.getElementById("menuItem4").innerHTML = menuItem;
+			document.getElementById("menuItem4").setAttribute('onclick', 'saveForOffline()');
+
 			//document.getElementById("menuMessage").innerHTML = "Send message"			
 			//document.getElementById("contactMapVendor").innerHTML = "contact Map Vendor"									
 		}
