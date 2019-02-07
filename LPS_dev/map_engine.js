@@ -1,5 +1,5 @@
 
-		var debugSeverityLevel = 4;
+		var debugSeverityLevel = 2;
 		var debugLogsEnabled = false; // 			<<===
 		var skipCode = false; // 					<<===
 		var codeEnabled = false;
@@ -28,6 +28,7 @@
 		var long = "long";
 		var isLocatedOnthisMap = true;
 		var lastTouchPosition = {x: 0, y: 0};
+		var showDistance = false;
 	
  
     	function initiate_watchlocation() {			
@@ -174,12 +175,21 @@
 		{
 			map_image = new Image();
 			map_image.src = 'img.jpg';
-			map_image.onload = function() {
-				canvas.width  = map_image.width;
-				canvas.height = map_image.height;
-				context.drawImage(map_image, 0, 0);
+			map_image.onload = function() {				
+				var imageRatio = (map_image.width / map_image.height);
+				debugLog(2, "drawMap - load: imageRatio=" + imageRatio);
+				if (window.innerWidth > window.innerHeight) {
+					canvas.height = window.innerHeight;	
+					canvas.width  = imageRatio * canvas.height;
+				} else {
+					canvas.width = window.innerWidth;	
+					canvas.height  = canvas.width / imageRatio;
+				}
+				//canvas.width  = window.innerWidth;
+				//canvas.height = window.innerHeight;				
+				context.drawImage(map_image, 0, 0, map_image.width, map_image.height, 0, 0, canvas.width, canvas.height);
 				postInit();
-			}
+			}			
 		}
 
 		function printNotOnMapMessage() {
@@ -202,7 +212,7 @@
 			if (lastTouchPosition.x == 0 && lastTouchPosition.y == 0) {
 				return;
 			}
-			if (isLocatedOnthisMap == false) {
+			if (isLocatedOnthisMap == false || showDistance == false) {
 				return;
 			}
 			debugLog(3, "drawDistancePointer: x: " + lastTouchPosition.x + ", y:" + lastTouchPosition.y);			
@@ -231,7 +241,7 @@
 			context.clearRect(0, 0, canvas.width, canvas.height);
 			context.beginPath();
 			context.closePath();
-			context.drawImage(map_image, 0, 0);				
+			context.drawImage(map_image, 0, 0, map_image.width, map_image.height, 0, 0, canvas.width, canvas.height);							
 			showTail();					
 			showPosition(map_coords.x, map_coords.y);
 			printNotOnMapMessage();
@@ -261,7 +271,7 @@
 		function prepareOrientationData() {
 			debugLog(2, "prepareOrientationData()");
 			mapOrientData.vector = calcGeoVector(mapOrientData.p1.lat, mapOrientData.p1.lon, mapOrientData.p2.lat, mapOrientData.p2.lon);
-			var xyDist = distance(0, 0, map_image.width, map_image.height);
+			var xyDist = distance(0, 0, canvas.width, canvas.height);
 			mapOrientData.vectorRatio = xyDist / mapOrientData.vector.dist
 			debugLog(3, "mapOrientData:" + JSON.stringify(mapOrientData));						
 			tailPointsMinDistance = xyDist / 250;
@@ -485,32 +495,47 @@
 		}
 		function saveForOffline() {
 			closeNav();
-		}
-		function clearMeasurments() {
-			lastTouchPosition.x = 0;
-			lastTouchPosition.y = 0;
-			closeNav();
-		}
+		}		
 		function contactMapVendor() {
 			closeNav();
 		}
+		function toggleShowDistance() {
+			debugLog(2, "toggleShowDistance");
+			if (showDistance == false) {
+				showDistance = true;
+			} else {
+				showDistance = false;
+			}
+			closeNav();
+		}
+
+		function generateMenu() {
+			var menuItem = "Show distance ruler";
+			if (showDistance == true) {
+				menuItem = "Hide distance ruler";
+			}
+			document.getElementById("menuItem1").innerHTML = menuItem;
+			document.getElementById("menuItem1").setAttribute('onclick', 'toggleShowDistance()');
+			menuItem = "Save for Offline use"		
+			document.getElementById("menuItem2").innerHTML = menuItem;
+			document.getElementById("menuItem2").setAttribute('onclick', 'saveForOffline()');
+			//document.getElementById("menuMessage").innerHTML = "Send message"			
+			//document.getElementById("contactMapVendor").innerHTML = "contact Map Vendor"									
+		}
 
 		function openNav() {
+			debugLog(2, "openNav");
 			if (codeEnabled == false) {
 				return;
 			}
-			//document.getElementById("menuClearMeasurments").innerHTML = "Clear Measurments";
-			document.getElementById("menuShowLatestMessages").innerHTML = "Show latest messages";
-			document.getElementById("menuMessage").innerHTML = "Send message"
-			document.getElementById("menuSaveOffline").innerHTML = "Save for Offline use"			
-			document.getElementById("mySidenav").style.width = "200px";
-			document.getElementById("main").style.marginLeft = "200px";
+			generateMenu();
+			document.getElementById("mySidenav").style.width = "200px";			
 			document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 		}
 		  
 		function closeNav() {
-			document.getElementById("mySidenav").style.width = "0";
-			document.getElementById("main").style.marginLeft= "0";
+			debugLog(2, "closeNav");
+			document.getElementById("mySidenav").style.width = "0";			
 			document.body.style.backgroundColor = "white";
 		}
 
