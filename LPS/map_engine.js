@@ -1,5 +1,5 @@
 
-		var debugSeverityLevel = 4;
+		var debugSeverityLevel = 2;
 		var debugLogsEnabled = false; // 			<<===
 		var skipCode = false; // 					<<===
 		var codeEnabled = false;
@@ -27,6 +27,9 @@
 		var lat = "lat";
 		var long = "long";
 		var isLocatedOnthisMap = true;
+		var lastTouchPosition = {x: 0, y: 0};
+		var showDistance = false;
+		var showTail = false;
 	
  
     	function initiate_watchlocation() {			
@@ -96,7 +99,10 @@
 			drawLocationIcon(x, y);
 		}
 
-		function showTail() {
+		function showLocationTail() {
+			if (showTail == false) {
+				return;
+			}
 			context.lineWidth = 1;
 			context.strokeStyle = "red";			
 			tailPoints.forEach(drawTailPoint);
@@ -173,33 +179,70 @@
 		{
 			map_image = new Image();
 			map_image.src = 'img.jpg';
-			map_image.onload = function() {
-				canvas.width  = map_image.width;
-				canvas.height = map_image.height;
-				context.drawImage(map_image, 0, 0);
+			map_image.onload = function() {				
+				var imageRatio = (map_image.width / map_image.height);
+				debugLog(2, "drawMap - load: imageRatio=" + imageRatio);
+				canvas.width = window.innerWidth;	
+				canvas.height  = canvas.width / imageRatio;
+				context.drawImage(map_image, 0, 0, map_image.width, map_image.height, 0, 0, canvas.width, canvas.height);
 				postInit();
-			}
+			}			
 		}
 
 		function printNotOnMapMessage() {
 			if (isLocatedOnthisMap == true) {
 				return;
 			}
-			context.strokeStyle = "red";
-			context.font = "40px Arial";
-			var left = (tickNumber * 6) % canvas.width;
+			if ((tickNumber % 4) == 0) {
+				context.strokeStyle = "white";	
+			} else {
+				context.strokeStyle = "red";
+			}			
+			context.font = "30px Arial";
+			var left = 20;
+			var top = 60;
 			var message_youAreNotOnThisMap = "You are not located on this map...";
-			context.strokeText(message_youAreNotOnThisMap, left, canvas.height/2);
+			context.strokeText(message_youAreNotOnThisMap, left, top);
+		}
+
+		function drawDistancePointer() {
+			if (lastTouchPosition.x == 0 && lastTouchPosition.y == 0) {
+				return;
+			}
+			if (isLocatedOnthisMap == false || showDistance == false) {
+				return;
+			}
+			debugLog(3, "drawDistancePointer: x: " + lastTouchPosition.x + ", y:" + lastTouchPosition.y);			
+			context.beginPath();
+			context.lineWidth = 2;
+			context.strokeStyle = "black";			
+			var radius = 7;			
+			context.moveTo(map_coords.x, map_coords.y);			
+			context.lineTo(lastTouchPosition.x, lastTouchPosition.y);
+			context.stroke();
+			context.beginPath();
+			context.arc(lastTouchPosition.x, lastTouchPosition.y, radius, 0, 2 * Math.PI);
+			context.fill();
+			
+			// Print the distance:
+			var fontSize = 20;			
+			context.font = fontSize + "px Arial";
+			var distanceFromLocation = getGpsDistance(lastTouchPosition.x, lastTouchPosition.y, map_coords.x, map_coords.y);
+			distanceFromLocation = distanceFromLocation.toFixed(3);
+			var distanceFromLocation_str = distanceFromLocation + " Km";
+			context.strokeText(distanceFromLocation_str, lastTouchPosition.x, lastTouchPosition.y - (1.5 * fontSize));
+			context.stroke();
 		}
 
 		function reDraw() {			
 			context.clearRect(0, 0, canvas.width, canvas.height);
 			context.beginPath();
 			context.closePath();
-			context.drawImage(map_image, 0, 0);				
-			showTail();					
+			context.drawImage(map_image, 0, 0, map_image.width, map_image.height, 0, 0, canvas.width, canvas.height);							
+			showLocationTail();					
 			showPosition(map_coords.x, map_coords.y);
 			printNotOnMapMessage();
+			drawDistancePointer();			
 		}
 
 		function timeTick() {		
@@ -225,10 +268,20 @@
 		function prepareOrientationData() {
 			debugLog(2, "prepareOrientationData()");
 			mapOrientData.vector = calcGeoVector(mapOrientData.p1.lat, mapOrientData.p1.lon, mapOrientData.p2.lat, mapOrientData.p2.lon);
-			var xyDist = distance(0, 0, map_image.width, map_image.height);
+			var xyDist = distance(0, 0, canvas.width, canvas.height);
 			mapOrientData.vectorRatio = xyDist / mapOrientData.vector.dist
 			debugLog(3, "mapOrientData:" + JSON.stringify(mapOrientData));						
 			tailPointsMinDistance = xyDist / 250;
+		}
+
+		function getGpsDistance(x1, y1, x2, y2) {
+			var dist = distance(x1, y1, x2, y2);
+			if (mapOrientData.vectorRatio == 0) {
+				dist = 0;
+			} else {
+				dist = dist/mapOrientData.vectorRatio;//In KMs.
+			}
+			return dist;
 		}
 
 		function distance(x1, y1, x2, y2) {			
@@ -347,6 +400,7 @@
 			debugLog(3, "preInit");
 			document.getElementById("map_title").innerHTML = "Sorry - Site is not open yet";
 			document.getElementById("current_location").value = "Code Please.";
+			document.getElementById("current_location").focus();
 		}
 
 		function postInit() { // Runs after image loads:
@@ -355,6 +409,22 @@
 			initLocation();
 			id = setInterval(timeTick, 500);
 		}
+
+		// Get the position of a touch relative to the canvas
+		function getTouchPosition(canvasDom, touchEvent) {
+			var rect = canvasDom.getBoundingClientRect();
+			return {
+	  			x: touchEvent.touches[0].clientX - rect.left,
+	  			y: touchEvent.touches[0].clientY - rect.top };
+  		}
+		// Get the position of the mouse relative to the canvas
+		function getMousePosition(canvasDom, mouseEvent) {
+			var rect = canvasDom.getBoundingClientRect();
+			return {
+			  x: mouseEvent.clientX - rect.left,
+			  y: mouseEvent.clientY - rect.top	};
+		}
+		  
 
 		function init() {
 			debugLog(2, "init...");
@@ -369,6 +439,14 @@
 			canvas = document.getElementById("map_canvas"),
 			context = canvas.getContext('2d');		
 			drawMap();
+			canvas.addEventListener("mousedown", function (e) {
+					lastTouchPosition = getMousePosition(canvas, e);
+					reDraw();
+				}, false);
+			canvas.addEventListener("touchstart", function (e) {
+					lastTouchPosition = getTouchPosition(canvas, e);
+					reDraw();
+				}, false);
 		}
 		
 		function initLocation() {
@@ -415,28 +493,72 @@
 		}
 		function saveForOffline() {
 			closeNav();
-		}
-		
+		}		
 		function contactMapVendor() {
 			closeNav();
 		}
 
+		function toggleKeepScreenOn() {
+			closeNav();
+		}
+
+		function toggleShowTail() {
+			debugLog(2, "toggleShowTail");
+			if (showTail == false) {
+				showTail = true;
+			} else {
+				showTail = false;
+			}
+			closeNav();
+		}
+
+		function toggleShowDistance() {
+			debugLog(2, "toggleShowDistance");
+			if (showDistance == false) {
+				showDistance = true;
+			} else {
+				showDistance = false;
+			}
+			closeNav();
+		}
+
+		function generateMenu() {
+			var menuItem = "Show distance ruler";
+			if (showDistance == true) {
+				menuItem = "Hide distance ruler";
+			}
+			document.getElementById("menuItem1").innerHTML = menuItem;
+			document.getElementById("menuItem1").setAttribute('onclick', 'toggleShowDistance()');
+			menuItem = "Keep screen on"
+			document.getElementById("menuItem2").innerHTML = menuItem;
+			document.getElementById("menuItem2").setAttribute('onclick', 'toggleKeepScreenOn()');
+			menuItem = "Show tail of locations"
+			if (showTail == true) {
+				menuItem = "Hide tail of locations"
+			}			
+			document.getElementById("menuItem3").innerHTML = menuItem;
+			document.getElementById("menuItem3").setAttribute('onclick', 'toggleShowTail()');
+			menuItem = "Save for Offline use"		
+			document.getElementById("menuItem4").innerHTML = menuItem;
+			document.getElementById("menuItem4").setAttribute('onclick', 'saveForOffline()');
+
+			//document.getElementById("menuMessage").innerHTML = "Send message"			
+			//document.getElementById("contactMapVendor").innerHTML = "contact Map Vendor"									
+		}
+
 		function openNav() {
+			debugLog(2, "openNav");
 			if (codeEnabled == false) {
 				return;
 			}
-			//document.getElementById("menuClearMeasurments").innerHTML = "Clear Measurments";
-			document.getElementById("menuShowLatestMessages").innerHTML = "Show latest messages";
-			document.getElementById("menuMessage").innerHTML = "Send message"
-			document.getElementById("menuSaveOffline").innerHTML = "Save for Offline use"			
-			document.getElementById("mySidenav").style.width = "200px";
-			document.getElementById("main").style.marginLeft = "200px";
+			generateMenu();
+			document.getElementById("mySidenav").style.width = "270px";			
 			document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 		}
 		  
 		function closeNav() {
-			document.getElementById("mySidenav").style.width = "0";
-			document.getElementById("main").style.marginLeft= "0";
+			debugLog(2, "closeNav");
+			document.getElementById("mySidenav").style.width = "0";			
 			document.body.style.backgroundColor = "white";
 		}
 

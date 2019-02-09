@@ -12,17 +12,17 @@
   	left: 0;
   	background-color: yellowgreen;
   	overflow-x: hidden;
-  	transition: 0.5s;
+  	transition: 0.2s;
   	padding-top: 60px;
 	}
 
 	.sidenav a {
   	padding: 2px 2px 2px 16px;
   	text-decoration: none;
-  	font-size: 18px;
+  	font-size: 28px;
   	color: black;
   	display: block;
-  	transition: 0.3s;
+  	transition: 0.2s;
 	}
 
 	.sidenav a:hover {
@@ -71,9 +71,13 @@
 
 	<div id="mySidenav" class="sidenav">
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a><br>
-			<a href="javascript:void(0)"  onclick="clearMeasurment()" id="menuClearMeasurments">Menu item 1</a><br>
-			<a href="javascript:void(0)"  onclick="saveForOffline()" id="menuSaveOffline">Menu item 2</a><br>
-			<a href="javascript:void(0)"  onclick="contactMapVendor()" id="menuMessage">Menu item 3</a><br>
+			<a href="javascript:void(0)"  onclick="closeNav()" id="menuItem1"></a><br>
+			<a href="javascript:void(0)"  onclick="closeNav()" id="menuItem2"></a><br>
+			<a href="javascript:void(0)"  onclick="closeNav()" id="menuItem3"></a><br>
+			<a href="javascript:void(0)"  onclick="closeNav()" id="menuItem4"></a><br>
+			<a href="javascript:void(0)"  onclick="closeNav()" id="menuItem5"></a><br>
+			<a href="javascript:void(0)"  onclick="closeNav()" id="menuItem6"></a><br>
+			<a href="javascript:void(0)"  onclick="closeNav()" id="menuItem7"></a><br>				
 	</div>
 
 	<canvas id="map_canvas" name="map_canvas"></canvas>
