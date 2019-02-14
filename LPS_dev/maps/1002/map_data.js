@@ -1,3 +1,4 @@
-		var mapTitle = "מפת ישראל";
-		var dataJson = 
-			{"ver":1,"ori_point_left_top_lat":"33.6389522","ori_point_left_top_long":"33.2235350","ori_point_right_bottom_lat":"29.0940005","ori_point_right_bottom_long":"36.8380370"};
+		var dataString = 
+			"1.0;מפת ישראל;heb;33.6389522;33.2235350;29.0940005;36.8380370";
+		document.getElementById("map_data").value = dataString;	
+			

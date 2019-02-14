@@ -1,3 +1,3 @@
-		var mapTitle = "אזור ים המלח";
-		var dataJson = 
-			{"ver":1,"ori_point_left_top_lat":"31.8035782","ori_point_left_top_long":"35.2106019","ori_point_right_bottom_lat":"31.8030788","ori_point_right_bottom_long":"35.2108567"};
+		var dataString = 
+			"1.0;Intel - Jer5;heb;31.8035782;35.2106019;31.8030788;35.2108567";
+		document.getElementById("map_data").value = dataString;
