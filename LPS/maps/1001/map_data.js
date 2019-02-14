@@ -1,3 +1,6 @@
-		var mapTitle = "רשות הטבע והגנים - יער בן שמן";
-		var dataJson = 
-			{"ver":1,"ori_point_left_top_lat":"31.9842794","ori_point_left_top_long":"34.9273028","ori_point_right_bottom_lat":"31.8973346","ori_point_right_bottom_long":"35.0299563"};
+		
+		var dataString = 
+			// MAKE SURE EACH LITERAL DOES NOT CONTAIN THE DELIMITER!!
+			// Ver, Title, Lang, left-top-lat, left-top-long, right-bottom-lat, right-bottom-long
+			"1.0;יער בן שמן - רשות הטבע והגנים;heb;31.9842794;34.9273028;31.8973346;35.0299563";
+		document.getElementById("map_data").value = dataString;
