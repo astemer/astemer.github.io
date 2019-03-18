@@ -33,7 +33,7 @@
   	position: absolute;
   	top: 0;
   	right: 25px;
-  	font-size: 36px;
+  	font-size: 40px;
   	margin-left: 50px;
 	}
 
@@ -59,10 +59,10 @@
 		<table style="width:100%">
 			<tr>
 				<th style="align-self:left">
-					<th style="align-self:left"><span id="menuOpen" name="menuOpen" style="font-size:30px;cursor:pointer;text-align:left">&#9776;</span></th>
+					<th style="align-self:left"><span id="menuOpen" name="menuOpen" style="font-size:34px;cursor:pointer;text-align:left">&#9776;</span></th>
 					<th><img src="navigation_page_services_icon.png" alt="location_page_services_icon" height="40" width="40"></th>
 				</th>
-				<th><b id="map_title">יער בן שמן</b></th> 
+				<th style="font-size:34px"><b id="map_title">יער בן שמן</b></th> 
 				<th><input type="text" id="current_location" name="current_location" oninput="check()" style="text-align:left;align-self:right"></th>
 			</tr>
 		</table>		
@@ -83,11 +83,10 @@
 	<canvas id="map_canvas" name="map_canvas" style="touch-action:none"></canvas>
 	<input id="map_data" type="hidden" value="">
 	<footer>
-		<p><b><center><a href="" id="about_link" name="about_link">Location-Page Services (c)</a></center></b>
-		<center>nopyanywhere@gmail.com</center>
-		<center>All rights reserved to Avner Stemmer</center></p>
-	</footer>
-	<script type="text/javascript" src="map_data.js"></script>
+		<p style="text-align:center"><b><a href="" id="about_link" name="about_link">Location-Page Services (c)</a></b><BR>		
+		All rights reserved</p>
+	</footer>	
+	<script type="text/javascript" src="map_data.js"></script>	
 	<script type="text/javascript" src="..\..\map_engine.js"></script>
 	<!--<script type="text/javascript" src="..\..\limit.js"></script>-->
   </body>

@@ -1,3 +1,3 @@
 		var genDataJson = 
-			'{"ver":1,"title":"Santiago","lang":"heb","ori_point_left_top_lat":"-33.2970122","ori_point_left_top_long":"-70.8912797","ori_point_right_bottom_lat":"-33.5966048","ori_point_right_bottom_long":"-70.2980180"}';
+			"1.0;Santiago;heb;-33.2970122;-70.8912797;-33.5966048;-70.2980180";			
 		document.getElementById("map_data").value = genDataJson;
