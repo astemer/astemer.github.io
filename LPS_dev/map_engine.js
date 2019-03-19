@@ -1,1 +1,771 @@
-var _0x314b=['Widew6Blw4k=','AmgqZ0hEw74/EA==','XMKIw4nDgA==','w7oHwo4MbRktDw==','w7vDhcKbVw9RZg==','w5U0woA=','ScKVw5fDg8Kew5UMDBDDoA==','w7fClhrCg8KTw4Rfw4PCgw==','WsKcbcKuwpE=','ByIQQMKrGw==','JhnDiXvCqMKdwqnDlDE=','wr7DjcKGwoJrw6YZw6V0','bsKLETDDgnx/wqF0','VyXCq8Orw4U=','QUrCijY1Bg==','w4TCq8Ovw4l7','ZmklRlk=','JsODw73DhmQ=','w7haTMOnJFJpbmE=','EH8ofkdmw7oECsKrw7U4w7o1wprDuH7DtsO7w6Rmw4YEwqQ=','MS7DrShQUQ==','woLClUw=','w5/Co8O/','w6LCo8OL','JCrDoCpeUMKsworDnh5/Kw==','wrnDiMKawoU=','bsKRL8Kgw4PDrA==','YSERUB/DvMOPwo3CrcKBJcK2','Yy4YShs=','bcKWwrDDomg/wq/CrAAGw7HDkQ==','T2LCu8KYw5nDlcO4w4ZbEj8=','JgPDpVc9w6TClBnCgCbChWs=','QUo4aw==','WcKAw4vDmsKUw4MODAvDoMKYwpU=','wpHDtQzDsQ==','csK+OSLDug==','fsOgUXfCng==','wpR9w6APw6oswrZ7wpjCvRzCgMO3wooGwok8','KsOUIsKuw5jDrMOUw4Va','w4FdXsOvwpzDu3E9','BsOow7/DvEBpwojDh2vCkQDCl8KHw7bCssOAwoTDizkEZS7CkcKP','HC4X','WmjCqw==','cSkR','Wj1a','wo0Kwoo=','ZcKbNQ==','KcO6w6vCqH8=','K8Ovw6bCpQw/BsOrwpjCg8KDaXEaw4MDwr1kIxDDqMO+worDi8K3dMKQQ8OBwrDCscKmwrVy','wovClnRCw4zDtMK5wpVuwowuw7QRNsOGLsOjwoQ=','ZUHCuRs=','worCnUvDgA==','cMKRJcKzw4TDqsK3w58=','VsKAw5HDoMKaw54HWzfDrMKOw514wpVnw492','TC3Cuw==','w75Mw4bClsKnwqE=','TMKbbsK2wpw=','w7AIwqHDtcOX','KsKow5TDig==','OMKkw4TDigxzO8KAw5DCqQ0=','w7UPwrXDrcKIEA==','BXNtw6Fpw4DCosKzw43CtcOLcTc=','KsOUMMKiw4jDrMOiwo07w43CtMOGUcK8','JRLDiX7Cow==','w6A2w6E=','NgvDpQ==','w6FIwr7Co8KS','wp/DosO7wpNqw4Q=','NsOQwoA=','BsOmw6A=','fcKewrA=','wogXbsK4PA==','w59CU8O2','Hx7DnRc=','TkrClxU0AcOQw6bCpBHDvsOJOXIVw5YGV8Kpw5DCvMOTwpFDw6wQw5E=','AsOsw6fDmm1iwoLDjmDCozDCgcKjw5w=','w6cew54SexE4Ag==','w7wHwrbDncOTRBBfw7MwScONIcOgw4w=','w684w6Y=','w5/CrcOl','TcOgw4Njw4PCqcORwqdvCiMQUy0=','JhfDuVM5w7nCtiPCjz3CiXjDihzDvMK9','w7wew4I4eg==','DcKpw4LDnQgpQMObwoQ=','c8OVW1nCgMOW','wpnDuRHDosOHw7A=','YSgeVD/Duw==','w5DCqsOqw49Swoo=','RW7CoB8I','VsKgw6bDosKg','Dw7DgwBDwpBIJyBycVbDvcKSw6bCkcKpBg==','wrpzbcK0','e8OZRko=','wqRtBhws','acOVVkrCm8OMHMOe','BBnDqwdJ','wq11JRQE','ScOtw5ZUw67CuA==','w4zCqTnCmMK5','M2EbM8OW','w7Arw7E=','cMOeWVHClcOa','OcKow4PDigs=','w7UUwqfDrsO/UQEswqpiTMOMJ8K+w5bDhRRqODHCmRXCvWITw7klwqlbf8OvwqnDr8OEw68Kw50UPcObw4rDosKqw7E1w67CrFxvKcOHwpU4CsOiw44O','asKFwr/Do0QtwonDqU5Sw7LDjCHCmGRIHMK7EMKqU0Y6fUk8wpAUNi7CicKJw4PDn8OywrjDpMKsPMK7bnUgL8KjDcOXBsOtwoZHJsOgexpZwqQ=','IcOLwo/Ch3PCisOXwrzCog==','TcKIw4HDmMKd','wp0awoQwacO2','woLDtRvDscOb','DcOsw7rDuGlz','NznDqxVRSsKO','w7PCnwvCp8KNw7NXw4XCmTF+XcKJHg==','wrDDgMKZwq56w58Mw715','TMOfR0zCjcKeC8Oewolfwr/DuMKXQ8OQbCDCoB/ClyAqW8KEKnjCtMKY','bcKcBALDp3RzwqN/TsO2wqrDtVE=','woMewoEiZA==','JsOmw7fDuiFXwoPDjm/CpBfDlg==','wqJmFTUlacO8wpHDvigHCj1L','wovCgmpTw67Dv8KiwpxnwoA5w7oXZcKJYw==','w65Gw4bCl8K7','w77Co8OWw5nCvBLChsOGwpVhWw==','JcOmEEQcw7/CicKNXgzDjMKeTsOm','w6Asw6DCsB3ChBIewrImRjjDqsKEIho=','w75Iw4nCl8Kt','bCPCrsO7w4Q+bh/DiMK6','IC7DuhlTRsKXworDkx5SIMOEwro=','DMOnw73DunNPwrvDpkI=','w5TCp8O/w758wpDDk8Ohwo0M','w7nCpcOBw5nCnQ==','Z8KZwrDDsXsbwpDCrRca','RcKQYMK9wpHDhg==','RMKbZ8K/wovDusKgw4M9w4PCpg==','w6bDhMKzWwV8Z8KsRnrCqw==','w7vDhcKoXR9HdsKkU2Y=','a8KdFALDvXRwwrJdU8OHwqfDmVsFLQ==','H10oKsOmWsKTw53Dow==','wonCk3xkw73DtMK4wrdHwoYpw68GYsKDfw==','a8OfQF3CnMObSMKa','FGI4bU5xw6w=','JMOrw6TCoTk5','wpkST8OlwofDqjg=','w480w4Isag==','w54OwqvDl8Oc','WSZRBMKWIBlvAALDtFV9IcOuwrPCi8OhXyDDl2XCg8KI','VinCrMOrw4Ii','VWbCrA==','RTxC','w6RIw5E=','wo0KfMKi','w5vCp8Oiw5p7woo=','wo0EwpfDjMOITiJAbgzCtsK+','QTjCrsOxwp8=','TUYieFTDrw==','EsOgw7fDq2k=','w5DCo8Olw4tywo3DscOhwpYMScO2','JAzDrE05','wpQRwoo7ZA==','w63CrcOLw5vClA/CucOXw5g7Glo=','AcOgw6DDqw==','HVc+PcOhRQ==','w5fCq8O4w4k=','w7wHwrbDlsOAWRRiw7MGQcOXJ8Og','NsONwpzCmVTCgMOfwr3Cvg==','wozCnmtV','AsKUw4DDtCQ=','B1w6O8Og','wooPasK3fMK+w4jDm2XCgA==','Ui8WSArDqsOrw4jCqsKaPcKqL3DCtk/CqDdbwq4IwrXCpMKEEsKI','eTxFw6F6w4nCtcOXw53CqcKfPS3Cn1zCj8OQDsOOc8OMw43DusOB','w5svwpR6Vw/DqQ==','wooPZsKzYMKdw7E=','JMOrw6zCsg==','XUDCljI1F8OX','wovCm3FEw6XDpcKP','MBPDng==','wqQMecKzLsKow5HDhnXDkg==','w7vDhcKoXR9RcQ==','NsOawpzClV/CicOv','w75Uw7jCoDnCvcKg','XTxZw6xmw4nCtA==','XsKWe8K/wpzDnMKc','w5zCoB7CusKm','VsKIJ8K5wpbDnMK2w54ow57CscKPw4TCmxDDhFBowovCsQHDjUbDjsKSQsK/w7PDgAUAw7k=','Q2cWS8KnK8OhwrXCg0E=','YsOhw5TDnQJtDMOc','WcKNw4zDicKbw4QA','KQfDrVU=','SjhdEcKZJiU=','w4fCrcO7','w7nDo2IVwoPDiXbCjF3CrcObWxXDrm/DmQxdw7PCpcKPw4VoDW8=','K8Oiw6PCoyMlOQ==','SkPCijQzBsO9','GADDnw==','PcOKw57DjWc=','wqliFQ==','woEcTg==','w6LCo8OLw4o=','KcOcwoDCl07Cjw==','w6FWw74=','w7Y/McOp','w7vDhcK6WRtRUcKtTmXCi8K8PsKH','w7pVw6DCiBs=','UUwseFDDvmNfwrbCncO2w5DDuAo7WU5t','w701McOrZ8ORVsOOZkUzw4w=','w4glwpVcUw/Dtx4KwoTDrlVWwoA=','w4FWT8O3P0tvaw==','D2MuYk93w7Q=','CCINYsKvCsOlwqPCmQh8w6Uvw4I=','J8Ogw6nCqiQyCg==','w5kXw4E6MDglB8O3w4LCg8Oaw4hqw755w4rDgjFgw5sGwoPDlQ==','TUYp','w6V1ccO7BA==','TcKgw6HDu8KF','1pPWrdWcc9er14LUkNSHwp3Wi9e41ovVkcO+1b7VndW71Zk=','cSgWQAo=','IgfDv2Qww7LCrxnCjSbCqGDDtxE=','a8KRKMKyw6LDrMOowpJL','wqxtDxU7RMOFwrnDnA==','eMOVQXvCmMObS8KbwrRCwonDpMO+Tg==','KxLDjX7Cr8KuwqM=','ejtDw7ghw6TCrsKTw43DucOLcWTCpxPClcOVRsKCccOAw4jDq8KSV8OWw70=','w5vCp8Op','B2g5S0pxw7IuFsK2w5Ivw4cw','SEYlanXDr1Vaw6s=','wo4Ge8KTYsKMw4TDimjCnMK/ecOnGg==','w4Ilwo9sdh7DvxZW','RkHCgD00EcOP','w4fCmwnCh8OBw7BVw5LDlwpaQsKsE8OdUMOOw4sEwrQ=','w7zCnx0=','OnYbHcO3','WCjCvsO0w6Q=','163UuNS+16g51YrWv3vVvNe01acO15LVotau1a3XktarENSP1JTUu1zWptWM1YPUvNSA1JXUig==','w7c1McO7XMOER8OGGA==','LMOXwoDClUjCr8OiwpbCiw==','RDFaAcK+JhlNQQ==','RiNJw6FAw43CsQ==','KQASYcKC','RAcUYD8=','G0cuIQ==','Y8KDwp9FdcO/OD7DhlPDhldHw68=','woQaXMK/asKMw4fDjnA=','XsKBcMK2wpw=','w7vDumIAwp8=','R0wvZg==','HDMAS8Km','w45SQsOpF0llcDUNw6/DmlZGVA==','X8KSa8K7w5HCgsOpwpp2wpvDvsOLwoXDnRE=','w6HDqlUdwpPDiVTCjFg=','d8KSwpJsfA==','MxXDimbCrg==','IMOsAHg=','ND/DtzBa','wosCbMK9acKbw4bDmmjCjMK+b8OCEcK3','w7pfw6PCsTk=','alLCgTzDqMOiwqnDgjY7IhPDu17DisKK','w6BMw4c=','FMOPworCgsObwp85CwfDocKDwrgwwpxkwpUkdsK/wrk=','wooYTsODwoPDqiZ4w7bDtxnDmsObdA==','JinDoSlLfMKWwobDkwE=','w4cywoR/','w6DClsOBw5F4','VAUnaS4=','MQ3DvkI0w7LCsQ==','IcOvDWQew67CvA==','RUrChSU=','UUw+fFTDvkM=','wr7DjcKAwpRgw4Ih','WcKaeQ==','fMKaMzbDhg==','QcKxwrNwYw==','LsOsAw==','KgzDp049w7M=','ZFXCrDMz','wp4Sd8KwWw==','JQzDnn7Cvw==','w79Sw77CsC7CvcOYNlkMw4gRHEHCnsOIwoHCjiI=','Ui4Cw6xhw4LCtMKDw5rCrMOcZGLCuRvDmMOBA8Kaa8ORw4fCv8KPUMORw73Drj3Ch8K1wqY=','SjxCw7xhw4DCog==','S8KWX8K/wrs=','Ih/DuHfChA==','K8Ohw6TCtSI9BA==','UXEefmo=','w7jClRg=','wofCml7Dmw==','w6hFw7jCqi4=','w4o4woJ8Tx7DsxQK','EcO7w7LDvGQ=','w63Co8OLw57CmhDCig==','RTtT','YS8RVRHDo8O8','w7Q4w6DCrA==','wovCmHZSw6TDvcKz','ay4ZSQ==','DkAvJsO8','YcKewohlacOuPDTDhg==','WmjCtsKfw5nDi8OP','w64iPsOtcA==','DGw5','w68Rw4k=','Wm3CkycQ','w6fCuA/ClMKs','wpYTwog2c8OVRwgtwpU=','esKYwrnDs2UpwqrCoQwFw4rDginCkA==','YS8bQw==','Fw7DnBF2cMKpwqbDsiRPHcOIwpDDqcOww6g=','wrvCh13DhhEwwp1HADJ7MVrDj8KEw53Cj8Oxw6vCrH0BAS3ClMKwwoNpw7bCh2/ChsOZw59z','wqUwwr4eVcOLaTIRwqg0w7TDgsOqfsOiQkDCk8KS','DcKuw5LDkgchB8KOw5DDoAbCrhh2wozDjsKKw6/CoMOtYcKOw5t5w7Y8wovCq28Cw67CuMKJ','fsOMw7pjw6DCmcOo','w5zCqcORw5/CnBnCmcObw5UoVVjCjMOlwo7DmiZ3SC7DhRXCicOEFMKHw6LCrw==','FGkJSsOXOh1OFgfDtGRuJcO1wrbCi8OsejXDimvDhcO+HsKGwpnCkl3DmMKrwqzCl07DqsK9','SkDCjCM5AQ==','w4MhwpVwSx/Dvh4=','BsKlw5tJw4HCq8KG','ScOqw5hUw4vCvw==','VsKOw4vDi8Kcw4QtDQ0=','w7k/MMO8ccOD','RU7ClzgpB8OAw6I=','SjxDw71qw58=','w6A2w73CsBzCmQ==','wrXDhMKIwpVnw5gf','UD14w7dW','ey4rXiY=','MxTDh2bCow==','w7A8w6bChh3CnA8iwrsBQDjDusKEIxPCixw=','WkrClwEyAcONw7PCox3DtcK1a3EZw65dAw==','JsOZHCjDpXYk','aMKHwp8=','QcKaZ8K9','wonCkUzDsV0xwplGTihWPDPDmA==','wpkewpk=','w682w7zCpQ==','w6FSw6TCoijCuw==','dnMdVU4=','PBcvbcKx','wpvCn3FHw78=','XsKdZsKtwqnDncK2w4Muw4LCvcKVwpHDiQ==','wp4Ka8KiZg==','UsKEw4zDi8Kdw4Q=','w711w4fCrTQ=','CwrDmyZowpBKFCtlR0DDhsOM','csORRWHCgMOXUsKSwr8=','UGnCtsKJw4TDr8O+w6pj','JsOMwpzCgl/CicOCwoTCq8OcVB1dwoPCtjw=','NMOiCHQV','R8KJwo9lOcOKOT7DiVTDoQA=','w5DCt8O5w492wpDDk8ObwpkXRcOlVgofVQ==','Iw3DqFQv','FMOHw6nDqmc=','w40Kw7rClCg=','esKYwqvDt2Epwoo=','IsKkw4nDmRdp','di8KRRbDqsOq','T8OfXFDCgMObVMOewr5ZwrzDs8KXB8KDGCHCugjDn283UcKObzs=','VW7CtsKJw6HDjsOOw5NH','w7tdw5fCjcKjwrYoNMOzUjE=','KMKuw5XDuwJiAQ==','acKZwqPCiQA=','wrfCs0UMw40=','TsKUZ8KswpjDgcKRw4UXw4rCosOBwovCpEDDnAI=','w5lfwqAuOw==','wrMJw6bCmsOy','w6E8w7XCqxbCugc1wrY=','w6bCsS/Ch8Kw','w7Ixw4cYSQ==','UGnCscKYwpjCicKE','wrrDhMKdwrRiw5MVw7Rywqt3f8KGw5A=','Mh3DgmfCow==','TkrClxQxF8OJw6LCpAbDmcO2Ank=','R8Okw4d5w4zCrcOSwrRgDQ==','wo/Ckmxiw6TDv8KiwqZzwps=','GC4dU8Kr','J8Kvw4nDmxFWAMKFw5DCqA==','BArDhgRswoE=','w6o3w7zCpwrCogMowrkhUQ==','w5rCrMOlw5hhwrbDgsOtwpIQUg==','fsOUUXvCgsObSMKKwpZfwrjDqcOSRMOGPg==','wrFsFBMhf8OlwpXDoig=','w67DjsK5ewFRbMKxbXvCrMKpMsKFC3k=','BMO7w7A=','w73CuMOXw4LCnhk=','SEHChD04','GgrDjBdrwoc=','JiXDqTBa','Vkol','Jg3DuA==','ZsKDwoxpd8OKNC/DgA==','wq/DhMKN','wqhsFxUdYw==','woEUVMOjwrvDoA==','W2LCv8KFw5jDt8OLw5NH','Vlc5cFfDvmNDwqDChsOX','wpwAwp0=','w4FcV8OnJFQ=','JMOnw6TCoxk+','VsKIw4vDicKhw58=','woUKYcKzWsKG','RsOsw5lDw7vCow==','SnPCqsKDw53Dgg==','w45WRsOrHmtrcTM=','wpnDtRHDoMOkw7HCmcKzYQ==','w7/Dp3QbwpzDiWnCmVfCtcOq','fcKRGTPDrg==','w44ywoI=','woASTMOjwrvDoA==','wrDDjsKfwpRaw5k=','wpx9w70ew58t','TSPCucO6w7k/','SUolemjDtA==','w6kkLcOhfsOV','wqPCisKkBA==','YCUYTxDDn8O4wpzCpg==','KyLDoDloSsKewpvDlQ==','w6ISwrTDtsOZVSJ4w74uRQ==','S0PCgjI2','TCXCocO6w7k/','Bl0rLMOaWA==','wpvCg2pOw6DDtA==','w5rCr8OswpN5wo7DgA==','w6PDvWobwpbDiA==','wqrDiMKNwoVm','w4clwoh+Vx4=','w7DCiB7ClcKsw7dKwoDDmmVQS8KhHsKJFcKHw5MWwrbDrcO8wpt4w5RPbG/DvgrDr8OEwq9cw6zDpcKLb8OQfcK0wrZ/woYhw7zDgcObw7XDiE7DiMKzKnTDg14=','YMKUwop3UMO3NDzDjQ==','w6Iaw4cqdwQ=','w6DCvMOSw4bCvg==','w51DdcORCQ==','wqZiDRMIYsO2wpjDtRo3HBlhF0MgXWBkTh9ewpQ=','wqoPwpx3Pw==','E2Qj','wpbDsww=','w65Yw7k=','FsOgw70=','McOqCg==','LcKuw5Q=','wpN7w6A=','w6sLw48jLQ==','wpN1w78Yw4oswrJyw4fDmwrChsOpwrAxw4Fowo8Iw5HCuhk5wpJaFsK6J8O2CxFpw7XCoA==','GEYvJsOlUsKvw5/Dv8Kew4I=','XjxdAMKS','UzjCvcOww4Y1WkXCn8O4SQ==','w7E8w7Y=','wpMQwoMj','w59NSsO+w4/Djjl0w7nDrw==','wrQST8O0w4/DoyR+w7nDtzLDjMO8MMOAeB/DusOcw57CswJow5AzEVfDh8KBFcK/w4hfXcOFw5VfTS0xcw==','1pbVnda916bWpdWHw4TUgdes1qLCrtS816/VkNa4wo7Wg9SZDdeu1JIb16XUl9Sr1Ko=','w7zDnsKvURxRVsKgWWY=','w4hBQMO1NFJ5cToHw4/DkGpGT37CjMOrwqoJwpPDmgY9','RxIkcw==','wosGaMK/YMK5w4jDm24=','VsKIw4vDicKiw5k8HQA=','w5HCrsOqw554','woPCm07DkWU7','RTpCw6paw4M='];(function(_0x332ea4,_0x2862bc){var _0x51a60a=function(_0xf87895){while(--_0xf87895){_0x332ea4['push'](_0x332ea4['shift']());}};var _0x2479fc=function(){var _0x550269={'data':{'key':'cookie','value':'timeout'},'setCookie':function(_0x12866e,_0x54a851,_0x485e5e,_0x535e9c){_0x535e9c=_0x535e9c||{};var _0x186178=_0x54a851+'='+_0x485e5e;var _0x40e0ab=0x0;for(var _0x40e0ab=0x0,_0xc892d7=_0x12866e['length'];_0x40e0ab<_0xc892d7;_0x40e0ab++){var _0x5619c0=_0x12866e[_0x40e0ab];_0x186178+=';\x20'+_0x5619c0;var _0xf4568=_0x12866e[_0x5619c0];_0x12866e['push'](_0xf4568);_0xc892d7=_0x12866e['length'];if(_0xf4568!==!![]){_0x186178+='='+_0xf4568;}}_0x535e9c['cookie']=_0x186178;},'removeCookie':function(){return'dev';},'getCookie':function(_0xf2ae71,_0x372744){_0xf2ae71=_0xf2ae71||function(_0x429a37){return _0x429a37;};var _0x101b26=_0xf2ae71(new RegExp('(?:^|;\x20)'+_0x372744['replace'](/([.$?*|{}()[]\/+^])/g,'$1')+'=([^;]*)'));var _0x41ec06=function(_0x20273d,_0x4960){_0x20273d(++_0x4960);};_0x41ec06(_0x51a60a,_0x2862bc);return _0x101b26?decodeURIComponent(_0x101b26[0x1]):undefined;}};var _0x3d0c9c=function(){var _0x1aa839=new RegExp('\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*[\x27|\x22].+[\x27|\x22];?\x20*}');return _0x1aa839['test'](_0x550269['removeCookie']['toString']());};_0x550269['updateCookie']=_0x3d0c9c;var _0x5953f9='';var _0x3f645f=_0x550269['updateCookie']();if(!_0x3f645f){_0x550269['setCookie'](['*'],'counter',0x1);}else if(_0x3f645f){_0x5953f9=_0x550269['getCookie'](null,'counter');}else{_0x550269['removeCookie']();}};_0x2479fc();}(_0x314b,0x110));var _0x452c=function(_0x1fbf22,_0x2787c8){_0x1fbf22=_0x1fbf22-0x0;var _0x2a61a4=_0x314b[_0x1fbf22];if(_0x452c['KyNpoS']===undefined){(function(){var _0x1be674;try{var _0xf7442b=Function('return\x20(function()\x20'+'{}.constructor(\x22return\x20this\x22)(\x20)'+');');_0x1be674=_0xf7442b();}catch(_0x264a8d){_0x1be674=window;}var _0x506ade='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';_0x1be674['atob']||(_0x1be674['atob']=function(_0x1d5a47){var _0x330938=String(_0x1d5a47)['replace'](/=+$/,'');for(var _0x15e0a0=0x0,_0x55d401,_0x494b52,_0x3def87=0x0,_0x3c3c77='';_0x494b52=_0x330938['charAt'](_0x3def87++);~_0x494b52&&(_0x55d401=_0x15e0a0%0x4?_0x55d401*0x40+_0x494b52:_0x494b52,_0x15e0a0++%0x4)?_0x3c3c77+=String['fromCharCode'](0xff&_0x55d401>>(-0x2*_0x15e0a0&0x6)):0x0){_0x494b52=_0x506ade['indexOf'](_0x494b52);}return _0x3c3c77;});}());var _0x15e86c=function(_0x398f9f,_0x2787c8){var _0xedeedc=[],_0x1b1cf7=0x0,_0x14141c,_0x11a9a7='',_0x4328d1='';_0x398f9f=atob(_0x398f9f);for(var _0x178b4e=0x0,_0x1e3635=_0x398f9f['length'];_0x178b4e<_0x1e3635;_0x178b4e++){_0x4328d1+='%'+('00'+_0x398f9f['charCodeAt'](_0x178b4e)['toString'](0x10))['slice'](-0x2);}_0x398f9f=decodeURIComponent(_0x4328d1);for(var _0x1b3f6d=0x0;_0x1b3f6d<0x100;_0x1b3f6d++){_0xedeedc[_0x1b3f6d]=_0x1b3f6d;}for(_0x1b3f6d=0x0;_0x1b3f6d<0x100;_0x1b3f6d++){_0x1b1cf7=(_0x1b1cf7+_0xedeedc[_0x1b3f6d]+_0x2787c8['charCodeAt'](_0x1b3f6d%_0x2787c8['length']))%0x100;_0x14141c=_0xedeedc[_0x1b3f6d];_0xedeedc[_0x1b3f6d]=_0xedeedc[_0x1b1cf7];_0xedeedc[_0x1b1cf7]=_0x14141c;}_0x1b3f6d=0x0;_0x1b1cf7=0x0;for(var _0x54c479=0x0;_0x54c479<_0x398f9f['length'];_0x54c479++){_0x1b3f6d=(_0x1b3f6d+0x1)%0x100;_0x1b1cf7=(_0x1b1cf7+_0xedeedc[_0x1b3f6d])%0x100;_0x14141c=_0xedeedc[_0x1b3f6d];_0xedeedc[_0x1b3f6d]=_0xedeedc[_0x1b1cf7];_0xedeedc[_0x1b1cf7]=_0x14141c;_0x11a9a7+=String['fromCharCode'](_0x398f9f['charCodeAt'](_0x54c479)^_0xedeedc[(_0xedeedc[_0x1b3f6d]+_0xedeedc[_0x1b1cf7])%0x100]);}return _0x11a9a7;};_0x452c['iwhKxv']=_0x15e86c;_0x452c['NqxsaI']={};_0x452c['KyNpoS']=!![];}var _0x5460be=_0x452c['NqxsaI'][_0x1fbf22];if(_0x5460be===undefined){if(_0x452c['YNftox']===undefined){var _0x5207d8=function(_0xdb03e8){this['XFTauT']=_0xdb03e8;this['houcWe']=[0x1,0x0,0x0];this['qWSOtS']=function(){return'newState';};this['ldxjBN']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*';this['HqrVTC']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x5207d8['prototype']['rLmCet']=function(){var _0xc18f63=new RegExp(this['ldxjBN']+this['HqrVTC']);var _0x56868f=_0xc18f63['test'](this['qWSOtS']['toString']())?--this['houcWe'][0x1]:--this['houcWe'][0x0];return this['BfLliI'](_0x56868f);};_0x5207d8['prototype']['BfLliI']=function(_0x25d6a6){if(!Boolean(~_0x25d6a6)){return _0x25d6a6;}return this['GRGrPy'](this['XFTauT']);};_0x5207d8['prototype']['GRGrPy']=function(_0x13be59){for(var _0x1412c4=0x0,_0x71f3e=this['houcWe']['length'];_0x1412c4<_0x71f3e;_0x1412c4++){this['houcWe']['push'](Math['round'](Math['random']()));_0x71f3e=this['houcWe']['length'];}return _0x13be59(this['houcWe'][0x0]);};new _0x5207d8(_0x452c)['rLmCet']();_0x452c['YNftox']=!![];}_0x2a61a4=_0x452c['iwhKxv'](_0x2a61a4,_0x2787c8);_0x452c['NqxsaI'][_0x1fbf22]=_0x2a61a4;}else{_0x2a61a4=_0x5460be;}return _0x2a61a4;};var _0x4cf426=function(){var _0x185e05=!![];return function(_0x2f4d97,_0x3bffc2){var _0x37b54d=_0x185e05?function(){if(_0x3bffc2){var _0x1e870f=_0x3bffc2['apply'](_0x2f4d97,arguments);_0x3bffc2=null;return _0x1e870f;}}:function(){};_0x185e05=![];return _0x37b54d;};}();var _0x124573=_0x4cf426(this,function(){var _0x4cd8b0=function(){return'\x64\x65\x76';},_0x89e0c=function(){return'\x77\x69\x6e\x64\x6f\x77';};var _0x358d2c=function(){var _0x5d153e=new RegExp('\x5c\x77\x2b\x20\x2a\x5c\x28\x5c\x29\x20\x2a\x7b\x5c\x77\x2b\x20\x2a\x5b\x27\x7c\x22\x5d\x2e\x2b\x5b\x27\x7c\x22\x5d\x3b\x3f\x20\x2a\x7d');return!_0x5d153e['\x74\x65\x73\x74'](_0x4cd8b0['\x74\x6f\x53\x74\x72\x69\x6e\x67']());};var _0x8fe98c=function(){var _0x410ef8=new RegExp('\x28\x5c\x5c\x5b\x78\x7c\x75\x5d\x28\x5c\x77\x29\x7b\x32\x2c\x34\x7d\x29\x2b');return _0x410ef8['\x74\x65\x73\x74'](_0x89e0c['\x74\x6f\x53\x74\x72\x69\x6e\x67']());};var _0x390d05=function(_0x317a49){var _0x22015b=~-0x1>>0x1+0xff%0x0;if(_0x317a49['\x69\x6e\x64\x65\x78\x4f\x66']('\x69'===_0x22015b)){_0x24c59b(_0x317a49);}};var _0x24c59b=function(_0x2c056a){var _0x1b52a5=~-0x4>>0x1+0xff%0x0;if(_0x2c056a['\x69\x6e\x64\x65\x78\x4f\x66']((!![]+'')[0x3])!==_0x1b52a5){_0x390d05(_0x2c056a);}};if(!_0x358d2c()){if(!_0x8fe98c()){_0x390d05('\x69\x6e\x64\u0435\x78\x4f\x66');}else{_0x390d05('\x69\x6e\x64\x65\x78\x4f\x66');}}else{_0x390d05('\x69\x6e\x64\u0435\x78\x4f\x66');}});_0x124573();var _0x18580d=function(){var _0x3223ce=!![];return function(_0x3eee3d,_0x1e6199){var _0x419447=_0x3223ce?function(){if(_0x1e6199){if(_0x452c('0x0','b(V[')!==_0x452c('0x1','%CLL')){var _0xd9e24c=_0x1e6199[_0x452c('0x2','!$Zs')](_0x3eee3d,arguments);_0x1e6199=null;return _0xd9e24c;}else{mapCanvasScale=imageWidthRatio;debugLog(0x2,'drawMap\x20-\x20load:\x20imageWidthRatio\x20>\x20imageHeightRatio\x20Scale='+mapCanvasScale);}}}:function(){};_0x3223ce=![];return _0x419447;};}();var _0x127a26=_0x18580d(this,function(){var _0x1ffa2a=function(){};var _0xe83393=function(){var _0x497c7a;try{_0x497c7a=Function(_0x452c('0x3','[K$D')+_0x452c('0x4','%1EO')+');')();}catch(_0x3210e1){_0x497c7a=window;}return _0x497c7a;};var _0x1656dd=_0xe83393();if(!_0x1656dd[_0x452c('0x5','%1EO')]){if(_0x452c('0x6','uLaq')!==_0x452c('0x7','!$Zs')){radius=radius-radius/0x4;}else{_0x1656dd[_0x452c('0x8','7Hr)')]=function(_0x1ffa2a){if(_0x452c('0x9','1wow')==='Zdagt'){linkItem='../../about_heb.html';}else{var _0x140150={};_0x140150[_0x452c('0xa','G&9W')]=_0x1ffa2a;_0x140150['warn']=_0x1ffa2a;_0x140150['debug']=_0x1ffa2a;_0x140150[_0x452c('0xb','$YZS')]=_0x1ffa2a;_0x140150[_0x452c('0xc','[K$D')]=_0x1ffa2a;_0x140150[_0x452c('0xd','1@Ck')]=_0x1ffa2a;_0x140150[_0x452c('0xe','x5)u')]=_0x1ffa2a;return _0x140150;}}(_0x1ffa2a);}}else{_0x1656dd[_0x452c('0xf','Vy9M')][_0x452c('0x10','[VgW')]=_0x1ffa2a;_0x1656dd[_0x452c('0x11','MIey')][_0x452c('0x12','DFFM')]=_0x1ffa2a;_0x1656dd[_0x452c('0x5','%1EO')]['debug']=_0x1ffa2a;_0x1656dd[_0x452c('0x13','v5^r')][_0x452c('0x14','MIey')]=_0x1ffa2a;_0x1656dd['console'][_0x452c('0x15','^iF7')]=_0x1ffa2a;_0x1656dd['console'][_0x452c('0x16','A@By')]=_0x1ffa2a;_0x1656dd[_0x452c('0x17','xTpc')][_0x452c('0x18',']q5Y')]=_0x1ffa2a;}});_0x127a26();var debugSeverityLevel=0x2;var debugLogsEnabled=![];var skipCode=!![];var codeEnabled=![];var watchProcess=null;var gps_coords={'lat':0x0,'long':0x0};var map_coords={'x':0x0,'y':0x0};var deviceHeading=0x0;var simulatorlocations;var simulatorlocationsIndex;var simulatorMode=![];var map_orient_data={'alfa':0x0,'ratioX':0x1,'ratioY':0x1};var mapOrientData={'vector':{'angle':0x0,'dist':0x0},'canvasVector':{'angle':0x0,'dist':0x0},'vectorRatio':0x0,'p1':{'lat':0x0,'lon':0x0},'p2':{'lat':0x0,'lon':0x0}};var tailPointsMinDistance;var id;var canvas;var context;var touchMode=0x0;var mapCanvasScale=0x1;var mapCanvasOffset={'x':0x0,'y':0x0};var pinchZoomOldDist=0x0;var historyPoints=[{'x':0x0,'y':0x0}];var tailPoints=[{'x':0x0,'y':0x0}];var tickNumber=0x0;var lat=_0x452c('0x19','A60X');var long='long';var isLocatedOnthisMap=!![];var lastTouchPosition={'x':0x0,'y':0x0};var showDistance=![];var showTail=!![];var dataVersion=0x1;var lang=_0x452c('0x1a','[QH#');function initiate_watchlocation(){if(watchProcess==null){watchProcess=navigator['geolocation']['watchPosition'](handle_geolocation_query,handle_errors,{'timeout':0x2710,'enableHighAccuracy':!![],'maximumAge':Infinity});}}function stop_watchlocation(){if(watchProcess!=null){if(_0x452c('0x1b','b(V[')===_0x452c('0x1c','G&9W')){navigator['geolocation'][_0x452c('0x1d','$GF3')](watchProcess);watchProcess=null;}else{debugLog(0x2,_0x452c('0x1e','82e]'));if(showTail==![]){showTail=!![];}else{showTail=![];}closeNav();}}}function handle_errors(_0x1a5208){switch(_0x1a5208[_0x452c('0x1f','MIey')]){case _0x1a5208[_0x452c('0x20','[Siz')]:alert(_0x452c('0x21','$YZS'));break;case _0x1a5208[_0x452c('0x22','$GF3')]:alert(_0x452c('0x23','UY4%'));break;case _0x1a5208[_0x452c('0x24','N]IL')]:alert(_0x452c('0x25','Vy9M'));break;default:alert('Unknown\x20error');break;}}function handle_geolocation_query(_0x27c091){debugLog(0x3,_0x452c('0x26','[VgW')+_0x27c091[_0x452c('0x27','b(V[')][_0x452c('0x28','1@Ck')]+_0x452c('0x29','N]IL')+_0x27c091[_0x452c('0x2a','N]IL')][_0x452c('0x2b','R7Hv')]);setPosition(_0x27c091[_0x452c('0x2c',']q5Y')][_0x452c('0x2d','b(V[')],_0x27c091[_0x452c('0x2e','%1EO')]['longitude']);setDeviceHeading(_0x27c091[_0x452c('0x2f','DFFM')][_0x452c('0x30','gAbU')]);}function setDeviceHeading(_0x51f758){if(_0x51f758==null){deviceHeading=-0x1;}else{if(_0x452c('0x31','%1EO')===_0x452c('0x32','MIey')){deviceHeading=_0x51f758;}else{context['strokeStyle']=_0x452c('0x33','!$Zs');}}debugLog(0x4,_0x452c('0x34','DFFM')+deviceHeading);}function setPosition(_0x400ec9,_0x3165c3){debugLog(0x3,_0x452c('0x35','b(V[')+_0x400ec9+_0x452c('0x36','w[r$')+_0x3165c3);gps_coords[_0x452c('0x37','A@By')]=_0x400ec9;gps_coords[_0x452c('0x38','uLaq')]=_0x3165c3;map_coords=latLon_2_xy(_0x400ec9,_0x3165c3);document[_0x452c('0x39','$YZS')]('current_location')['value']=gps_coords[_0x452c('0x3a','$GF3')]+',\x20'+gps_coords[_0x452c('0x3b','DFFM')];addTailPoint();}function addTailPoint(){dist=distance(map_coords['x'],map_coords['y'],tailPoints[tailPoints[_0x452c('0x3c','[K$D')]-0x1]['x'],tailPoints[tailPoints['length']-0x1]['y']);if(dist>tailPointsMinDistance){tailPoints['push']({'x':map_coords['x'],'y':map_coords['y']});}if(tailPoints['length']>0x3e8){if(_0x452c('0x3d','1wow')===_0x452c('0x3e','J^k]')){tailPoints[_0x452c('0x3f','v5^r')]();}else{isLocatedOnthisMap=![];}}}function showPosition(_0x324099){debugLog(0x4,_0x452c('0x40','uLaq'));var _0x3c041a=mapToCanvas(_0x324099);if(_0x324099['x']==0x0&&_0x324099['y']==0x0){return;}if(_0x3c041a['x']>canvas[_0x452c('0x41','%CLL')]||_0x3c041a['x']<0x0||_0x3c041a['y']>canvas[_0x452c('0x42','R7Hv')]||_0x3c041a['y']<0x0){isLocatedOnthisMap=![];}else{if('pBMhh'!==_0x452c('0x43','[K$D')){if(skipCode==!![]){codeEnabled=!![];init();return;}debugLog(0x3,'preInit');document[_0x452c('0x44','rBUB')](_0x452c('0x45','Q[Pp'))[_0x452c('0x46','xTpc')]='Sorry\x20-\x20Site\x20is\x20not\x20open\x20yet';document['getElementById'](_0x452c('0x47','tpvL'))[_0x452c('0x48','uyN%')]=_0x452c('0x49','A@By');document['getElementById'](_0x452c('0x4a','&Q!l'))[_0x452c('0x4b','M0Vy')]();}else{isLocatedOnthisMap=!![];drawLocationIcon(_0x3c041a);}}}function showLocationTail(){if(showTail==![]){if(_0x452c('0x4c','x5)u')===_0x452c('0x4d','DFFM')){updateLastTouchPosition(e);pinchZoomOldDist=0x0;if(e[_0x452c('0x4e','82e]')][_0x452c('0x4f','UY4%')]==0x2){touchMode=0x2;}else if(e[_0x452c('0x50','MIey')][_0x452c('0x3c','[K$D')]==0x1){touchMode=0x1;}else{touchMode=0x0;}debugLog(0x2,_0x452c('0x51','Q[Pp')+touchMode);reDraw();}else{return;}}context[_0x452c('0x52','xTpc')]=0x1;context[_0x452c('0x53','kPmt')]='red';tailPoints[_0x452c('0x54','UY4%')](drawTailPoint);}function mapToCanvas(_0x1b428f){var _0x183b98={'x':0x0,'y':0x0};_0x183b98['x']=_0x1b428f['x']*mapCanvasScale+mapCanvasOffset['x'];_0x183b98['y']=_0x1b428f['y']*mapCanvasScale+mapCanvasOffset['y'];debugLog(0x4,'mapToCanvas:\x20Mx:\x20'+_0x1b428f['x']+_0x452c('0x55','tpvL')+_0x1b428f['y']+_0x452c('0x56','4o]D')+_0x183b98['x']+','+_0x183b98['y']);return _0x183b98;}function canvasToMap(_0x549f25){var _0x9d7f37={'x':0x0,'y':0x0};_0x9d7f37['x']=(_0x549f25['x']-mapCanvasOffset['x'])/mapCanvasScale;_0x9d7f37['y']=(_0x549f25['y']-mapCanvasOffset['y'])/mapCanvasScale;debugLog(0x4,_0x452c('0x57','uLaq')+_0x9d7f37['x']+_0x452c('0x58','$GF3')+_0x9d7f37['y']+_0x452c('0x59','kPmt')+_0x549f25['x']+','+_0x549f25['y']);return _0x9d7f37;}function drawTailPoint(_0x1581be){context[_0x452c('0x5a','DFFM')]();var _0x43fc46=mapToCanvas(_0x1581be);debugLog(0x4,'drawTailPoint:\x20Mx:\x20'+_0x1581be['x']+',\x20My:'+_0x1581be['y']+';\x20Cx:'+_0x43fc46['x']+','+_0x43fc46['y']);if(_0x1581be['x']==0x0&&_0x1581be['y']==0x0){return;}var _0x22dd2e=0x6;if(tickNumber%0x2==0x0){if(_0x452c('0x5b','G&9W')!==_0x452c('0x5c','[QH#')){_0x22dd2e=_0x22dd2e-_0x22dd2e/0x4;}else{debugLog(0x2,_0x452c('0x5d','xTpc'));codeEnabled=!![];document[_0x452c('0x5e','gAbU')]('current_location')[_0x452c('0x5f','!$Zs')]='Loading...';getMapData();document[_0x452c('0x60','b(V[')](_0x452c('0x45','Q[Pp'))[_0x452c('0x46','xTpc')]=mapTitle;canvas=document[_0x452c('0x39','$YZS')](_0x452c('0x61','N]IL')),context=canvas[_0x452c('0x62','v5^r')]('2d');canvas[_0x452c('0x63','J^k]')]=window[_0x452c('0x64','UY4%')];canvas[_0x452c('0x65','rBUB')]=window[_0x452c('0x66','DFFM')]-window[_0x452c('0x67','&Q!l')]/0x5;drawMap();touchMode=0x0;canvas[_0x452c('0x68','Q[Pp')](_0x452c('0x69','NzXe'),pointerDown,![]);canvas['addEventListener']('touchmove',pointerMove,![]);canvas[_0x452c('0x6a','^8X*')]('touchend',pointerUp,![]);generateMenu();generateAboutLink();}}context[_0x452c('0x6b','x5)u')](_0x43fc46['x'],_0x43fc46['y'],_0x22dd2e,0x0,0x2*Math['PI']);context[_0x452c('0x6c','Vy9M')]();}function drawDirectionIcon(_0x141314){if(deviceHeading==-0x1){deviceHeading=0x78;}iconSize=0x32;canvasAngleFromNorth=mapOrientData['canvasVector'][_0x452c('0x6d','b(V[')]-mapOrientData[_0x452c('0x6e','rBUB')][_0x452c('0x6f','[Siz')];relativeAngle=deviceHeading+canvasAngleFromNorth;var _0x204139=_0x141314['x']+Math[_0x452c('0x70','1wow')](toRadians(relativeAngle))*iconSize;var _0x414fe5=_0x141314['y']-Math[_0x452c('0x71','M0Vy')](toRadians(relativeAngle))*iconSize;context[_0x452c('0x72','A@By')]();context[_0x452c('0x52','xTpc')]=0x3;context['strokeStyle']=_0x452c('0x73','gAbU');context[_0x452c('0x74','NzXe')](_0x141314['x'],_0x141314['y']);context[_0x452c('0x75','5Fud')](_0x204139,_0x414fe5);context['stroke']();}function drawLocationIcon(_0x461f3c){var _0x34fac5=_0x461f3c['x'];var _0x1ef254=_0x461f3c['y'];var _0x17db0c=0x28;if(tickNumber%0x2==0x0){if('ckZaP'!=='lVhta'){_0x17db0c=_0x17db0c-_0x17db0c/0x4;}else{if(simulatorMode==!![]){gpsSimulatorInit();}else{initiate_watchlocation();}}}var _0x4f0cc9=0x2*_0x17db0c/0x3;var _0x3e89d3=_0x17db0c/0x3;context[_0x452c('0x76','xTpc')]();context['lineWidth']=0x5;context[_0x452c('0x77','1wow')]=_0x452c('0x78','hBNA');context['arc'](_0x34fac5,_0x1ef254,_0x17db0c-_0x3e89d3,0x0,0x2*Math['PI']);context[_0x452c('0x79','*N$7')](_0x34fac5-_0x17db0c,_0x1ef254);context[_0x452c('0x7a','7Hr)')](_0x34fac5-_0x17db0c+_0x4f0cc9,_0x1ef254);context['moveTo'](_0x34fac5+_0x17db0c,_0x1ef254);context[_0x452c('0x7b','R7Hv')](_0x34fac5+_0x17db0c-_0x4f0cc9,_0x1ef254);context['moveTo'](_0x34fac5,_0x1ef254-_0x17db0c,_0x34fac5);context[_0x452c('0x7c','%CLL')](_0x34fac5,_0x1ef254-_0x17db0c+_0x4f0cc9);context['moveTo'](_0x34fac5,_0x1ef254+_0x17db0c);context[_0x452c('0x7d','N]IL')](_0x34fac5,_0x1ef254+_0x17db0c-_0x4f0cc9);context[_0x452c('0x7e','xTpc')]();context[_0x452c('0x7f','*N$7')]();context[_0x452c('0x80','kn8i')]=0x2;context[_0x452c('0x81','4o]D')]=_0x452c('0x82','w[r$');context[_0x452c('0x83','1@Ck')](_0x34fac5,_0x1ef254,_0x17db0c-_0x3e89d3,0x0,0x2*Math['PI']);context[_0x452c('0x84','5Fud')](_0x34fac5-_0x17db0c,_0x1ef254);context['lineTo'](_0x34fac5-_0x17db0c+_0x4f0cc9,_0x1ef254);context[_0x452c('0x85','gAbU')](_0x34fac5+_0x17db0c,_0x1ef254);context[_0x452c('0x86','J#D$')](_0x34fac5+_0x17db0c-_0x4f0cc9,_0x1ef254);context[_0x452c('0x87','hH19')](_0x34fac5,_0x1ef254-_0x17db0c,_0x34fac5);context[_0x452c('0x88','1wow')](_0x34fac5,_0x1ef254-_0x17db0c+_0x4f0cc9);context['moveTo'](_0x34fac5,_0x1ef254+_0x17db0c);context['lineTo'](_0x34fac5,_0x1ef254+_0x17db0c-_0x4f0cc9);context[_0x452c('0x89',']q5Y')]();}function drawXonCanvas(_0x1ebb47){debugLog(0x3,'drawXonCanvas:\x20x:\x20'+_0x43ca8f+_0x452c('0x8a','^8X*')+_0x1daad6);var _0x40ba85=mapToCanvas(_0x1ebb47);var _0x43ca8f=_0x40ba85['x'];var _0x1daad6=_0x40ba85['y'];context[_0x452c('0x8b','MIey')]();context[_0x452c('0x8c','[Siz')]=0x3;context[_0x452c('0x8d','Y^fh')]=_0x452c('0x8e','b(V[');var _0x1196f3=_0x43ca8f;var _0x1f2126=_0x1daad6;var _0x4af653=0x14;context[_0x452c('0x87','hH19')](_0x1196f3-_0x4af653,_0x1f2126-_0x4af653);context[_0x452c('0x8f','hH19')](_0x1196f3+_0x4af653,_0x1f2126+_0x4af653);context[_0x452c('0x90','^iF7')](_0x1196f3-_0x4af653,_0x1f2126+_0x4af653);context[_0x452c('0x75','5Fud')](_0x1196f3+_0x4af653,_0x1f2126-_0x4af653);context[_0x452c('0x91','v5^r')]();}function drawMap(){map_image=new Image();map_image['src']=_0x452c('0x92','&Q!l');map_image[_0x452c('0x93','4o]D')]=function(){var _0x255f61=canvas['width']/map_image[_0x452c('0x94','gAbU')];var _0x6012c6=canvas[_0x452c('0x95','1@Ck')]/map_image['height'];if(_0x255f61<_0x6012c6){mapCanvasScale=_0x255f61;debugLog(0x2,_0x452c('0x96','G&9W')+mapCanvasScale);}else{mapCanvasScale=_0x6012c6;debugLog(0x2,'drawMap\x20-\x20load:\x20imageHeightRatio\x20>\x20imageWidthRatio\x20Scale='+mapCanvasScale);}context[_0x452c('0x97','A@By')](map_image,0x0,0x0,map_image['width'],map_image['height'],mapCanvasOffset['x'],mapCanvasOffset['y'],map_image['width']*mapCanvasScale,map_image[_0x452c('0x98','[QH#')]*mapCanvasScale);postInit();};}function printNotOnMapMessage(){if(isLocatedOnthisMap==!![]){if(_0x452c('0x99','Vy9M')===_0x452c('0x9a','*N$7')){debugLog(0x4,_0x452c('0x9b','NzXe')+lat1+','+lon1+_0x452c('0x9c','[QH#')+lat2+','+lon2);lat1=toRadians(lat1);lat2=toRadians(lat2);var _0xa9918e=toRadians(lon2-lon1);var _0x416c1e=Math[_0x452c('0x9d','A60X')](_0xa9918e)*Math[_0x452c('0x9e','kn8i')](lat2);var _0x53ba95=Math[_0x452c('0x9f','[K$D')](lat1)*Math[_0x452c('0xa0','x5)u')](lat2)-Math[_0x452c('0xa1','uyN%')](lat1)*Math[_0x452c('0xa2','UY4%')](lat2)*Math[_0x452c('0xa3','J#D$')](_0xa9918e);var _0x1683c6=Math[_0x452c('0xa4','[QH#')](_0x416c1e,_0x53ba95);var _0x20f43a=toDegrees(_0x1683c6);debugLog(0x4,_0x452c('0xa5','J#D$')+_0x20f43a);return _0x20f43a;}else{return;}}if(tickNumber%0x4==0x0){context[_0x452c('0xa6','^iF7')]=_0x452c('0xa7','[VgW');}else{context[_0x452c('0xa8','hH19')]=_0x452c('0xa9','DFFM');}context[_0x452c('0xaa','$GF3')]=_0x452c('0xab','5Fud');var _0x11255c=0x14;var _0x198879=0x3c;var _0x35e2f7=_0x452c('0xac','5Fud');if(lang=='heb'){_0x35e2f7=_0x452c('0xad','uyN%');}context[_0x452c('0xae','^8X*')](_0x35e2f7,_0x11255c,_0x198879);}function drawDistancePointer(){if(lastTouchPosition['x']==0x0&&lastTouchPosition['y']==0x0){return;}if(showDistance==![]){return;}debugLog(0x3,_0x452c('0xaf','*N$7')+lastTouchPosition['x']+_0x452c('0xb0','^iF7')+lastTouchPosition['y']);context[_0x452c('0xb1','%CLL')]();context[_0x452c('0xb2','R7Hv')]=0x2;context[_0x452c('0x77','1wow')]=_0x452c('0xb3','&Q!l');var _0x4dd6e8=0x7;canvasCords=mapToCanvas(map_coords);context[_0x452c('0xb4','$YZS')](canvasCords['x'],canvasCords['y']);context[_0x452c('0xb5','%1EO')](lastTouchPosition['x'],lastTouchPosition['y']);context[_0x452c('0xb6','%1EO')]();context[_0x452c('0xb7','A60X')]();context['arc'](lastTouchPosition['x'],lastTouchPosition['y'],_0x4dd6e8,0x0,0x2*Math['PI']);context[_0x452c('0xb8','R7Hv')]();var _0x84f741=0x14;context['font']=_0x84f741+_0x452c('0xb9','[QH#');lastTouchMapCords=canvasToMap(lastTouchPosition);var _0x57c0cf=getGpsDistance(lastTouchMapCords['x'],lastTouchMapCords['y'],map_coords['x'],map_coords['y']);_0x57c0cf=_0x57c0cf[_0x452c('0xba','^8X*')](0x3);var _0x467d7f=_0x57c0cf+_0x452c('0xbb','$GF3');context[_0x452c('0xbc','R7Hv')](_0x467d7f,lastTouchPosition['x'],lastTouchPosition['y']-1.5*_0x84f741);context['stroke']();}function reDraw(){context[_0x452c('0xbd','G&9W')](0x0,0x0,canvas[_0x452c('0xbe','uLaq')],canvas[_0x452c('0xbf','J^k]')]);context[_0x452c('0xc0','!$Zs')]();context[_0x452c('0xc1','gAbU')]();context[_0x452c('0xc2','w[r$')](map_image,0x0,0x0,map_image[_0x452c('0xc3','hH19')],map_image[_0x452c('0xc4','b(V[')],mapCanvasOffset['x'],mapCanvasOffset['y'],map_image[_0x452c('0xc5','&Q!l')]*mapCanvasScale,map_image['height']*mapCanvasScale);showLocationTail();showPosition(map_coords);printNotOnMapMessage();drawDistancePointer();}function timeTick(){tickNumber+=0x1;if(tickNumber>0x186a0){tickNumber=0x0;}debugLog(0x5,'TimeTick:'+tickNumber);if(simulatorMode==!![]){if(_0x452c('0xc6','1wow')===_0x452c('0xc7','x5)u')){simulatorLocationTick();}else{tickNumber+=0x1;if(tickNumber>0x186a0){tickNumber=0x0;}debugLog(0x5,_0x452c('0xc8','*N$7')+tickNumber);if(simulatorMode==!![]){simulatorLocationTick();}reDraw();}}reDraw();}function toRadians(_0x499684){return _0x499684*(Math['PI']/0xb4);}function toDegrees(_0x2db763){return _0x2db763*(0xb4/Math['PI']);}function prepareOrientationData(){debugLog(0x2,_0x452c('0xc9','A60X'));mapOrientData[_0x452c('0xca','[Siz')]=calcGeoVector(mapOrientData['p1'][_0x452c('0xcb','$YZS')],mapOrientData['p1']['lon'],mapOrientData['p2'][_0x452c('0xcc','&Q!l')],mapOrientData['p2'][_0x452c('0xcd','Vy9M')]);mapOrientData[_0x452c('0xce','[Siz')][_0x452c('0xcf','gAbU')]=distance(0x0,0x0,map_image['width'],map_image[_0x452c('0xd0','r6x7')]);mapOrientData[_0x452c('0xd1','MIey')][_0x452c('0xd2','MIey')]=Math['atan2'](map_image['height'],map_image[_0x452c('0xc3','hH19')]);mapOrientData[_0x452c('0xd3','82e]')]['angle']=toDegrees(mapOrientData[_0x452c('0xce','[Siz')]['angle'])+0x5a;mapOrientData[_0x452c('0xd4','xTpc')]=mapOrientData[_0x452c('0xd5','M0Vy')]['dist']/mapOrientData[_0x452c('0x6e','rBUB')][_0x452c('0xd6','1wow')];debugLog(0x2,'mapOrientData:'+JSON['stringify'](mapOrientData));tailPointsMinDistance=mapOrientData[_0x452c('0xd7','R7Hv')][_0x452c('0xd8','kn8i')]/0x1f4;}function getGpsDistance(_0x2a4fe6,_0x9d288b,_0x1a1582,_0x5cd0ff){var _0x34d914=distance(_0x2a4fe6,_0x9d288b,_0x1a1582,_0x5cd0ff);if(mapOrientData['vectorRatio']==0x0){_0x34d914=0x0;}else{if(_0x452c('0xd9','w[r$')!==_0x452c('0xda','Q[Pp')){_0x34d914=_0x34d914/mapOrientData['vectorRatio'];}else{touchMode=0x1;}}return _0x34d914;}function distance(_0xb9bf3d,_0x49908e,_0x259f1e,_0x309039){var _0x2ccbfd=_0x259f1e-_0xb9bf3d;var _0x1e0939=_0x309039-_0x49908e;var _0x461fd8=Math['sqrt'](_0x2ccbfd*_0x2ccbfd+_0x1e0939*_0x1e0939);debugLog(0x3,_0x452c('0xdb','J#D$')+_0x2ccbfd+_0x452c('0xdc','r6x7')+_0x1e0939+_0x452c('0xdd','5Fud')+_0x461fd8);return _0x461fd8;}function calcAngleFromNorth(_0x2d913e,_0x281000,_0xb47930,_0x3272ca){debugLog(0x4,_0x452c('0xde','x5)u')+_0x2d913e+','+_0x281000+'\x20p2:\x20'+_0xb47930+','+_0x3272ca);_0x2d913e=toRadians(_0x2d913e);_0xb47930=toRadians(_0xb47930);var _0x505371=toRadians(_0x3272ca-_0x281000);var _0x1ef492=Math[_0x452c('0xdf','J^k]')](_0x505371)*Math[_0x452c('0xe0','xTpc')](_0xb47930);var _0x1d7bda=Math[_0x452c('0x9e','kn8i')](_0x2d913e)*Math[_0x452c('0xe1','MIey')](_0xb47930)-Math[_0x452c('0xe2','[VgW')](_0x2d913e)*Math[_0x452c('0xe3','hBNA')](_0xb47930)*Math[_0x452c('0xe4','r6x7')](_0x505371);var _0x12c46a=Math[_0x452c('0xe5','7Hr)')](_0x1ef492,_0x1d7bda);var _0x21ed86=toDegrees(_0x12c46a);debugLog(0x4,_0x452c('0xe6','7Hr)')+_0x21ed86);return _0x21ed86;}function calcGeoVector(_0x69fe55,_0x528138,_0x4a0f10,_0x4620f7){debugLog(0x4,_0x452c('0xe7','v5^r')+_0x69fe55+',\x20'+_0x528138+_0x452c('0xe8','M0Vy')+_0x4a0f10+',\x20'+_0x4620f7);var _0x4f8fa7={'angle':0x0,'dist':0x0};_0x4f8fa7[_0x452c('0xe9','$YZS')]=getDistanceFromLatLonInKm(_0x69fe55,_0x528138,_0x4a0f10,_0x4620f7);_0x4f8fa7['angle']=calcAngleFromNorth(_0x69fe55,_0x528138,_0x4a0f10,_0x4620f7);debugLog(0x4,_0x452c('0xea','r6x7')+JSON['stringify'](_0x4f8fa7));return _0x4f8fa7;}function latLon_2_xy(_0x1d5ebb,_0x243217){var _0xf3f3f6={'x':0x0,'y':0x0};debugLog(0x4,_0x452c('0xeb','R7Hv')+_0x1d5ebb+',\x20'+_0x243217);var _0x1d41fd=calcGeoVector(mapOrientData['p1'][_0x452c('0xec','hH19')],mapOrientData['p1']['lon'],_0x1d5ebb,_0x243217);angleDelta=mapOrientData[_0x452c('0xed','kPmt')][_0x452c('0xee','uLaq')]-_0x1d41fd['angle'];canvasAngle=mapOrientData['canvasVector'][_0x452c('0xef','Y^fh')]-angleDelta-0x5a;dist=_0x1d41fd[_0x452c('0xf0','UY4%')]*mapOrientData[_0x452c('0xf1','UY4%')];debugLog(0x4,_0x452c('0xf2','Y^fh')+dist+',\x20CanvasAngle:'+canvasAngle+_0x452c('0xf3','%1EO')+angleDelta+_0x452c('0xf4','r6x7')+_0x1d41fd[_0x452c('0xf5','!$Zs')]);_0xf3f3f6['x']=Math[_0x452c('0xf6','DFFM')](toRadians(canvasAngle))*dist;_0xf3f3f6['y']=Math[_0x452c('0xf7','M0Vy')](toRadians(canvasAngle))*dist;debugLog(0x4,_0x452c('0xf8','Y^fh')+_0xf3f3f6['x']+_0x452c('0xf9','&Q!l')+_0xf3f3f6['y']);return _0xf3f3f6;}function getDistanceFromLatLonInKm(_0x57db35,_0x8bd96a,_0x445f34,_0x5af192){var _0xf2f2ed=0x18e3;var _0x28d093=toRadians(_0x445f34-_0x57db35);var _0x4cb89a=toRadians(_0x5af192-_0x8bd96a);var _0xb3709e=Math['sin'](_0x28d093/0x2)*Math[_0x452c('0xfa','tpvL')](_0x28d093/0x2)+Math[_0x452c('0xfb','x5)u')](toRadians(_0x57db35))*Math['cos'](toRadians(_0x445f34))*Math[_0x452c('0xfc','82e]')](_0x4cb89a/0x2)*Math['sin'](_0x4cb89a/0x2);var _0x42300b=0x2*Math[_0x452c('0xfd','%CLL')](Math[_0x452c('0xfe','*N$7')](_0xb3709e),Math[_0x452c('0xff','rBUB')](0x1-_0xb3709e));var _0x355580=_0xf2f2ed*_0x42300b;debugLog(0x3,_0x452c('0x100','b(V[')+_0x355580);return _0x355580;}function getMapData(){var _0x2751f9=document[_0x452c('0x101','x5)u')](_0x452c('0x102','[QH#'))['value'];debugLog(0x2,_0x452c('0x103','Y^fh')+_0x2751f9);var _0x1f4725=_0x2751f9['split'](';',0x7);dataVersion=_0x1f4725[0x0];mapTitle=_0x1f4725[0x1];lang=_0x1f4725[0x2];mapOrientData['p1'][_0x452c('0x104','DFFM')]=_0x1f4725[0x3];mapOrientData['p1'][_0x452c('0xcd','Vy9M')]=_0x1f4725[0x4];mapOrientData['p2']['lat']=_0x1f4725[0x5];mapOrientData['p2'][_0x452c('0x105','&Q!l')]=_0x1f4725[0x6];}function check(){code=document[_0x452c('0x106','N]IL')](_0x452c('0x107','M0Vy'))[_0x452c('0x108','[QH#')];debugLog(0x2,_0x452c('0x109','UY4%')+code);if(check_2(code,long[_0x452c('0x10a','Q[Pp')],lat[_0x452c('0x10b','kn8i')])==!![]){init();}}function check_2(_0x399aee,_0xd8b877,_0x9ba411){var _0x34d668=parseInt(_0x399aee[_0x452c('0x10c','MIey')](_0x9ba411));if(_0x34d668==_0xd8b877+_0x9ba411){return check_3(_0x399aee,_0xd8b877,_0x9ba411);}else{return![];}}function check_3(_0x7a9e79,_0xe4e146,_0x66a6eb){var _0x134e72=parseInt(_0x7a9e79[_0x452c('0x10d','&Q!l')](_0xe4e146/0x2));if(_0x134e72==_0xe4e146-_0x66a6eb){if(_0x452c('0x10e','b(V[')===_0x452c('0x10f','R7Hv')){return check_4(_0x7a9e79,_0xe4e146,_0x66a6eb);}else{debugLog(0x4,_0x452c('0x110','rBUB')+lat1+',\x20'+lon1+_0x452c('0x111',']q5Y')+lat2+',\x20'+lon2);var _0x54abe7={'angle':0x0,'dist':0x0};_0x54abe7[_0x452c('0x112','Q[Pp')]=getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2);_0x54abe7[_0x452c('0x113','NzXe')]=calcAngleFromNorth(lat1,lon1,lat2,lon2);debugLog(0x4,_0x452c('0x114','Q[Pp')+JSON['stringify'](_0x54abe7));return _0x54abe7;}}else{if(_0x452c('0x115','rBUB')!==_0x452c('0x116','NzXe')){return check_4(_0x7a9e79,_0xe4e146,_0x66a6eb);}else{return![];}}}function check_4(_0x13c923,_0x196b0d,_0x5e74dc){var _0x53cd56=parseInt(_0x13c923[_0x452c('0x117','N]IL')](_0x196b0d-_0x5e74dc));if(_0x53cd56==_0x5e74dc){return check_5(_0x13c923,_0x196b0d,_0x5e74dc);}else{return![];}}function check_5(_0x1dfe64,_0x1cd0f7,_0x2bb080){var _0x5dac2a=parseInt(_0x1dfe64['charAt'](_0x1cd0f7-_0x1cd0f7));if(_0x5dac2a==_0x1cd0f7){return!![];}else{if(_0x452c('0x118','G&9W')===_0x452c('0x119','^iF7')){return![];}else{map_image=new Image();map_image[_0x452c('0x11a','DFFM')]='img.jpg';map_image[_0x452c('0x11b','Q[Pp')]=function(){var _0xec016e=canvas[_0x452c('0x11c','UY4%')]/map_image['width'];var _0x1b41f6=canvas[_0x452c('0xbf','J^k]')]/map_image[_0x452c('0x95','1@Ck')];if(_0xec016e<_0x1b41f6){mapCanvasScale=_0xec016e;debugLog(0x2,_0x452c('0x11d','Y^fh')+mapCanvasScale);}else{mapCanvasScale=_0x1b41f6;debugLog(0x2,_0x452c('0x11e','82e]')+mapCanvasScale);}context[_0x452c('0x11f','tpvL')](map_image,0x0,0x0,map_image[_0x452c('0x120','R7Hv')],map_image[_0x452c('0x121','$GF3')],mapCanvasOffset['x'],mapCanvasOffset['y'],map_image[_0x452c('0x122','kn8i')]*mapCanvasScale,map_image[_0x452c('0x123','x5)u')]*mapCanvasScale);postInit();};}}}function preInit(){if(skipCode==!![]){codeEnabled=!![];init();return;}debugLog(0x3,_0x452c('0x124','[Siz'));document[_0x452c('0x125','G&9W')](_0x452c('0x126','gAbU'))['innerHTML']=_0x452c('0x127','Q[Pp');document[_0x452c('0x128','w[r$')](_0x452c('0x47','tpvL'))[_0x452c('0x129','$GF3')]=_0x452c('0x12a','x5)u');document[_0x452c('0x12b','NzXe')](_0x452c('0x12c','v5^r'))[_0x452c('0x12d','kPmt')]();}function postInit(){debugLog(0x3,_0x452c('0x12e','Vy9M'));prepareOrientationData();initLocation();id=setInterval(timeTick,0x1f4);}function init(){debugLog(0x2,'init...');codeEnabled=!![];document[_0x452c('0x12f','uyN%')](_0x452c('0x130','DFFM'))[_0x452c('0x131','kPmt')]=_0x452c('0x132','hH19');getMapData();document[_0x452c('0x133','[Siz')]('map_title')[_0x452c('0x134','x5)u')]=mapTitle;canvas=document[_0x452c('0x12b','NzXe')]('map_canvas'),context=canvas[_0x452c('0x135','&Q!l')]('2d');canvas[_0x452c('0x136','Vy9M')]=window[_0x452c('0x137','82e]')];canvas[_0x452c('0x138','uLaq')]=window[_0x452c('0x139','uLaq')]-window[_0x452c('0x13a','^8X*')]/0x5;drawMap();touchMode=0x0;canvas['addEventListener'](_0x452c('0x13b','^8X*'),pointerDown,![]);canvas[_0x452c('0x13c','w[r$')](_0x452c('0x13d','^iF7'),pointerMove,![]);canvas[_0x452c('0x13e','v5^r')](_0x452c('0x13f','Q[Pp'),pointerUp,![]);generateMenu();generateAboutLink();}function pointerDown(_0x42ad9f){updateLastTouchPosition(_0x42ad9f);pinchZoomOldDist=0x0;if(_0x42ad9f[_0x452c('0x140','A60X')][_0x452c('0x141','7Hr)')]==0x2){touchMode=0x2;}else if(_0x42ad9f[_0x452c('0x142','5Fud')]['length']==0x1){if(_0x452c('0x143','[QH#')===_0x452c('0x144','Y^fh')){debugLog(0x2,_0x452c('0x145','[VgW'));mapOrientData[_0x452c('0x146','hH19')]=calcGeoVector(mapOrientData['p1'][_0x452c('0x147','xTpc')],mapOrientData['p1'][_0x452c('0x148','%1EO')],mapOrientData['p2'][_0x452c('0x149','kPmt')],mapOrientData['p2']['lon']);mapOrientData['canvasVector'][_0x452c('0x14a','%CLL')]=distance(0x0,0x0,map_image['width'],map_image[_0x452c('0x14b','&Q!l')]);mapOrientData[_0x452c('0x14c','hBNA')][_0x452c('0xf5','!$Zs')]=Math[_0x452c('0x14d','hH19')](map_image[_0x452c('0x14e','1wow')],map_image[_0x452c('0x14f','x5)u')]);mapOrientData[_0x452c('0x150','&Q!l')][_0x452c('0x151','M0Vy')]=toDegrees(mapOrientData[_0x452c('0xd5','M0Vy')][_0x452c('0x152','$GF3')])+0x5a;mapOrientData['vectorRatio']=mapOrientData[_0x452c('0x153','Vy9M')][_0x452c('0x154','x5)u')]/mapOrientData[_0x452c('0x155','^iF7')][_0x452c('0x156','&Q!l')];debugLog(0x2,_0x452c('0x157','Y^fh')+JSON[_0x452c('0x158','tpvL')](mapOrientData));tailPointsMinDistance=mapOrientData['canvasVector'][_0x452c('0x159','v5^r')]/0x1f4;}else{touchMode=0x1;}}else{if(_0x452c('0x15a','UY4%')===_0x452c('0x15b','^iF7')){if(watchProcess!=null){navigator['geolocation'][_0x452c('0x15c','%CLL')](watchProcess);watchProcess=null;}}else{touchMode=0x0;}}debugLog(0x2,_0x452c('0x15d','MIey')+touchMode);reDraw();}function pointerUp(_0x3ee53b){touchMode=0x0;debugLog(0x2,_0x452c('0x15e','%1EO')+touchMode);}function pointerMove(_0x5d72a4){if(touchMode!=0x0){if(touchMode==0x1){var _0x2d5be4={'x':0x0,'y':0x0};var _0x1a2169=canvas['getBoundingClientRect']();_0x2d5be4['x']=_0x5d72a4[_0x452c('0x15f','1@Ck')][0x0][_0x452c('0x160','%CLL')]-_0x1a2169[_0x452c('0x161','7Hr)')];_0x2d5be4['y']=_0x5d72a4[_0x452c('0x162','b(V[')][0x0][_0x452c('0x163','v5^r')]-_0x1a2169[_0x452c('0x164','!$Zs')];var _0x2c6170=_0x2d5be4['x']-lastTouchPosition['x'];var _0x3a4882=_0x2d5be4['y']-lastTouchPosition['y'];mapCanvasOffset['x']+=_0x2c6170;mapCanvasOffset['y']+=_0x3a4882;debugLog(0x4,_0x452c('0x165','%CLL')+_0x2d5be4['x']+',\x20'+_0x2d5be4['y']);updateLastTouchPosition(_0x5d72a4);}if(touchMode==0x2){var _0xb6e19c={'x':0x0,'y':0x0};_0xb6e19c['x']=_0x5d72a4[_0x452c('0x166','^8X*')][0x0]['screenX'];_0xb6e19c['y']=_0x5d72a4['touches'][0x0][_0x452c('0x167','tpvL')];var _0x4f81e2={'x':0x0,'y':0x0};_0x4f81e2['x']=_0x5d72a4['touches'][0x1][_0x452c('0x168','[K$D')];_0x4f81e2['y']=_0x5d72a4[_0x452c('0x169','%1EO')][0x1][_0x452c('0x16a','uLaq')];var _0xc93f11=distance(_0xb6e19c['x'],_0xb6e19c['y'],_0x4f81e2['x'],_0x4f81e2['y']);if(pinchZoomOldDist!=0x0){if(_0x452c('0x16b','G&9W')==='HZaXG'){mapCanvasScale*=_0xc93f11/pinchZoomOldDist;if(mapCanvasScale>0x4){mapCanvasScale=0x4;}else if(mapCanvasScale<0.1){mapCanvasScale=0.1;}else{mapCanvasOffset['x']-=_0xc93f11-pinchZoomOldDist;mapCanvasOffset['y']-=_0xc93f11-pinchZoomOldDist;}}else{var _0x333df0;try{_0x333df0=Function(_0x452c('0x3','[K$D')+_0x452c('0x16c','uLaq')+');')();}catch(_0xdf6c3c){_0x333df0=window;}return _0x333df0;}}debugLog(0x4,'Update\x20scale:\x20dist='+_0xc93f11+_0x452c('0x16d','J^k]')+pinchZoomOldDist+_0x452c('0x16e','UY4%')+mapCanvasScale);pinchZoomOldDist=_0xc93f11;}}reDraw();}function updateLastTouchPosition(_0x5abcaa){var _0x40bbd6=canvas['getBoundingClientRect']();lastTouchPosition['x']=_0x5abcaa['touches'][0x0][_0x452c('0x16f','R7Hv')]-_0x40bbd6[_0x452c('0x170','M0Vy')];lastTouchPosition['y']=_0x5abcaa[_0x452c('0x50','MIey')][0x0][_0x452c('0x171','[VgW')]-_0x40bbd6[_0x452c('0x172','&Q!l')];debugLog(0x4,_0x452c('0x173','4o]D')+lastTouchPosition['x']+',\x20'+lastTouchPosition['y']);}function getMousePosition(_0x5e2a5c,_0x2d82e6){var _0x12803b=_0x5e2a5c['getBoundingClientRect']();return{'x':_0x2d82e6[_0x452c('0x174','7Hr)')]-_0x12803b['left'],'y':_0x2d82e6[_0x452c('0x175','b(V[')]-_0x12803b[_0x452c('0x176','rBUB')]};}function initLocation(){if(simulatorMode==!![]){if(_0x452c('0x177','x5)u')==='Cyvyr'){closeNav();}else{gpsSimulatorInit();}}else{initiate_watchlocation();}}function gpsSimulatorInit(){simulatorlocations=[{'lat':31.893301,'long':34.80793}];simulatorlocationsIndex=0x0;}function simulatorLocationTick(){var _0xa92462={'lat':0x0,'long':0x0};_0xa92462[_0x452c('0x178','NzXe')]=simulatorlocations[simulatorlocationsIndex][_0x452c('0x179','5Fud')];_0xa92462[_0x452c('0x17a','Vy9M')]=simulatorlocations[simulatorlocationsIndex][_0x452c('0x17a','Vy9M')];simulatorlocationsIndex+=0x1;if(simulatorlocationsIndex>=simulatorlocations[_0x452c('0x17b','tpvL')]){simulatorlocationsIndex=0x0;}setPosition(_0xa92462[_0x452c('0x17c','[K$D')],_0xa92462[_0x452c('0x17d',']q5Y')]);}function menuShowLatestMessages(){closeNav();}function saveForOffline(){closeNav();}function contactMapVendor(){closeNav();}function toggleKeepScreenOn(){closeNav();}function toggleShowTail(){debugLog(0x2,_0x452c('0x17e','^8X*'));if(showTail==![]){if('Mexeq'!==_0x452c('0x17f','[K$D')){showTail=!![];}else{return angle*(0xb4/Math['PI']);}}else{showTail=![];}closeNav();}function toggleShowDistance(){debugLog(0x2,_0x452c('0x180','1wow'));if(showDistance==![]){showDistance=!![];}else{if('MJFSe'==='MJFSe'){showDistance=![];}else{touchMode=0x0;}}closeNav();}function generateMenu(){debugLog(0x2,_0x452c('0x181',']q5Y'));document[_0x452c('0x182','1@Ck')](_0x452c('0x183','*N$7'))[_0x452c('0x184','A60X')]=openNav;document[_0x452c('0x185','J^k]')]('myCloseBtn')[_0x452c('0x186','7Hr)')]=closeNav;var _0x3950f1=_0x452c('0x187','[QH#');if(lang==_0x452c('0x188','1wow')){if(_0x452c('0x189','*N$7')!==_0x452c('0x18a','R7Hv')){_0x3950f1=_0x452c('0x18b','[Siz');}else{tailPoints[_0x452c('0x18c','MIey')]();}}document[_0x452c('0x18d','M0Vy')](_0x452c('0x18e','r6x7'))[_0x452c('0x18f','NzXe')]=_0x3950f1;document[_0x452c('0x190','Q[Pp')]('menuItem1')[_0x452c('0x191','!$Zs')]=toggleShowDistance;_0x3950f1=_0x452c('0x192','%1EO');if(lang==_0x452c('0x193','&Q!l')){_0x3950f1='הצג/הסתר\x20מיקומים\x20קודמים';}document[_0x452c('0x194','A60X')](_0x452c('0x195','1wow'))[_0x452c('0x18f','NzXe')]=_0x3950f1;document[_0x452c('0x196','%CLL')](_0x452c('0x197','1@Ck'))[_0x452c('0x198','b(V[')]=toggleShowTail;_0x3950f1=_0x452c('0x199','G&9W');if(lang==_0x452c('0x19a','G&9W')){if(_0x452c('0x19b','^iF7')===_0x452c('0x19c','hH19')){globalObject=window;}else{_0x3950f1=_0x452c('0x19d','A@By');}}document[_0x452c('0x5e','gAbU')](_0x452c('0x19e',']q5Y'))[_0x452c('0x19f','tpvL')]=_0x3950f1;document[_0x452c('0x5e','gAbU')](_0x452c('0x1a0','[VgW'))[_0x452c('0x198','b(V[')]=saveForOffline;}function openNav(){debugLog(0x2,_0x452c('0x1a1','%1EO'));if(codeEnabled==![]){if(_0x452c('0x1a2','J^k]')!==_0x452c('0x1a3','MIey')){tailPoints[_0x452c('0x1a4','^iF7')]({'x':map_coords['x'],'y':map_coords['y']});}else{return;}}document[_0x452c('0x1a5','A@By')](_0x452c('0x1a6','%CLL'))[_0x452c('0x1a7','uLaq')][_0x452c('0x1a8','4o]D')]='270px';document[_0x452c('0x1a9','1wow')][_0x452c('0x1aa','J^k]')][_0x452c('0x1ab','*N$7')]=_0x452c('0x1ac','uLaq');}function closeNav(){debugLog(0x2,'closeNav');document[_0x452c('0x5e','gAbU')](_0x452c('0x1ad','4o]D'))[_0x452c('0x1ae','A@By')][_0x452c('0x1af','!$Zs')]='0';document[_0x452c('0x1b0','uyN%')][_0x452c('0x1b1','[Siz')][_0x452c('0x1b2','%CLL')]=_0x452c('0x1b3','[K$D');}function generateAboutLink(){var _0x9a600e=_0x452c('0x1b4','!$Zs');if(lang==_0x452c('0x1b5','kPmt')){_0x9a600e=_0x452c('0x1b6','R7Hv');}document[_0x452c('0x1b7','5Fud')](_0x452c('0x1b8','[Siz'))[_0x452c('0x1b9','1@Ck')]=_0x9a600e;};function debugLog(_0x3c655a,_0x10f0a9){if(debugLogsEnabled==![]){if(_0x452c('0x1ba','&Q!l')===_0x452c('0x1bb','MIey')){var _0x260027={'x':0x0,'y':0x0};var _0x41ad76=canvas['getBoundingClientRect']();_0x260027['x']=e[_0x452c('0x1bc','M0Vy')][0x0][_0x452c('0x1bd','uyN%')]-_0x41ad76[_0x452c('0x1be','b(V[')];_0x260027['y']=e[_0x452c('0x1bf','1wow')][0x0][_0x452c('0x1c0','gAbU')]-_0x41ad76[_0x452c('0x1c1','uLaq')];var _0x533712=_0x260027['x']-lastTouchPosition['x'];var _0x57d435=_0x260027['y']-lastTouchPosition['y'];mapCanvasOffset['x']+=_0x533712;mapCanvasOffset['y']+=_0x57d435;debugLog(0x4,'Move\x20Axis:'+_0x260027['x']+',\x20'+_0x260027['y']);updateLastTouchPosition(e);}else{return;}}if(_0x3c655a<=debugSeverityLevel){if(_0x452c('0x1c2','w[r$')===_0x452c('0x1c3','A@By')){codeEnabled=!![];init();return;}else{console[_0x452c('0x1c4','uyN%')](_0x10f0a9);}}}window[_0x452c('0x1c5','M0Vy')]=preInit();
+
+		var debugSeverityLevel = 2;
+		var debugLogsEnabled = false; // 			<<===
+		var skipCode = true; // 					<<===
+		var codeEnabled = false;
+    	var watchProcess = null;
+		var gps_coords = {lat: 0.0, long: 0.0};
+		var map_coords = {x: 0.0, y: 0.0};
+		var deviceHeading = 0.0;
+		var simulatorlocations;
+		var simulatorlocationsIndex;
+		var simulatorMode = false; // 				<<====
+		var map_orient_data = {alfa: 0.0, ratioX: 1.0, ratioY: 1.0};		
+		var mapOrientData = {
+			vector: {angle: 0.0, dist: 0.0}, // Angle from North, Dist in KM
+			canvasVector: {angle: 0.0, dist: 0.0}, // Angle from the Upper direction of the image, Dist in XY pixels
+			vectorRatio: 0.0, 
+			p1: {lat: 0.0, lon: 0.0},//Top left 
+			p2: {lat: 0.0, lon: 0.0} // Bottom right
+		};
+		var tailPointsMinDistance;
+		var id;
+		var canvas;
+		var context;
+		var touchMode = 0; // None	
+		var mapCanvasScale = 1.0;
+		var mapCanvasOffset = {x:0, y:0};
+		var pinchZoomOldDist = 0;	
+		var historyPoints = [{x: 0.0, y: 0.0}];	
+		var tailPoints = [{x: 0.0, y: 0.0}];
+		var tickNumber = 0;
+		var lat = "lat";
+		var long = "long";
+		var isLocatedOnthisMap = true;
+		var lastTouchPosition = {x: 0, y: 0};
+		var showDistance = false;
+		var showTail = true;
+		var dataVersion = 1;
+		var lang = "eng"
+	
+ 
+    	function initiate_watchlocation() {			
+			if (watchProcess == null) {
+				watchProcess = navigator.geolocation.watchPosition(handle_geolocation_query, handle_errors,
+			    {
+						timeout: 10000,
+						enableHighAccuracy: true,
+						maximumAge: Infinity
+					});
+			}
+    	}
+ 
+    	function stop_watchlocation() {
+		  if (watchProcess != null) {
+				navigator.geolocation.clearWatch(watchProcess);
+				watchProcess = null;
+			}			
+    	}
+ 
+    	function handle_errors(error) {
+            switch(error.code)
+            {
+                case error.PERMISSION_DENIED: alert("User did not share geolocation data");
+                break;
+                case error.POSITION_UNAVAILABLE: alert("Could not detect current position");
+                break;
+                case error.TIMEOUT: alert("Retrieving position timedout");
+                break;
+                default: alert("Unknown error");
+                break;
+        		}
+    	}
+
+		function handle_geolocation_query(position) {
+			debugLog(3, "===> handle_geolocation_query: lat: " + position.coords.latitude + ", long:" + position.coords.longitude);
+			setPosition(position.coords.latitude, position.coords.longitude);
+			//heading = position.heading; // degrees from true north. If speed is 0: NaN. If device is unable to provide info: Null.
+			setDeviceHeading(position.coords.heading);
+    	}        
+		
+		function setDeviceHeading(newDeviceHeading) {			
+			if (newDeviceHeading == null) {
+				deviceHeading = -1; // Not valid direction				
+			} else {
+				deviceHeading = newDeviceHeading;			
+			}			
+			debugLog(4, "setDeviceHeading: " + deviceHeading);
+		}
+
+		function setPosition(lat, long) {
+			debugLog(3, "setPosition: lat: " + lat + ", long:" + long);
+			gps_coords.lat = lat;
+			gps_coords.long = long;
+			map_coords = latLon_2_xy(lat, long);
+			document.getElementById("current_location").value = gps_coords.lat + ", " + gps_coords.long;
+			addTailPoint();			
+		}
+
+		function addTailPoint() {			
+			dist = distance(map_coords.x, map_coords.y, tailPoints[tailPoints.length - 1].x, tailPoints[tailPoints.length - 1].y);
+			if (dist > tailPointsMinDistance) {
+				tailPoints.push({x: map_coords.x, y: map_coords.y});
+			}
+			if (tailPoints.length > 1000) {
+				tailPoints.shift();				
+			}
+		}
+
+		function showPosition(mapCords) {
+			debugLog(4, "showPosition: ");
+			var canvasCords = mapToCanvas(mapCords);
+			if (mapCords.x == 0 && mapCords.y == 0) {
+				// Location 0,0 is not a valid location to show:
+				return;
+			}			
+			//drawXonCanvas(x, y);			
+			if (canvasCords.x > canvas.width || canvasCords.x < 0 || canvasCords.y > canvas.height || canvasCords.y < 0) {
+				isLocatedOnthisMap = false;	
+			} else {
+				isLocatedOnthisMap = true;
+				drawLocationIcon(canvasCords);
+				//drawDirectionIcon(canvasCords);
+			}
+		}
+
+		function showLocationTail() {
+			if (showTail == false) {
+				return;
+			}
+			context.lineWidth = 1;
+			context.strokeStyle = "red";			
+			tailPoints.forEach(drawTailPoint);
+		}
+
+		function mapToCanvas(mapCords) {
+			var canvasCords = {x:0, y:0};
+			canvasCords.x = ((mapCords.x * mapCanvasScale) + mapCanvasOffset.x);
+			canvasCords.y = ((mapCords.y * mapCanvasScale) + mapCanvasOffset.y);
+			debugLog(4, "mapToCanvas: Mx: " + mapCords.x + ", My:" + mapCords.y + "; Cx:" + canvasCords.x + "," + canvasCords.y);
+			return canvasCords;
+		}
+
+		function canvasToMap(canvasCords) {
+			var mapCords = {x:0, y:0};
+			mapCords.x = ((canvasCords.x - mapCanvasOffset.x) / mapCanvasScale);
+			mapCords.y = ((canvasCords.y - mapCanvasOffset.y) / mapCanvasScale);
+			debugLog(4, "canvasToMap: Mx: " + mapCords.x + ", My:" + mapCords.y + "; Cx:" + canvasCords.x + "," + canvasCords.y);
+			return mapCords;
+		}
+
+		function drawTailPoint(mapCords) {
+			context.beginPath();
+			var canvasCords = mapToCanvas(mapCords);
+			debugLog(4, "drawTailPoint: Mx: " + mapCords.x + ", My:" + mapCords.y + "; Cx:" + canvasCords.x + "," + canvasCords.y);
+			if (mapCords.x == 0 && mapCords.y == 0) {
+				// This is not a true location:
+				return;
+			}	
+			var radius = 6;
+			if (tickNumber%2 == 0) {
+				radius = radius - (radius/4);
+			}
+			context.arc(canvasCords.x, canvasCords.y, radius, 0, 2 * Math.PI);
+			context.stroke();
+		}
+
+		function drawDirectionIcon(canvasCords) {
+			if (deviceHeading == -1) {
+				deviceHeading = 120;
+				//return;
+			}
+			iconSize = 50;
+			canvasAngleFromNorth = mapOrientData.canvasVector.angle - mapOrientData.vector.angle;
+			relativeAngle = deviceHeading + canvasAngleFromNorth;
+			var x = canvasCords.x + Math.sin(toRadians(relativeAngle)) * iconSize;
+			var y = canvasCords.y - Math.cos(toRadians(relativeAngle)) * iconSize;
+
+			context.beginPath();
+			context.lineWidth = 3;
+			context.strokeStyle = "red";				
+							
+			context.moveTo(canvasCords.x, canvasCords.y);
+			context.lineTo(x, y);	              	      
+			
+			context.stroke();
+		}
+
+		function drawLocationIcon(canvasCords) {					
+			var x = canvasCords.x;
+			var y = canvasCords.y;			
+			var radius = 40;
+			if (tickNumber%2 == 0) {
+				radius = radius - (radius/4);
+			}
+	    	var targetBars = ((2 * radius) / 3);
+	    	var targetCircle = ( radius / 3);
+			
+			context.beginPath();
+			context.lineWidth = 5;
+			context.strokeStyle = "red";				
+				
+			context.arc(x, y , radius - targetCircle, 0, 2 * Math.PI);
+			context.moveTo(x - radius, y);
+			context.lineTo(x - radius + targetBars, y);	              	      
+			context.moveTo(x + radius, y);
+			context.lineTo(x + radius - targetBars, y);	              	      
+			context.moveTo(x, y - radius, x);
+			context.lineTo(x, y - radius + targetBars);	              	      
+			context.moveTo(x, y + radius);
+			context.lineTo(x, y + radius - targetBars);	              	      		
+			 
+			context.stroke();
+
+			context.beginPath();
+			context.lineWidth = 2;
+			context.strokeStyle = "white";				
+
+			context.arc(x, y , radius - targetCircle, 0, 2 * Math.PI);
+			context.moveTo(x - radius, y);
+			context.lineTo(x - radius + targetBars, y);	              	      
+			context.moveTo(x + radius, y);
+			context.lineTo(x + radius - targetBars, y);	              	      
+			context.moveTo(x, y - radius, x);
+			context.lineTo(x, y - radius + targetBars);	              	      
+			context.moveTo(x, y + radius);
+			context.lineTo(x, y + radius - targetBars);	 
+			
+			context.stroke();
+		}
+
+		function drawXonCanvas(mapCords) {	
+			debugLog(3, "drawXonCanvas: x: " + x + ", y:" + y);
+			var canvasCords = mapToCanvas(mapCords);
+			var x = canvasCords.x;
+			var y = canvasCords.y;
+			context.beginPath();
+			context.lineWidth = 3;
+			context.strokeStyle = "black";			
+			var X_location_x = x;
+			var X_location_y = y;
+			var X_size = 20;
+			//context.strokeStyle = '#00ff00';
+			context.moveTo(X_location_x - X_size, X_location_y - X_size);			
+			context.lineTo(X_location_x + X_size, X_location_y + X_size);
+			context.moveTo(X_location_x - X_size, X_location_y + X_size);			
+			context.lineTo(X_location_x + X_size, X_location_y - X_size);
+			context.stroke();
+		}
+
+		function drawMap()
+		{
+			map_image = new Image();
+			map_image.src = 'img.jpg';
+			map_image.onload = function() {					
+				var imageWidthRatio = canvas.width/map_image.width;
+				var imageHeightRatio = canvas.height/map_image.height;
+				if (imageWidthRatio < imageHeightRatio) {
+					mapCanvasScale = imageWidthRatio;	
+					debugLog(2, "drawMap - load: imageWidthRatio > imageHeightRatio Scale=" + mapCanvasScale);
+				}
+				else {
+					mapCanvasScale = imageHeightRatio;	
+					debugLog(2, "drawMap - load: imageHeightRatio > imageWidthRatio Scale=" + mapCanvasScale);
+				}
+				context.drawImage(map_image, 
+					0, 0, map_image.width, map_image.height,
+					mapCanvasOffset.x, mapCanvasOffset.y, map_image.width * mapCanvasScale, map_image.height * mapCanvasScale);
+				postInit();
+			}			
+		}
+
+		function printNotOnMapMessage() {
+			if (isLocatedOnthisMap == true) {
+				return;
+			}
+			if ((tickNumber % 4) == 0) {
+				context.strokeStyle = "white";	
+			} else {
+				context.strokeStyle = "red";
+			}			
+			context.font = "20px Arial";
+			var left = 20;
+			var top = 60;
+			var message_youAreNotOnThisMap = "Your location is currently not on the map";
+			if (lang == "heb") {
+				message_youAreNotOnThisMap = "המיקום שלך כרגע לא על המפה";
+			}			
+			context.strokeText(message_youAreNotOnThisMap, left, top);
+		}
+
+		function drawDistancePointer() {
+			if (lastTouchPosition.x == 0 && lastTouchPosition.y == 0) {
+				return;
+			}
+			if (/*isLocatedOnthisMap == false ||*/ showDistance == false) {
+				return;
+			}
+			debugLog(3, "drawDistancePointer: x: " + lastTouchPosition.x + ", y:" + lastTouchPosition.y);			
+			context.beginPath();
+			context.lineWidth = 2;
+			context.strokeStyle = "black";			
+			var radius = 7;	
+			canvasCords = mapToCanvas(map_coords);		
+			context.moveTo(canvasCords.x, canvasCords.y);			
+			context.lineTo(lastTouchPosition.x, lastTouchPosition.y);
+			context.stroke();
+			context.beginPath();
+			context.arc(lastTouchPosition.x, lastTouchPosition.y, radius, 0, 2 * Math.PI);
+			context.fill();
+			
+			// Print the distance:
+			var fontSize = 20;			
+			context.font = fontSize + "px Arial";
+			lastTouchMapCords = canvasToMap(lastTouchPosition);
+			var distanceFromLocation = getGpsDistance(lastTouchMapCords.x, lastTouchMapCords.y, map_coords.x, map_coords.y);
+			distanceFromLocation = distanceFromLocation.toFixed(3);
+			var distanceFromLocation_str = distanceFromLocation + " Km";
+			context.strokeText(distanceFromLocation_str, lastTouchPosition.x, lastTouchPosition.y - (1.5 * fontSize));
+			context.stroke();
+		}
+
+		function reDraw() {						
+			context.clearRect(0, 0, canvas.width, canvas.height);
+			context.beginPath();
+			context.closePath();
+			context.drawImage(map_image, 
+				0, 0, map_image.width, map_image.height,
+				mapCanvasOffset.x, mapCanvasOffset.y, map_image.width * mapCanvasScale, map_image.height * mapCanvasScale);					
+			showLocationTail();					
+			showPosition(map_coords);
+			printNotOnMapMessage();
+			drawDistancePointer();			
+		}
+
+		function timeTick() {		
+			tickNumber += 1;
+			if (tickNumber > 100000) {
+				tickNumber = 0;
+			}	
+			debugLog(5, "TimeTick:" + tickNumber);
+			if (simulatorMode == true) {
+				simulatorLocationTick();
+			}
+			reDraw();
+		}
+
+		function toRadians (angle) {
+			return angle * (Math.PI / 180);
+		}
+		
+		function toDegrees (angle) {
+			return angle * (180 / Math.PI);
+		}
+
+		function prepareOrientationData() {
+			debugLog(2, "prepareOrientationData()");
+			mapOrientData.vector = calcGeoVector(mapOrientData.p1.lat, mapOrientData.p1.lon, mapOrientData.p2.lat, mapOrientData.p2.lon);
+			mapOrientData.canvasVector.dist = distance(0, 0, map_image.width, map_image.height);
+			mapOrientData.canvasVector.angle = Math.atan2(map_image.height, map_image.width);
+			mapOrientData.canvasVector.angle = toDegrees(mapOrientData.canvasVector.angle) + 90;
+			mapOrientData.vectorRatio = mapOrientData.canvasVector.dist / mapOrientData.vector.dist;
+			debugLog(2, "mapOrientData:" + JSON.stringify(mapOrientData));						
+			tailPointsMinDistance = mapOrientData.canvasVector.dist / 500;
+		}
+
+		function getGpsDistance(x1, y1, x2, y2) {
+			var dist = distance(x1, y1, x2, y2);
+			if (mapOrientData.vectorRatio == 0) {
+				dist = 0;
+			} else {
+				dist = dist/mapOrientData.vectorRatio;//In KMs.
+			}
+			return dist;
+		}
+
+		function distance(x1, y1, x2, y2) {			
+			var distX = x2 - x1;
+			var distY = y2 - y1;
+			var dist = Math.sqrt(distX * distX + distY * distY);
+			debugLog(3, "distance: distX: " + distX + ", distY: " + distY + ", dist: " + dist);
+			return dist;
+		}
+
+		// Curtosey of:
+		// https://www.movable-type.co.uk/scripts/latlong.html?from=49.1715000,-121.7493500&to=49.18258,-121.75441
+		function calcAngleFromNorth(lat1, lon1, lat2, lon2) {
+			debugLog(4, "calcAngleFromNorth: p1: " + lat1 + "," + lon1 + " p2: " + lat2 + "," + lon2);
+			lat1 = toRadians(lat1);
+			lat2 = toRadians(lat2);
+			var deltaLon = toRadians(lon2-lon1);
+			var y = Math.sin(deltaLon) * Math.cos(lat2);
+			var x = Math.cos(lat1)*Math.sin(lat2) - Math.sin(lat1)*Math.cos(lat2)*Math.cos(deltaLon);
+			var bearingInRad = Math.atan2(y, x);
+			var bearingInDeg = toDegrees(bearingInRad);
+			debugLog(4, "calcAngleFromNorth: BearingInDeg: " + bearingInDeg);
+			return bearingInDeg;
+		}
+
+		function calcGeoVector(lat1, lon1, lat2, lon2) {
+			debugLog(4, "calcGeoVector: #1:" + lat1 + ", " + lon1 + " #2:" + lat2 + ", " + lon2);			
+			var vector = {angle: 0.0, dist: 0.0};									 						
+			vector.dist = getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2);
+			//vector.angle = angleFromEast(lat1, lon1, lat2, lon2, vector.dist);
+			vector.angle = calcAngleFromNorth(lat1, lon1, lat2, lon2);						
+			debugLog(4, "vector: " + JSON.stringify(vector));
+			return vector;
+		}
+
+		function latLon_2_xy(lat, lon) {
+			var p = {x: 0.0, y: 0.0};
+			debugLog(4, "latLon_2_xy: lat:" + lat + ", " + lon);
+			var vector = calcGeoVector(mapOrientData.p1.lat, mapOrientData.p1.lon, lat, lon);
+			// Assuming the top left corner of the image is 0,0 and the bottom right corner is the "100,100":
+			angleDelta = mapOrientData.vector.angle - vector.angle;
+			canvasAngle = (mapOrientData.canvasVector.angle - angleDelta) - 90;	// Clock wize from the X axie.		
+			dist = vector.dist * mapOrientData.vectorRatio;
+			debugLog(4, "dist: " + dist + ", CanvasAngle:" + canvasAngle + ", AngleDelta:" + angleDelta + ", vectorAngle:" + vector.angle);
+			p.x = Math.cos(toRadians(canvasAngle)) * dist;
+			p.y = Math.sin(toRadians(canvasAngle)) * dist;
+			debugLog(4, "p.x: " + p.x + ", p.y:" + p.y);
+
+			return p;
+		}
+
+		// From StackOverFlow:
+		// https://stackoverflow.com/questions/27928/calculate-distance-between-two-latitude-longitude-points-haversine-formula
+		function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
+  		var R = 6371; // Radius of the earth in km
+  		var dLat = toRadians(lat2-lat1);  // deg2rad below
+  		var dLon = toRadians(lon2-lon1); 
+  		var a = 
+    		Math.sin(dLat/2) * Math.sin(dLat/2) +
+    		Math.cos(toRadians(lat1)) * Math.cos(toRadians(lat2)) * 
+    		Math.sin(dLon/2) * Math.sin(dLon/2); 
+  		var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+			var d = R * c; // Distance in km
+			debugLog(3, "getDistanceFromLatLonInKm: " + d);
+  		return d;
+		}
+
+		function getMapData() {				
+			var mapDataString = document.getElementById("map_data").value;
+			debugLog(2, "mapDataString: " + mapDataString);
+			var mapDataArr = mapDataString.split(";", 7); // Ver 1.0
+			dataVersion = mapDataArr[0];			
+			mapTitle = mapDataArr[1];
+			lang = mapDataArr[2];
+			mapOrientData.p1.lat = mapDataArr[3];
+			mapOrientData.p1.lon = mapDataArr[4];
+			mapOrientData.p2.lat = mapDataArr[5];
+			mapOrientData.p2.lon = mapDataArr[6];			
+		}
+
+		function check() {
+			code = document.getElementById("current_location").value;
+			debugLog(2, "Check(): " + code);
+			if (check_2(code, long.length, lat.length) == true) {
+				init();
+			}
+		}
+
+		function check_2(code, longSize, latSize) {
+			var code3 = parseInt(code.charAt(latSize));			
+			if (code3 == (longSize + latSize)) {
+				return check_3(code, longSize, latSize);
+			} else {
+				return false;
+			}
+		}
+
+		function check_3(code, longSize, latSize) {
+			var code2 = parseInt(code.charAt(longSize / 2));			
+			if (code2 == (longSize - latSize)) {
+				return check_4(code, longSize, latSize);
+			} else {
+				return false;
+			}
+		}
+
+		function check_4(code, longSize, latSize) {
+			var code1 = parseInt(code.charAt(longSize - latSize));			
+			if (code1 == latSize) {
+				return check_5(code, longSize, latSize);
+			} else {
+				return false;
+			}
+		}
+
+		function check_5(code, longSize, latSize) {
+			var code0 = parseInt(code.charAt(longSize - longSize));			
+			if (code0 == longSize) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+		function preInit() {
+			if (skipCode == true) {	
+				codeEnabled = true;			
+				init();
+				return;
+			}
+			debugLog(3, "preInit");
+			document.getElementById("map_title").innerHTML = "Sorry - Site is not open yet";
+			document.getElementById("current_location").value = "Code Please.";
+			document.getElementById("current_location").focus();
+		}
+
+		function postInit() { // Runs after image loads:
+			debugLog(3, "postInit...");
+			prepareOrientationData();
+			initLocation();
+			id = setInterval(timeTick, 500);
+		}
+
+		function init() {
+			debugLog(2, "init...");
+			codeEnabled = true;
+			document.getElementById("current_location").value = "Loading...";
+			getMapData();	
+			document.getElementById("map_title").innerHTML = mapTitle;
+			canvas = document.getElementById("map_canvas"),
+			context = canvas.getContext('2d');			
+			canvas.width = window.innerWidth;	
+			canvas.height = window.innerHeight - (window.innerHeight/5);
+			drawMap();
+			touchMode = 0;						
+			canvas.addEventListener("touchstart",  function(event) {event.preventDefault()});
+			canvas.addEventListener("touchmove",   function(event) {event.preventDefault()});
+			canvas.addEventListener("touchend",    function(event) {event.preventDefault()});			
+			canvas.addEventListener("touchstart", pointerDown, false);
+			canvas.addEventListener("touchmove", pointerMove, false);
+			canvas.addEventListener("touchend", pointerUp, false);
+			generateMenu();
+			generateAboutLink();
+		}
+		
+		//--
+		// Touch handlers:
+		function pointerDown(e) {			
+			updateLastTouchPosition(e);				
+			pinchZoomOldDist = 0;
+			if (e.touches.length == 2) {
+				touchMode = 2; // Pinch	zoom				
+			} else if (e.touches.length == 1) {
+				touchMode = 1; // Drag
+			} else {
+				touchMode = 0; // None
+			}
+			debugLog(2, "Pointer down - Touch mode:" +  touchMode);
+			reDraw();
+		}
+
+		function pointerUp(e) {			
+			touchMode = 0; // None
+			debugLog(2, "Pointer up - Touch mode:" +  touchMode);						
+		}
+
+		function pointerMove(e) {
+			if (touchMode != 0) {
+				if (touchMode == 1) { // Drag 
+					var currTouch = {x:0, y:0};
+					var canvasClientRect = canvas.getBoundingClientRect();					
+					currTouch.x = e.touches[0].clientX - canvasClientRect.left;
+					currTouch.y = e.touches[0].clientY - canvasClientRect.top;																		
+					var deltaX = currTouch.x - lastTouchPosition.x;
+					var deltaY = currTouch.y - lastTouchPosition.y;					
+					mapCanvasOffset.x += deltaX;
+					mapCanvasOffset.y += deltaY;
+					debugLog(4, "Move Axis:" + currTouch.x + ", " + currTouch.y);	
+					updateLastTouchPosition(e);															
+				} if (touchMode == 2) { // Pinch zoom					
+					var p1 = {x:0, y:0};
+					p1.x = e.touches[0].screenX;
+					p1.y = e.touches[0].screenY;
+					var p2 = {x: 0, y:0};
+					p2.x = e.touches[1].screenX;
+					p2.y = e.touches[1].screenY;
+					var dist = distance(p1.x, p1.y, p2.x, p2.y);
+					if (pinchZoomOldDist != 0) {											
+						// Update the scale:
+						mapCanvasScale *= dist/pinchZoomOldDist;
+						if (mapCanvasScale > 4.0) { // Limit scale to x4
+							mapCanvasScale = 4.0;
+						} else 		
+						if (mapCanvasScale < 0.1) { // Limit scale to x1/10
+							mapCanvasScale = 0.1;
+						} else 
+						{ // Scale is OK, lets update offset too:
+							// Inorder to keep the map in the same position, shift the offset toward the 0,0:
+							mapCanvasOffset.x -= (dist - pinchZoomOldDist);
+							mapCanvasOffset.y -= (dist - pinchZoomOldDist);	
+						}	
+
+					}
+					debugLog(4, "Update scale: dist=" + dist + ", oldDist=" + pinchZoomOldDist + ", scale=" + mapCanvasScale);					
+					pinchZoomOldDist = dist;									
+				}			
+			}
+			reDraw();
+		}
+
+		function updateLastTouchPosition(e) {	
+			var canvasClientRect = canvas.getBoundingClientRect();		
+			lastTouchPosition.x = e.touches[0].clientX - canvasClientRect.left;
+			lastTouchPosition.y = e.touches[0].clientY - canvasClientRect.top;			
+			debugLog(4, "updateLastTouchPosition: " + lastTouchPosition.x + ", " + lastTouchPosition.y);	
+		}
+
+		// Get the position of the mouse relative to the canvas
+		function getMousePosition(canvasDom, mouseEvent) {
+			var rect = canvasDom.getBoundingClientRect();
+			return {
+			  x: mouseEvent.clientX - rect.left,
+			  y: mouseEvent.clientY - rect.top	};
+		}
+		  
+		//--
+
+		function initLocation() {
+			if (simulatorMode == true) {
+				gpsSimulatorInit();
+			} else {
+				initiate_watchlocation();
+			}
+		}
+
+		function gpsSimulatorInit() {
+			simulatorlocations = 
+				[
+					{lat: 31.893301, long: 34.807930}
+
+					//{lat:-14.293594, long: 126.644523}, // Kalinburu
+					//{lat:-33.531809, long: -70.682449}, // Santiago
+					//{lat: 40.578126, long: -73.887681} // NYC
+					/*
+					{lat: 32.0, long: 35.0}, {lat: 32.0, long: 35.0001}, {lat: 32.0, long: 35.0002}, {lat: 32.0, long: 35.0003},
+					{lat: 32.0, long: 35.0004}, {lat: 32.0, long: 35.0005}, {lat: 32.0, long: 35.0006}, {lat: 32.0, long: 35.0007},
+					{lat: 32.0, long: 35.0008}, {lat: 32.0, long: 35.0009}, {lat: 32.0, long: 35.0010}, {lat: 32.0, long: 35.0011},
+					{lat: 32.0, long: 35.0012}, {lat: 32.0, long: 35.0013}, {lat: 32.0, long: 35.0014}, {lat: 32.0, long: 35.0015},
+					{lat: 32.0, long: 35.0016}, {lat: 32.0, long: 35.0017}, {lat: 32.0, long: 35.0018}, {lat: 32.0, long: 35.0019},
+					{lat: 32.0, long: 35.0020}, {lat: 32.0, long: 35.0021}, {lat: 32.0, long: 35.0022}, {lat: 32.0, long: 35.0023},					
+					{lat: 32.0, long: 35.0024}, {lat: 32.0, long: 35.0025}, {lat: 32.0, long: 35.0026}, {lat: 32.0, long: 35.0027},
+					{lat: 32.0, long: 35.0028}, {lat: 32.0, long: 35.0029}, {lat: 32.0, long: 35.0030}, {lat: 32.0, long: 35.0031},
+					{lat: 32.0, long: 35.0032}, {lat: 32.0, long: 35.0033}, {lat: 32.0, long: 35.0034}, {lat: 32.0, long: 35.0035},
+					{lat: 32.0, long: 35.0036}, {lat: 32.0, long: 35.0037}, {lat: 32.0, long: 35.0038}, {lat: 32.0, long: 35.0039},
+					{lat: 32.0, long: 35.0040}, {lat: 32.0, long: 35.0041}, {lat: 32.0, long: 35.0042}, {lat: 32.0, long: 35.0043}					
+				*/
+				];
+			simulatorlocationsIndex = 0;						
+		}
+
+		function simulatorLocationTick() {	
+			var location = {lat: 0.0, long: 0.0};
+			location.lat = simulatorlocations[simulatorlocationsIndex].lat;
+			location.long = simulatorlocations[simulatorlocationsIndex].long;
+			simulatorlocationsIndex += 1;
+			if (simulatorlocationsIndex >= simulatorlocations.length) {
+				simulatorlocationsIndex = 0;
+			}
+			setPosition(location.lat, location.long);			
+		}
+
+		
+		function menuShowLatestMessages() {
+			closeNav();
+		}
+		function saveForOffline() {
+			closeNav();
+		}		
+		function contactMapVendor() {
+			closeNav();
+		}
+
+		function toggleKeepScreenOn() {
+			closeNav();
+		}
+
+		function toggleShowTail() {
+			debugLog(2, "toggleShowTail");
+			if (showTail == false) {
+				showTail = true;
+			} else {
+				showTail = false;
+			}
+			closeNav();
+		}
+
+		function toggleShowDistance() {
+			debugLog(2, "toggleShowDistance");
+			if (showDistance == false) {
+				showDistance = true;
+			} else {
+				showDistance = false;
+			}
+			closeNav();
+		}
+
+		function generateMenu() {	
+			debugLog(2, "generateMenu");
+			document.getElementById("menuOpen").onclick = openNav;
+			document.getElementById("myCloseBtn").onclick = closeNav;
+			var menuItem = "Show/Hide distance ruler";
+			if (lang == "heb") {
+				menuItem = "הצג/הסתר סרגל מרחק";
+			}			
+			document.getElementById("menuItem1").innerHTML = menuItem;
+			document.getElementById("menuItem1").onclick = toggleShowDistance;
+
+			menuItem = "Show/Hide tail of locations"
+			if (lang == "heb") {
+				menuItem = "הצג/הסתר מיקומים קודמים";
+			}			
+
+			document.getElementById("menuItem2").innerHTML = menuItem;
+			document.getElementById("menuItem2").onclick = toggleShowTail;
+
+			menuItem = "Save for Offline use"		
+			if (lang == "heb") {
+				menuItem = "שמור את הדף לשימוש ללא אינטרנט";
+			}			
+
+			document.getElementById("menuItem3").innerHTML = menuItem;
+			document.getElementById("menuItem3").onclick = saveForOffline;
+
+			//document.getElementById("menuMessage").innerHTML = "Send message"			
+			//document.getElementById("contactMapVendor").innerHTML = "contact Map Vendor"	
+			/*
+			menuItem = "Keep screen on"
+			if (lang == "heb") {
+				menuItem = "שמור את המסך דלוק";
+			}			
+			document.getElementById("menuItem2").innerHTML = menuItem;
+			document.getElementById("menuItem2").onclick = toggleKeepScreenOn;
+			*/								
+		}
+
+		function openNav() {
+			debugLog(2, "openNav");
+			if (codeEnabled == false) {
+				return;
+			}			
+			document.getElementById("mySidenav").style.width = "270px";			
+			document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+		}
+		  
+		function closeNav() {
+			debugLog(2, "closeNav");
+			document.getElementById("mySidenav").style.width = "0";			
+			document.body.style.backgroundColor = "white";
+		}
+
+		function generateAboutLink() {
+			var linkItem = "../../about.html";
+			if (lang == "heb") {
+				linkItem = "../../about_heb.html";
+			}			
+			document.getElementById("about_link").href = linkItem;
+		};
+
+		function debugLog(severity, str) {
+			if (debugLogsEnabled == false) {
+				return;
+			}
+			if (severity <= debugSeverityLevel) {
+				console.log(str);
+			} 
+		}
+
+		window.onload = preInit();
